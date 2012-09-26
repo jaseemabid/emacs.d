@@ -32,8 +32,9 @@
  '(default ((t (:family "Droid Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal)))))
 
 ;; Custom packages
-;; (Add-to-list 'package-archives
-;;              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(require 'package)
+(add-to-list 'package-archives
+			 '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; ;; Custom keybindings
 (define-key global-map "\C-x\C-u" 'undo)
@@ -60,8 +61,8 @@
 ;; ido mode :)
 (ido-mode t)
 ;; Snippets
-(require 'yasnippet)
-(yas-global-mode 1)
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
 
 ;; ;; Hooks
 
@@ -95,7 +96,6 @@
 			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Color themes
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/comidia.el")
+;; (load "~/.emacs.d/elpa/color-theme-20080305.834/color-theme.el")
 ;; (color-theme-initialize)
 ;; (color-theme-comidia)
-(load-theme 'tango)
