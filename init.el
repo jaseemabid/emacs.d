@@ -103,6 +103,5 @@
 			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Color themes
-;; (load "~/.emacs.d/elpa/color-theme-20080305.834/color-theme.el")
-;; (color-theme-initialize)
-;; (color-theme-comidia)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+(load-theme 'solarized-dark t)
