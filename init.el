@@ -54,7 +54,9 @@
 ;; Line number mode
 (global-linum-mode t)
 ;; Start emacs as a server everytime
-(server-start t)
+(load "server")
+(unless (server-running-p) (server-start))
+
 ;; Type over a region
 (pending-delete-mode t)
 ;; Sessions
