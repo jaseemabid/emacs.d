@@ -60,8 +60,8 @@
 ;; ido mode :)
 (ido-mode t)
 ;; Snippets
-;; (require 'yasnippet)
-;; (yas/global-mode 1)
+(require 'yasnippet)
+(yas-global-mode 1)
 
 ;; ;; Hooks
 
@@ -75,6 +75,13 @@
 
 ;; Fixing some insane text conventions
 (setq sentence-end-double-space nil)
+
+;; Rainbow mode for css-mode
+(add-hook 'css-mode-hook 'rainbow-mode)
+
+;; auto-fill-mode for text-mode
+(add-hook 'text-mode-hook 'auto-fill-mode)
+(add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; Make
 ;; y/n suffice for yes/no q
