@@ -1,0 +1,23 @@
+# List of packages installed with package manager
+
+auctex-11.86
+clojure-mode-20120914.1423
+clojurescript-mode-20120913.1043
+clojure-test-mode-20120914.1423
+coffee-mode-0.4.1
+color-theme-20080305.834
+crontab-mode-20090510.2255
+csv-mode-1.0
+csv-mode-20091203.1911
+dired+-20120905.1658
+erlang-20120831.1448
+gh-20120720.2305
+gist-20120916.1845
+js2-mode-20090814
+logito-20120225.2155
+org-20120925
+pcache-20120408.1206
+rainbow-mode-0.2
+sisu-mode-3.0.3
+vlf-0.2
+yasnippet-0.8.0
