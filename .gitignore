@@ -1,0 +1,16 @@
+# Gitignore file
+
+# Remove backup files
+*~
+*.
+*#
+
+# Emacs packages
+elpa/
+var/
+
+#  Emacs tmp files & Misc
+
+/auto-save-list
+/.emacs.desktop
+/.emacs.desktop.lock
