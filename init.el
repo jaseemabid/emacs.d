@@ -84,12 +84,35 @@
 ;; Fixing some insane text conventions
 (setq sentence-end-double-space nil)
 
-;; Rainbow mode for css-mode
+;; Rainbow mode for css and html mode
 (add-hook 'css-mode-hook 'rainbow-mode)
+(add-hook 'html-mode-hook 'rainbow-mode)
 
 ;; auto-fill-mode for text-mode
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
+
+;; Handle extra filetypes
+
+;; PKGBUILKD mode
+(autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
+(setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
+
+;; HTML mode
+(autoload 'html-mode "html-mode" "html Mode." t)
+(add-to-list 'auto-mode-alist '("\\.ext\\'" . html-mode))
+
+;; LESS mode
+(autoload 'css-mode "css-mode" "CSS Mode." t)
+(add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
+
+;; ORG mode
+(autoload 'org-mode "org-mode" "ORG Mode." t)
+(add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+
+;; Markdown mode
+(autoload 'markdown-mode "markdown-mode" "markdown Mode." t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; Make
 ;; y/n suffice for yes/no q
