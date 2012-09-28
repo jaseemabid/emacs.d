@@ -26,7 +26,9 @@
  '(setq visible-bell t)
  '(show-paren-mode t)
  '(tab-width 4)
- '(tool-bar-mode nil)
+ '(tool-bar-mode nil) ;; Who needs all the bars?
+ '(menu-bar-mode nil)
+ '(scroll-bar-mode nil)
  '(transient-mark-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
