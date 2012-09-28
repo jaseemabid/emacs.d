@@ -44,16 +44,45 @@
 						 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; ;; Custom keybindings
-(define-key global-map "\C-x\C-u" 'undo)
-(define-key global-map "\C-x\C-b" 'electric-buffer-list)
-(global-set-key (kbd "C-M-g") 'goto-line)
-(global-set-key (kbd "C-M-f") 'comment-or-uncomment-region)
 
 ;; Easy buffer switching
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
+
+;; Undo without leaving the ctrl key
+(define-key global-map "\C-x\C-u" 'undo)
+
+;; Because buffer list suck
+(define-key global-map "\C-x\C-b" 'electric-buffer-list)
+
+;; Comment/uncomment block
+(global-set-key (kbd "C-M-f") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-c u") 'uncomment-region)
+
+;; Webjump let's you quickly search google, wikipedia, emacs wiki
+(global-set-key (kbd "C-x g") 'webjump)
+(global-set-key (kbd "C-x M-g") 'browse-url-at-point)
+
+;; Eval buffer
+(global-set-key (kbd "C-c e") 'eval-buffer)
+
+;; Mark all
+(global-set-key (kbd "C-c a") 'mark-whole-buffer)
+
+;; Sorting
+(global-set-key (kbd "M-s l") 'sort-lines)
+
+;; Make shell more convenient, and suspend-frame less
+(global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-x M-z") 'suspend-frame)
+
+;; Navigation bindings
+(global-set-key (kbd "C-M-g" 'goto-line)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
 ;; ;;  Essential extra modes
 
