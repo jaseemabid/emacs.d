@@ -68,8 +68,8 @@
 ;; ido mode :)
 (ido-mode t)
 ;; centered cursor mode
-(require 'centered-cursor-mode)
-(global-centered-cursor-mode t)
+;; (require 'centered-cursor-mode)
+;; (global-centered-cursor-mode t)
 ;; Snippets
 ;; (require 'yasnippet)
 ;; (yas-global-mode 1)
