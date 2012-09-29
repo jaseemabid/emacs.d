@@ -80,7 +80,7 @@
 (global-set-key (kbd "C-x M-z") 'suspend-frame)
 
 ;; Navigation bindings
-(global-set-key (kbd "C-M-g" 'goto-line)
+(global-set-key (kbd "C-M-g") 'goto-line)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
