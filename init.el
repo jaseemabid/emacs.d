@@ -88,22 +88,19 @@
 
 ;; Line number mode
 (global-linum-mode t)
+
 ;; Start emacs as a server everytime
 (load "server")
 (unless (server-running-p) (server-start))
 
 ;; Type over a region
 (pending-delete-mode t)
+
 ;; Sessions
 (desktop-save-mode t)
+
 ;; ido mode :)
 (ido-mode t)
-;; centered cursor mode
-;; (require 'centered-cursor-mode)
-;; (global-centered-cursor-mode t)
-;; Snippets
-;; (require 'yasnippet)
-;; (yas-global-mode 1)
 
 ;; ;; Hooks
 
@@ -167,3 +164,8 @@
 ;; Color themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (load-theme 'solarized-dark t)
+
+;; Load extra packages installed with elpa
+(add-hook 'after-init-hook
+		  '(lambda ()
+			 (load-file "~/.emacs.d/after-init.el")))
