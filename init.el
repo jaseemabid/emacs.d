@@ -108,9 +108,14 @@
 ;; ;; Hooks
 
 ;; Default indentation is usually 2 spaces, changing to 4.
+;; Better navigation
 (add-hook 'html-mode-hook
 		  (lambda ()
-			(set (make-local-variable 'sgml-basic-offset) 4)))
+			(set (make-local-variable 'sgml-basic-offset) 4)
+			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
+			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
+			)
+		  )
 
 ;; delete \b at line ends before saving a file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
