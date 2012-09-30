@@ -14,3 +14,5 @@ var/
 /auto-save-list
 /.emacs.desktop
 /.emacs.desktop.lock
+.mc-lists.el
+/snippets/
