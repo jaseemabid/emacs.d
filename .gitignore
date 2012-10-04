@@ -4,6 +4,7 @@
 *~
 *.
 *#
+*.elc
 
 # Emacs packages
 elpa/
