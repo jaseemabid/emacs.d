@@ -37,6 +37,9 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Droid Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal)))))
 
+;; Start maximized
+(set-frame-parameter nil 'fullscreen 'maximized)
+
 ;; Custom packages
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -143,7 +146,8 @@
 (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
 
 ;; ORG mode
-(autoload 'org-mode "org-mode" "ORG Mode." t)
+(require 'org)
+;; (autoload 'org-mode "org-mode" "ORG Mode." t)
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 
 ;; Markdown mode
