@@ -87,6 +87,9 @@
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
+;; Turn on the menu bar for exploring new modes
+(global-set-key (kbd "C-c C-m") 'menu-bar-mode)
+
 ;; ;;  Essential extra modes
 
 ;; Line number mode
