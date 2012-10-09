@@ -90,6 +90,10 @@
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-c C-m") 'menu-bar-mode)
 
+;; Remember mode
+(define-key global-map (kbd "C-c r") 'remember)
+(define-key global-map (kbd "C-c R") 'remember-region)
+
 ;; ;;  Essential extra modes
 
 ;; Line number mode
