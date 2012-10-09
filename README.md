@@ -29,8 +29,8 @@ risk. Will clean up someday when I get time.
 
 ### TODO
 
-* Load Yasnippets, centered mode etc *after* elpa packages load
-* Check these packages
-	* http://julien.danjou.info/projects/emacs-packages
-* Fix ERB
-* Fix gnus
+* Read
+  * http://julien.danjou.info/projects/emacs-packages
+* Fix
+  * ERB
+  * gnus
