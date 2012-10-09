@@ -23,3 +23,6 @@
 (global-set-key (kbd "C-M-e") 'er/expand-region)
 (global-set-key (kbd "C-M-i") 'er/mark-inner-tag)
 (global-set-key (kbd "C-M-o") 'er/mark-outer-tag)
+;; git-commit-mode
+(require 'magit)
+(add-hook 'magit-log-edit-mode-hook 'git-commit-mode-magit-setup)
