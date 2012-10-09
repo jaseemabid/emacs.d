@@ -26,3 +26,5 @@
 ;; git-commit-mode
 (require 'magit)
 (add-hook 'magit-log-edit-mode-hook 'git-commit-mode-magit-setup)
+;; Remember mode
+(require 'remember)
