@@ -10,6 +10,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-fill-mode 1)
+ '(auto-indent-next-pair-timer-interval (quote ((css-mode 1.5) (default 0.0005))))
  '(c-basic-indent 4)
  '(c-default-style "k&r")
  '(case-fold-search t)
@@ -21,14 +22,14 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(line-number-mode 1)
+ '(menu-bar-mode nil)
  '(nxml-child-indent 4)
  '(ring-bell-function (quote ignore) t)
+ '(scroll-bar-mode nil)
  '(setq visible-bell t)
  '(show-paren-mode t)
  '(tab-width 4)
- '(tool-bar-mode nil) ;; Who needs all the bars?
- '(menu-bar-mode nil)
- '(scroll-bar-mode nil)
+ '(tool-bar-mode nil)
  '(transient-mark-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -150,16 +151,13 @@
 (setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
 
 ;; HTML mode
-(autoload 'html-mode "html-mode" "html Mode." t)
 (add-to-list 'auto-mode-alist '("\\.ext\\'" . html-mode))
 
 ;; LESS mode
-(autoload 'css-mode "css-mode" "CSS Mode." t)
 (add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
 
 ;; ORG mode
 (require 'org)
-;; (autoload 'org-mode "org-mode" "ORG Mode." t)
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 
 ;; Markdown mode
@@ -170,6 +168,9 @@
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
+;; Nginx-mode
+(add-to-list 'auto-mode-alist '("nginx.conf" . nginx-mode))
 
 ;; Make
 ;; y/n suffice for yes/no q

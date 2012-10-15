@@ -28,3 +28,7 @@
 (add-hook 'magit-log-edit-mode-hook 'git-commit-mode-magit-setup)
 ;; Remember mode
 (require 'remember)
+;; Coffee-mode
+(require 'coffee-mode)
+;; Rainbow-mode
+(require 'rainbow-mode)
