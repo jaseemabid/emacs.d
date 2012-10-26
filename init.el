@@ -96,6 +96,10 @@
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-c C-m") 'menu-bar-mode)
 
+;; Minimap mode
+(global-set-key (kbd "C-c C-s") 'minimap-create)
+(global-set-key (kbd "C-c C-t") 'minimap-kill)
+
 ;; Remember mode
 (define-key global-map (kbd "C-c r") 'remember)
 (define-key global-map (kbd "C-c R") 'remember-region)
