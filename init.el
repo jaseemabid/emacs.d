@@ -158,7 +158,7 @@
 (add-to-list 'auto-mode-alist '("\\.ext\\'" . html-mode))
 
 ;; LESS mode
-(add-to-list 'auto-mode-alist '("\\.less\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 
 ;; ORG mode
 (require 'org)
