@@ -109,9 +109,6 @@
 ;; Line number mode
 (global-linum-mode t)
 
-;; Guru-mode to do it the right way
-(guru-global-mode t)
-
 ;; Start emacs as a server everytime
 (load "server")
 (unless (server-running-p) (server-start))
@@ -150,6 +147,9 @@
 ;; auto-fill-mode for text-mode
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
+
+;; Guru-mode to do it the right way
+(add-hook 'prog-mode-hook 'turn-on-guru-mode)
 
 ;; Zip well in dired mode
 
