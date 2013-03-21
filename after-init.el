@@ -32,3 +32,6 @@
 (require 'coffee-mode)
 ;; Rainbow-mode
 (require 'rainbow-mode)
+;; rinari
+(require 'rinari)
+(global-rinari-mode)
