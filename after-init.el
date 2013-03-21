@@ -4,7 +4,7 @@
 ;; Load extra packages installed with elpa
 ;; Jaseem Abid <jaseemabid@gmail.com>
 
-;; ;; centered cursor mode
+;; centered cursor mode
 (require 'centered-cursor-mode)
 (global-centered-cursor-mode t)
 ;; Snippets

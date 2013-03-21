@@ -109,10 +109,20 @@
 (define-key global-map (kbd "C-c r") 'remember)
 (define-key global-map (kbd "C-c R") 'remember-region)
 
+;; Magit mode
+(define-key global-map (kbd "C-c i") 'magit-status)
+(define-key global-map (kbd "C-c g") 'magit-status)
+
+
+;; Sensible backup files
+(setq backup-directory-alist
+	  '(("." . "~/.emacs.backups")))
+
 ;; ;;  Essential extra modes
 
 ;; Line number mode
 (global-linum-mode t)
+(global-hl-line-mode t)
 
 ;; Start emacs as a server everytime
 (load "server")
@@ -123,12 +133,18 @@
 
 ;; Sessions
 (desktop-save-mode t)
+(setq desktop-buffers-not-to-save
+	  (concat "\\("
+			  "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
+			  "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
+			  "\\)$"))
+
+(define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
 ;; ido mode :)
 (ido-mode t)
 
 ;; openwith-mode
-
 '(openwith-associations (quote (("\\.pdf\\'" "evince" (file))
 								("\\.mp3\\'" "clementine" (file))
 								("\\.\\(?:mpe?g\\|avi\\|wmv\\)\\'" "vlc"
@@ -136,6 +152,7 @@
 								 ("\\.\\(?:jp?g\\|png\\|JPG\\)\\'" "eog" (file)))
 							   )
 						)
+(add-hook 'dired-mode-hook 'openwith-mode)
 
 ;; ;; Hooks
 
@@ -167,15 +184,17 @@
 ;; (add-hook 'prog-mode-hook 'turn-on-guru-mode)
 
 ;; Zip well in dired mode
-
 (eval-after-load "dired-aux"
   '(add-to-list 'dired-compress-file-suffixes
 				'("\\.zip\\'" ".zip" "unzip")))
+
 (eval-after-load "dired"
   '(define-key dired-mode-map "z" 'dired-zip-files))
+
 (defun dired-zip-files (zip-file)
   "Create an archive containing the marked files."
-  (interactive "sEnter name of zip file: ")
+  (interactive "Enter name of zip file: ")
+
   ;; create the zip file
   (let ((zip-file (if (string-match ".zip$" zip-file) zip-file (concat zip-file ".zip"))))
     (shell-command
@@ -193,6 +212,7 @@
   ;; mark zip file
   ;; (dired-mark-files-regexp (filename-to-regexp zip-file))
   )
+
 (defun concat-string-list (list)
   "Return a string which is a concatenation of all elements of the list separated by spaces"
   (mapconcat '(lambda (obj) (format "%s" obj)) list " "))
