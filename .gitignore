@@ -17,3 +17,7 @@ var/
 /.emacs.desktop.lock
 .mc-lists.el
 /snippets/
+/eshell/history
+/eshell/lastdir
+/newsticker/feeds/
+/tramp
