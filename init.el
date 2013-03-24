@@ -10,7 +10,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-fill-mode 1)
- '(background-mode dark)
  '(c-basic-indent 4)
  '(c-default-style "k&r")
  '(case-fold-search t)
@@ -21,7 +20,6 @@
  '(indent-tabs-mode t)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
- '(line-number-mode 1)
  '(menu-bar-mode nil)
  '(nxml-child-indent 4)
  '(ring-bell-function (quote ignore) t)
