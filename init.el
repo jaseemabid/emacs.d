@@ -10,19 +10,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-fill-mode 1)
- '(auto-indent-next-pair-timer-interval (quote ((css-mode 1.5) (default 0.0005))))
- '(background-color "#002b36")
  '(background-mode dark)
  '(c-basic-indent 4)
  '(c-default-style "k&r")
  '(case-fold-search t)
  '(column-number-mode 1)
- '(cursor-color "#839496")
- '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(default-major-mode (quote org-mode) t)
  '(default-tab-width 4 t)
  '(fill-column 80)
- '(foreground-color "#839496")
  '(indent-tabs-mode t)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
@@ -35,13 +30,11 @@
  '(show-paren-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil)
- '(transient-mark-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Inconsolata")))))
+ '(transient-mark-mode t)
+)
+
+;; Set fonts
+(set-default-font "Inconsolata-11")
 
 ;; Start maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
