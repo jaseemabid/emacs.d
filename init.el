@@ -104,6 +104,8 @@
 (define-key global-map (kbd "C-c i") 'magit-status)
 (define-key global-map (kbd "C-c g") 'magit-status)
 
+;; Bury buffer
+(define-key global-map (kbd "C-c b") 'bury-buffer)
 
 ;; Sensible backup files
 (setq backup-directory-alist
