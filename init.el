@@ -109,7 +109,7 @@
 
 ;; Sensible backup files
 (setq backup-directory-alist
-	  '(("." . "~/.emacs.backups")))
+	  '(("." . "~/.emacs.d/backups")))
 
 ;; ;;  Essential extra modes
 
