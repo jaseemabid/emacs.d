@@ -45,3 +45,6 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 ;; Ignore compiled Haskell files in filename completions
 (add-to-list 'completion-ignored-extensions ".hi")
+
+;; And finally some 'lorem-ipsum
+(require 'lorem-ipsum)
