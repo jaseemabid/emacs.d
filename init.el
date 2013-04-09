@@ -3,6 +3,10 @@
 ;; ~/.emacs.d/init.el
 ;; Jaseem Abid <jaseemabid@gmail.com>
 
+;; Identity
+(setq user-full-name "Jaseem Abid")
+(setq user-mail-address "jaseemabid@gmail.com")
+
 ;; ;; Custom vars
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
