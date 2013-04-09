@@ -166,6 +166,15 @@
 			)
 		  )
 
+;; Fix intendation in coffee-mode
+(add-hook 'coffee-mode-hook
+		  (lambda ()
+			"coffee-mode-hook"
+			(make-local-variable 'tab-width)
+			(set 'tab-width 2)
+			)
+		  )
+
 ;; delete \b at line ends before saving a file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
