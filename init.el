@@ -47,6 +47,9 @@
 						 ("marmalade" . "http://marmalade-repo.org/packages/")
 						 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+;; Install all packages requied
+(load-file "~/.emacs.d/elpa-list")
+
 ;; ;; Custom keybindings
 
 ;; Easy buffer switching
