@@ -3,43 +3,43 @@
 ;; ~/.emacs.d/init.el
 ;; Jaseem Abid <jaseemabid@gmail.com>
 
-;; Identity
+;; ;; Identity
 (setq user-full-name "Jaseem Abid")
 (setq user-mail-address "jaseemabid@gmail.com")
 
-;; ;; Custom vars
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(auto-fill-mode 1)
- '(c-basic-indent 4)
- '(c-default-style "k&r")
- '(case-fold-search t)
- '(column-number-mode 1)
- '(default-major-mode (quote org-mode) t)
- '(default-tab-width 4 t)
- '(fill-column 80)
- '(indent-tabs-mode t)
- '(inhibit-startup-screen t)
- '(initial-scratch-message nil)
- '(menu-bar-mode nil)
- '(nxml-child-indent 4)
- '(ring-bell-function (quote ignore) t)
- '(scroll-bar-mode nil)
- '(setq visible-bell t)
- '(show-paren-mode t)
- '(tab-width 4)
- '(tool-bar-mode nil)
- '(transient-mark-mode t)
-)
+;; ;; Startup screen
+(setq inhibit-splash-screen t
+      initial-scratch-message nil
+	  default-major-mode 'org-mode)
 
-;; Set fonts
+;; ;; Fonts and text styling
 (set-default-font "Inconsolata-11")
+
+(auto-fill-mode 1)
+
+(setq c-basic-indent 4
+	  c-default-style "k&r"
+	  case-fold-search t
+	  column-number-mode 1
+	  default-tab-width 4
+	  fill-column 80
+	  nxml-child-indent 4
+	  transient-mark-mode t)
+
+;; No bells and whistles
 
 ;; Start maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
+
+;; No bars and buttons
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+;; Visible bell
+(setq ring-bell-function 'ignore
+	  visible-bell t
+	  show-paren-mode t)
 
 ;; Custom packages
 (require 'package)
