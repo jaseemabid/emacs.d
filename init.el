@@ -26,6 +26,10 @@
 	  nxml-child-indent 4
 	  transient-mark-mode t)
 
+;; Start emacs as a server everytime
+(load "server")
+(unless (server-running-p) (server-start))
+
 ;; No bells and whistles
 
 ;; Start maximized
@@ -123,10 +127,6 @@
 ;; Line number mode
 (global-linum-mode t)
 (global-hl-line-mode t)
-
-;; Start emacs as a server everytime
-(load "server")
-(unless (server-running-p) (server-start))
 
 ;; Type over a region
 (pending-delete-mode t)
