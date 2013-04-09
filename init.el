@@ -144,7 +144,6 @@
 ;; ido mode :)
 (ido-mode t)
 
-
 ;; ;; Hooks
 
 ;; Default indentation is usually 2 spaces, changing to 4.
@@ -188,11 +187,9 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 
 ;; ORG mode
-(require 'org)
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
 
 ;; Markdown mode
-(autoload 'markdown-mode "markdown-mode" "markdown Mode." t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; Coffee mode
