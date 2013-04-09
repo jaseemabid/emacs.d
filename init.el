@@ -48,7 +48,7 @@
 						 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Install all packages requied
-(load-file "~/.emacs.d/elpa-list")
+(load-file "~/.emacs.d/elpa-list.el")
 
 ;; ;; Custom keybindings
 
