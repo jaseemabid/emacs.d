@@ -26,11 +26,17 @@
 	  nxml-child-indent 4
 	  transient-mark-mode t)
 
-;; Start emacs as a server everytime
-(load "server")
-(unless (server-running-p) (server-start))
+;; ;; Display tweaks
 
-;; No bells and whistles
+;; Set the name of the host and current path/file in title bar:
+(setq frame-title-format
+	  (list (format "%s %%S: %%j " (system-name))
+			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
+;; Color themes
+(add-to-list 'custom-theme-load-path
+			 "~/.emacs.d/themes/emacs-color-theme-solarized")
+(load-theme 'solarized-dark t)
 
 ;; Start maximized
 (set-frame-parameter nil 'fullscreen 'maximized)
@@ -53,6 +59,10 @@
 
 ;; Install all packages requied
 (load-file "~/.emacs.d/elpa-list.el")
+
+;; Start emacs as a server everytime
+(load "server")
+(unless (server-running-p) (server-start))
 
 ;; ;; Custom keybindings
 
@@ -204,39 +214,10 @@
 ;; y/n suffice for yes/no q
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; ;; Display tweaks
-
-;; Set the name of the host and current path/file in title bar:
-(setq frame-title-format
-	  (list (format "%s %%S: %%j " (system-name))
-			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
-
-;; Color themes
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
-(load-theme 'solarized-dark t)
-
-;; Real programmers use the real lambda
-(defun sm-lambda-mode-hook ()
-  (font-lock-add-keywords
-   nil `(("\\<lambda\\>"
-   (0 (progn (compose-region (match-beginning 0) (match-end 0)
-        ,(make-char 'greek-iso8859-7 107))
-      nil)))))
-
-  (font-lock-add-keywords
-   nil `(("\\<function\\>"
-   (0 (progn (compose-region (match-beginning 0) (match-end 0)
-        ,(make-char 'greek-iso8859-7 107))
-      nil)))))
-  )
-
-(add-hook 'emacs-lisp-mode-hook 'sm-lambda-mode-hook)
-(add-hook 'lisp-interactive-mode-hook 'sm-lamba-mode-hook)
-(add-hook 'scheme-mode-hook 'sm-lambda-mode-hook)
-
-(add-hook 'js2-mode-hook 'sm-lambda-mode-hook)
-
 ;; Load extra packages installed with elpa
 (add-hook 'after-init-hook
 		  '(lambda ()
 			 (load-file "~/.emacs.d/after-init.el")))
+
+;; Real programmers use the real lambda
+(load-file "~/.emacs.d/lambda-fontify.el")
