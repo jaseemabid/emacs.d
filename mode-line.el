@@ -100,7 +100,7 @@
               (set (car i) nil))
             my-images-alist)))
 
-(toggle-mode-line-images t)
+;; (toggle-mode-line-images t)
 
 ;; MODELINE
 ;; Eh a cool guy, overrides the default mode-line-format and doesn't afraid of anything.
