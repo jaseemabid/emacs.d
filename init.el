@@ -230,3 +230,7 @@
 
 ;; Real programmers use the real lambda
 (load-file "~/.emacs.d/lambda-fontify.el")
+
+;; Hack the mode-line
+(add-to-list 'load-path "~/.emacs.d/vendor/mode-line-stats/")
+(load-file "~/.emacs.d/mode-line.el")
