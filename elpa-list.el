@@ -81,6 +81,9 @@
                           zencoding-mode)
   "Default packages")
 
+(require 'package)
+(package-initialize)
+
 (defun jaseem/packages-installed-p ()
   (loop for pkg in jaseem/packages
         when (not (package-installed-p pkg)) do (return nil)
