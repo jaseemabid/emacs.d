@@ -28,7 +28,6 @@
                           doc-mode
                           dropdown-list
                           erlang
-                          expand-region
                           findr
                           flymake
                           flymake-easy
@@ -81,17 +80,3 @@
                           zencoding-mode)
   "Default packages")
 
-(require 'package)
-(package-initialize)
-
-(defun jaseem/packages-installed-p ()
-  (loop for pkg in jaseem/packages
-        when (not (package-installed-p pkg)) do (return nil)
-        finally (return t)))
-
-(unless (jaseem/packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg jaseem/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
