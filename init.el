@@ -304,3 +304,6 @@
 
 ;; Real programmers use the real lambda
 (load-file "~/.emacs.d/lambda-fontify.el")
+
+;; elisp snippets
+(load-file "~/.emacs.d/snippets.el")
