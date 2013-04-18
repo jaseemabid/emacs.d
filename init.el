@@ -7,6 +7,9 @@
 (setq user-full-name "Jaseem Abid")
 (setq user-mail-address "jaseemabid@gmail.com")
 
+;; ;; Server start
+(server-start)
+
 ;; ;; Startup screen
 (setq inhibit-splash-screen t
       initial-scratch-message nil
@@ -59,10 +62,6 @@
 
 ;; Install all packages requied
 (load-file "~/.emacs.d/elpa-list.el")
-
-;; Start emacs as a server everytime
-(load "server")
-(unless (server-running-p) (server-start))
 
 ;; ;; Custom keybindings
 
