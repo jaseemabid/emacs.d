@@ -27,21 +27,21 @@
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Install all packages requied
-;; (load-file "~/.emacs.d/elpa-list.el")
+(load-file "~/.emacs.d/elpa-list.el")
 
 (package-initialize)
 
-;; (defun jaseem/packages-installed-p ()
-;;   (loop for pkg in jaseem/packages
-;;         when (not (package-installed-p pkg)) do (return nil)
-;;         finally (return t)))
+(defun jaseem/packages-installed-p ()
+  (loop for pkg in jaseem/packages
+        when (not (package-installed-p pkg)) do (return nil)
+        finally (return t)))
 
-;; (unless (jaseem/packages-installed-p)
-;;   (message "%s" "Refreshing package database...")
-;;   (package-refresh-contents)
-;;   (dolist (pkg jaseem/packages)
-;;     (when (not (package-installed-p pkg))
-;;       (package-install pkg))))
+(unless (jaseem/packages-installed-p)
+  (message "%s" "Refreshing package database...")
+  (package-refresh-contents)
+  (dolist (pkg jaseem/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
 
 ;; ---------
 ;; Autoloads
