@@ -61,9 +61,7 @@
 ;; -----------------
 ;; General settings
 ;; -----------------
-(setq-default blink-matching-delay .25
-			  blink-matching-paren t
-			  c-basic-indent 4
+(setq-default c-basic-indent 4
 			  c-basic-offset 4
 			  c-default-style "k&r"
 			  case-fold-search t
@@ -83,7 +81,6 @@
 			  resize-minibuffer-frame t
 			  ring-bell-function 'ignore
 			  sentence-end-double-space nil
-			  show-paren-mode t
 			  tab-width 4
 			  transient-mark-mode t
 			  uniquify-buffer-name-style 'forward
@@ -249,6 +246,13 @@
 
 ;; auto-fill
 (auto-fill-mode 1)
+
+;; Show parentheses
+;; Customization ignored :(
+;; (setq blink-matching-delay 1
+;; 	  blink-matching-paren t)
+(show-paren-mode t)
+
 
 ;; html-mode
 ;; Better navigation
