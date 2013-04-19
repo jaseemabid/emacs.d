@@ -226,7 +226,20 @@
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 (add-hook 'magit-log-edit-mode-hook 'git-commit-mode-magit-setup)
 
+;; js-mode
+(add-hook 'js-mode-hook
+		  (lambda ()
+			;; Switch to js2
+			(js2-mode)
+			)
+		  )
+
 ;; js2-mode
+(add-hook 'js2-mode-hook
+		  (lambda ()
+			(setq mode-name "JS2")
+			)
+		  )
 
 (setq-default js-indent-level 4
 			  js2-allow-keywords-as-property-names t
