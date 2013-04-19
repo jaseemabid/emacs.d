@@ -127,6 +127,7 @@
 (add-to-list 'auto-mode-alist '("\\.ext\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.kv$" . kivy-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
@@ -225,6 +226,27 @@
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 (add-hook 'magit-log-edit-mode-hook 'git-commit-mode-magit-setup)
 
+;; js2-mode
+
+(setq-default js-indent-level 4
+			  js2-allow-keywords-as-property-names t
+			  js2-auto-insert-catch-block t
+			  js2-concat-multiline-strings t
+			  js2-global-externs (quote
+								  ("module" "require"
+								   "jQuery" "$"
+								   "_" "buster"
+								   "sinon" "assert"
+								   "setTimeout" "clearTimeout"
+								   "setInterval" "clearInterval"
+								   "location" "__dirname"
+								   "console" "JSON"))
+			  js2-highlight-level 3
+			  js2-include-browser-externs t
+			  js2-include-node-externs t)
+
+
+
 ;; line-number-mode
 (global-linum-mode t)
 (global-hl-line-mode t)
@@ -252,7 +274,6 @@
 ;; (setq blink-matching-delay 1
 ;; 	  blink-matching-paren t)
 (show-paren-mode t)
-
 
 ;; html-mode
 ;; Better navigation
