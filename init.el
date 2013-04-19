@@ -263,7 +263,12 @@
 			  "\\)$"))
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
-;; ido mode
+;; ido-mode
+(setq ido-enable-flex-matching t
+	  ido-all-frames 'visible
+	  ido-case-fold t
+	  ido-create-new-buffer 'prompt
+	  ido-everywhere t)
 (ido-mode t)
 
 ;; auto-fill
