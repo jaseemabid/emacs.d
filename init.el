@@ -56,7 +56,7 @@
 (require 'remember)
 (require 'rinari)
 (require 'yasnippet)
-
+(require 'zone)
 
 ;; -----------------
 ;; General settings
@@ -336,6 +336,9 @@
 ;; Ignore compiled Haskell files in filename completions
 (add-to-list 'completion-ignored-extensions ".hi")
 
+;; zone-mode
+;; zone-pgm-five-oclock-swan-dive
+(zone-when-idle 60)
 
 ;; Write file hook
 (add-hook 'write-file-hooks
