@@ -321,7 +321,7 @@
 (global-rinari-mode)
 
 ;; centered cursor mode
-;; (global-centered-cursor-mode t)
+(global-centered-cursor-mode t)
 
 ;; Snippets
 (yas-global-mode 1)
