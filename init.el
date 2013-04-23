@@ -182,6 +182,9 @@
 ;; Sorting
 (global-set-key (kbd "M-s l") 'sort-lines)
 
+;; Flyspell
+(global-set-key (kbd "C-c f") 'flyspell-buffer)
+
 ;; Make shell more convenient, and suspend-frame less
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-x M-z") 'suspend-frame)
