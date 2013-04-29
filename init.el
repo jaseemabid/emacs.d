@@ -88,6 +88,10 @@
 			  uniquify-buffer-name-style 'forward
 			  visible-bell t)
 
+;; Set the default browser to Chrome
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome")
+
 ;; Make y/n suffice for yes/no q
 (fset 'yes-or-no-p 'y-or-n-p)
 
