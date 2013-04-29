@@ -356,6 +356,3 @@
 
 ;; elisp snippets
 (load-file "~/.emacs.d/snippets.el")
-
-;; ERC configuration
-(load-file "~/.emacs.d/ercrc.el")
