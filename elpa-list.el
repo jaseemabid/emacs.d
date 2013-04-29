@@ -74,9 +74,9 @@
                           ruby-tools
                           rvm
                           smex
+                          solarized-theme
                           sws-mode
                           yaml-mode
                           yasnippet
                           zencoding-mode)
   "Default packages")
-
