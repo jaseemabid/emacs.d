@@ -68,7 +68,6 @@
 			  column-number-mode t
 			  default-major-mode 'org-mode
 			  default-tab-width 4
-			  display-battery-mode t
 			  fill-adapt-mode t
 			  fill-column 80
 			  font-lock-maximum-decoration t
@@ -76,15 +75,12 @@
 			  inhibit-startup-message t
 			  next-line-add-newlines nil
 			  nxml-child-indent 4
-			  quack-pretty-lambda-p t
 			  require-final-newline t
-			  resize-minibuffer-frame t
 			  ring-bell-function 'ignore
 			  sentence-end-double-space nil
 			  tab-width 4
 			  transient-mark-mode t
 			  uniquify-buffer-name-style 'forward
-			  vc-follow-symlinks t
 			  visible-bell t)
 
 ;; Make y/n suffice for yes/no q
@@ -110,7 +106,7 @@
 (load-theme 'solarized-dark t)
 
 ;; Start maximized
-(set-frame-parameter nil 'fullscreen 'maximized)
+;; (set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; No bars and buttons
 (scroll-bar-mode -1)
@@ -338,10 +334,6 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 ;; Ignore compiled Haskell files in filename completions
 (add-to-list 'completion-ignored-extensions ".hi")
-
-;; zone-mode
-;; zone-pgm-five-oclock-swan-dive
-(zone-when-idle 60)
 
 ;; Write file hook
 (add-hook 'write-file-hooks
