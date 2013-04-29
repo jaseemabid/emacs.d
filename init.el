@@ -202,7 +202,7 @@
 
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook 'turn-on-guru-mode)
+(add-hook 'prog-mode-hook 'guru-mode)
 
 ;; Minimap mode
 ;; (global-set-key (kbd "C-c C-s") 'minimap-create)
@@ -223,7 +223,6 @@
       process-connection-type nil)
 
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
-(add-hook 'magit-log-edit-mode-hook 'git-commit-mode-magit-setup)
 
 ;; js-mode
 (add-hook 'js-mode-hook
@@ -256,8 +255,6 @@
 			  js2-highlight-level 3
 			  js2-include-browser-externs t
 			  js2-include-node-externs t)
-
-
 
 ;; line-number-mode
 (global-linum-mode t)
