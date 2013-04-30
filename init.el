@@ -8,8 +8,8 @@
 ;; --------
 ;; Identity
 ;; ---------
-(setq user-full-name "Jaseem Abid")
-(setq user-mail-address "jaseemabid@gmail.com")
+(setq user-full-name "Jaseem Abid"
+	  user-mail-address "jaseemabid@gmail.com")
 
 ;; ------------
 ;; Server start
