@@ -120,6 +120,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; backup files
+(setq backup-directory-alist
+	  '(("." . "~/.emacs.d/backups")))
+
 ;; ----------------
 ;; auto-mode-alists
 ;; ----------------
@@ -144,60 +148,56 @@
 ;; Custom keybindings
 ;; ------------------
 
-;; Easy buffer switching
+;; buffer switching
 (global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
 (global-set-key (kbd "C-c b") 'bury-buffer)
 
-;; Navigation bindings
-(global-set-key (kbd "C-M-g") 'goto-line)
-(global-set-key (kbd "M-p") 'backward-paragraph)
-(global-set-key (kbd "M-n") 'forward-paragraph)
-
 ;; bind Caps-Lock to M-x
 (if (eq window-system 'x)
     (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
 (global-set-key [f13] 'execute-extended-command)
 
-;; Undo without leaving the ctrl key
-(define-key global-map "\C-x\C-u" 'undo)
-
-;; Because buffer list suck
+;; buffer list suck
 (define-key global-map "\C-x\C-b" 'electric-buffer-list)
 
-;; Comment/uncomment block
+;; comment/uncomment block
 (global-set-key (kbd "C-M-f") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 
-;; Webjump let's you quickly search google, wikipedia, emacs wiki
-(global-set-key (kbd "C-x g") 'webjump)
-(global-set-key (kbd "C-x M-g") 'browse-url-at-point)
-
-;; Eval buffer
+;; eval buffer
 (global-set-key (kbd "C-c e") 'eval-buffer)
 
-;; Mark all
-(global-set-key (kbd "C-c a") 'mark-whole-buffer)
-
-;; Sorting
-(global-set-key (kbd "M-s l") 'sort-lines)
-
-;; Flyspell
+;; flyspell
 (global-set-key (kbd "C-c f") 'flyspell-buffer)
 
-;; Make shell more convenient, and suspend-frame less
+;; make shell more convenient, and suspend-frame less
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-x M-z") 'suspend-frame)
 
-;; Turn on the menu bar for exploring new modes
+;; mark all
+(global-set-key (kbd "C-c a") 'mark-whole-buffer)
+
+;; menu bar for exploring new modes
 (global-set-key (kbd "C-c C-m") 'menu-bar-mode)
 
-;; Sensible backup files
-(setq backup-directory-alist
-	  '(("." . "~/.emacs.d/backups")))
+;; navigation bindings
+(global-set-key (kbd "C-M-g") 'goto-line)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
+
+;; sorting
+(global-set-key (kbd "M-s l") 'sort-lines)
+
+;; undo without leaving the ctrl key
+(define-key global-map "\C-x\C-u" 'undo)
+
+;; webjump let's you quickly search google, wikipedia, emacs wiki
+(global-set-key (kbd "C-x g") 'webjump)
+(global-set-key (kbd "C-x M-g") 'browse-url-at-point)
 
 ;; ------------------------
 ;; Mode level customization
