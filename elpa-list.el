@@ -27,7 +27,7 @@
                           dired+
                           doc-mode
                           dropdown-list
-                          eimp-mode
+                          eimp
                           erlang
                           findr
                           flymake
