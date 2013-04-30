@@ -248,10 +248,6 @@
 			)
 		  )
 
-;; Image modes
-(add-hook 'image-mode-hook 'eimp-mode)
-;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
-
 ;; ido-mode
 (setq ido-enable-flex-matching t
 	  ido-all-frames 'visible
@@ -259,6 +255,10 @@
 	  ido-create-new-buffer 'prompt
 	  ido-everywhere t)
 (ido-mode t)
+
+;; image modes
+(add-hook 'image-mode-hook 'eimp-mode)
+;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
 
 ;; js-mode
 (add-hook 'js-mode-hook
@@ -274,7 +274,6 @@
 			(setq mode-name "JS2")
 			)
 		  )
-
 (setq-default js-indent-level 4
 			  js2-allow-keywords-as-property-names t
 			  js2-auto-insert-catch-block t
@@ -300,16 +299,11 @@
 (define-key global-map (kbd "C-c i") 'magit-status)
 (define-key global-map (kbd "C-c g") 'magit-status)
 (define-key global-map (kbd "C-c l") 'magit-log-simple)
-
 (setq magit-commit-all-when-nothing-staged nil
       magit-revert-item-confirm t
       magit-process-connection-type nil
       process-connection-type nil)
-
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
-
-;; Type over a region
-(pending-delete-mode t)
 
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
@@ -326,17 +320,20 @@
 ;; rinari
 (global-rinari-mode)
 
-;; Show parentheses
+;; show parentheses
 (show-paren-mode t)
+
+;; snippets
+(yas-global-mode 1)
 
 ;; text-mode
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
-;; Snippets
-(yas-global-mode 1)
+;; type over a region
+(pending-delete-mode t)
 
-;; Write file hook
+;; write file hook
 (add-hook 'write-file-hooks
 		  (lambda ()
 			;; delete \b at line ends before saving a file
