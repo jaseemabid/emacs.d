@@ -326,6 +326,10 @@
 ;; centered cursor mode
 (global-centered-cursor-mode t)
 
+;; Image modes
+(add-hook 'image-mode-hook 'eimp-mode)
+;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
+
 ;; Snippets
 (yas-global-mode 1)
 
