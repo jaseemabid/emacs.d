@@ -199,37 +199,66 @@
 (setq backup-directory-alist
 	  '(("." . "~/.emacs.d/backups")))
 
-;; --------------------------
-;; Mode level customizations
-;; --------------------------
+;; ------------------------
+;; Mode level customization
+;; ------------------------
 
-;; text-mode
-(add-hook 'text-mode-hook 'auto-fill-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
+;; auto-fill
+(auto-fill-mode 1)
 
-;; prog-mode
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook 'guru-mode)
+;; centered cursor mode
+(global-centered-cursor-mode t)
 
-;; Minimap mode
-;; (global-set-key (kbd "C-c C-s") 'minimap-create)
-;; (global-set-key (kbd "C-c C-t") 'minimap-kill)
+;; coffee-mode
+(add-hook 'coffee-mode-hook
+		  (lambda ()
+			"coffee-mode-hook"
+			(make-local-variable 'tab-width)
+			(set 'tab-width 2)
+			)
+		  )
 
-;; remember-mode
-(define-key global-map (kbd "C-c r") 'remember)
-(define-key global-map (kbd "C-c R") 'remember-region)
+;; desktop-mode
+(desktop-save-mode t)
+(setq desktop-buffers-not-to-save
+	  (concat "\\("
+			  "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
+			  "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
+			  "\\)$"))
+(define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
-;; magit
-(define-key global-map (kbd "C-c i") 'magit-status)
-(define-key global-map (kbd "C-c g") 'magit-status)
-(define-key global-map (kbd "C-c l") 'magit-log-simple)
+;; haskell-mode
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;; hslint on the command line only likes this indentation mode;
+;; alternatives commented out below.
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+;; Ignore compiled Haskell files in filename completions
+(add-to-list 'completion-ignored-extensions ".hi")
 
-(setq magit-commit-all-when-nothing-staged nil
-      magit-revert-item-confirm t
-      magit-process-connection-type nil
-      process-connection-type nil)
+;; html-mode
+;; Better navigation
+(add-hook 'html-mode-hook
+		  (lambda ()
+			"html-mode-hook"
+			(set (make-local-variable 'sgml-basic-offset) 4)
+			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
+			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
+			)
+		  )
 
-(add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
+;; Image modes
+(add-hook 'image-mode-hook 'eimp-mode)
+;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
+
+;; ido-mode
+(setq ido-enable-flex-matching t
+	  ido-all-frames 'visible
+	  ido-case-fold t
+	  ido-create-new-buffer 'prompt
+	  ido-everywhere t)
+(ido-mode t)
 
 ;; js-mode
 (add-hook 'js-mode-hook
@@ -267,81 +296,45 @@
 (global-linum-mode t)
 (global-hl-line-mode t)
 
+;; magit
+(define-key global-map (kbd "C-c i") 'magit-status)
+(define-key global-map (kbd "C-c g") 'magit-status)
+(define-key global-map (kbd "C-c l") 'magit-log-simple)
+
+(setq magit-commit-all-when-nothing-staged nil
+      magit-revert-item-confirm t
+      magit-process-connection-type nil
+      process-connection-type nil)
+
+(add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
+
 ;; Type over a region
 (pending-delete-mode t)
 
-;; Sessions
-(desktop-save-mode t)
-(setq desktop-buffers-not-to-save
-	  (concat "\\("
-			  "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
-			  "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
-			  "\\)$"))
-(define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
-
-;; ido-mode
-(setq ido-enable-flex-matching t
-	  ido-all-frames 'visible
-	  ido-case-fold t
-	  ido-create-new-buffer 'prompt
-	  ido-everywhere t)
-(ido-mode t)
-
-;; auto-fill
-(auto-fill-mode 1)
-
-;; Show parentheses
-;; Customization ignored :(
-;; (setq blink-matching-delay 1
-;; 	  blink-matching-paren t)
-(show-paren-mode t)
-
-;; html-mode
-;; Better navigation
-(add-hook 'html-mode-hook
-		  (lambda ()
-			"html-mode-hook"
-			(set (make-local-variable 'sgml-basic-offset) 4)
-			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
-			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
-			)
-		  )
-
-;;coffee-mode
-(add-hook 'coffee-mode-hook
-		  (lambda ()
-			"coffee-mode-hook"
-			(make-local-variable 'tab-width)
-			(set 'tab-width 2)
-			)
-		  )
+;; prog-mode
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'prog-mode-hook 'guru-mode)
 
 ;; rainbow-mode
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'html-mode-hook 'rainbow-mode)
 
+;; remember-mode
+(define-key global-map (kbd "C-c r") 'remember)
+(define-key global-map (kbd "C-c R") 'remember-region)
+
 ;; rinari
 (global-rinari-mode)
 
-;; centered cursor mode
-(global-centered-cursor-mode t)
+;; Show parentheses
+(show-paren-mode t)
 
-;; Image modes
-(add-hook 'image-mode-hook 'eimp-mode)
-;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
+;; text-mode
+(add-hook 'text-mode-hook 'auto-fill-mode)
+(add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; Snippets
 (yas-global-mode 1)
-
-;; haskell-mode
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-;; hslint on the command line only likes this indentation mode;
-;; alternatives commented out below.
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-;; Ignore compiled Haskell files in filename completions
-(add-to-list 'completion-ignored-extensions ".hi")
 
 ;; Write file hook
 (add-hook 'write-file-hooks
