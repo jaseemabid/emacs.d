@@ -161,7 +161,8 @@
 (global-set-key [f13] 'execute-extended-command)
 
 ;; buffer list suck
-(define-key global-map "\C-x\C-b" 'electric-buffer-list)
+;; (define-key global-map "\C-x\C-b" 'electric-buffer-list)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; comment/uncomment block
 (global-set-key (kbd "C-M-f") 'comment-or-uncomment-region)
