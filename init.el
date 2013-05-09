@@ -78,6 +78,7 @@
 			  font-lock-maximum-decoration t
 			  indent-tabs-mode t
 			  inhibit-startup-message t
+			  initial-scratch-message nil
 			  next-line-add-newlines nil
 			  nxml-child-indent 4
 			  require-final-newline t
