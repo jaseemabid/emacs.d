@@ -225,6 +225,9 @@
 (add-to-list 'desktop-modes-not-to-save 'dired-mode)
 (add-to-list 'desktop-modes-not-to-save 'help-mode)
 (add-to-list 'desktop-modes-not-to-save 'magit-mode)
+(add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
+(add-to-list 'desktop-modes-not-to-save 'completion-list-mode)
+
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
 ;; haskell-mode
