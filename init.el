@@ -221,11 +221,9 @@
 
 ;; desktop-mode
 (desktop-save-mode t)
-(setq desktop-buffers-not-to-save
-	  (concat "\\("
-			  "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
-			  "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
-			  "\\)$"))
+(add-to-list 'desktop-modes-not-to-save 'dired-mode)
+(add-to-list 'desktop-modes-not-to-save 'help-mode)
+(add-to-list 'desktop-modes-not-to-save 'magit-mode)
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
 ;; haskell-mode
