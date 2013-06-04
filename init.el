@@ -227,8 +227,10 @@
 (add-to-list 'desktop-modes-not-to-save 'magit-mode)
 (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
 (add-to-list 'desktop-modes-not-to-save 'completion-list-mode)
-
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
+
+;; eshell
+(setq eshell-buffer-maximum-lines 4096)
 
 ;; haskell-mode
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
