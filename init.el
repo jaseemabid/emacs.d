@@ -177,7 +177,7 @@
 (global-set-key (kbd "C-c f") 'flyspell-buffer)
 
 ;; make shell more convenient, and suspend-frame less
-(global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-z") 'eshell)
 (global-set-key (kbd "C-x M-z") 'suspend-frame)
 
 ;; mark all
