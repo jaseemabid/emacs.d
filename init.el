@@ -294,6 +294,9 @@
 			  js2-include-browser-externs t
 			  js2-include-node-externs t)
 
+;; js2-refactor-mode
+(js2r-add-keybindings-with-prefix "C-c C-r")
+
 ;; line-number-mode
 (global-linum-mode t)
 (global-hl-line-mode t)
