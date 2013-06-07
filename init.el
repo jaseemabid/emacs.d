@@ -177,6 +177,12 @@
 (global-set-key (kbd "C-c f") 'flyspell-buffer)
 
 ;; make shell more convenient, and suspend-frame less
+(defun eshell/clear ()
+  "clear shell buffer"
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)))
+(global-set-key (kbd "C-l") 'eshell/clear)
 (global-set-key (kbd "C-z") 'eshell)
 (global-set-key (kbd "C-x M-z") 'suspend-frame)
 
