@@ -60,6 +60,7 @@
 (require 'rainbow-mode)
 (require 'remember)
 (require 'rinari)
+(require 'uniquify)
 (require 'yasnippet)
 (require 'zone)
 
@@ -350,6 +351,9 @@
 
 ;; type over a region
 (pending-delete-mode t)
+
+;; uniquify buffers
+(setq uniquify-buffer-name-style 'forward)
 
 ;; write file hook
 (add-hook 'write-file-hooks
