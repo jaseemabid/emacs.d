@@ -12,12 +12,6 @@
 	  user-full-name "Jaseem Abid"
 	  user-mail-address "jaseemabid@gmail.com")
 
-;; ------------
-;; Server start
-;; ------------
-(unless (server-running-p)
-  (server-start))
-
 ;; --------------------
 ;; Recompile everything
 ;; --------------------
@@ -62,6 +56,7 @@
 (require 'rainbow-mode)
 (require 'remember)
 (require 'rinari)
+(require 'server)
 (require 'uniquify)
 (require 'yasnippet)
 (require 'zone)
@@ -337,6 +332,10 @@
 (if ( = (user-uid) 0)
 	(read-only-mode t)
   )
+
+;; server-mode
+(unless (server-running-p)
+  (server-start))
 
 ;; show parentheses
 (show-paren-mode t)
