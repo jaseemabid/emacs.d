@@ -21,6 +21,13 @@
     (replace-in-file "”" "\"")
     (replace-in-file "" "")))
 
+(defun smart-open-line ()
+  "Shortcut for C-e RET"
+  (interactive)
+  (move-end-of-line nil)
+  (newline))
+(global-set-key [(shift return)] 'smart-open-line)
+
 ;; Custom macros
 (fset 'sink
 	  [?R ?~ ?/ ?. ?l ?o ?c ?a ?l ?/ ?s ?h ?a ?r ?e ?/ ?e ?x ?t ?r ?a ?s tab return])
