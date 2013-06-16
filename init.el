@@ -118,9 +118,10 @@
 ;; (set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; No bars and buttons
+(menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(menu-bar-mode -1)
+(tooltip-mode -1)
 
 ;; backup files
 (setq backup-directory-alist
