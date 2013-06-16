@@ -14,7 +14,8 @@
 ;; ------------
 ;; Server start
 ;; ------------
-(server-start)
+(unless (server-running-p)
+  (server-start))
 
 ;; --------------------
 ;; Recompile everything
