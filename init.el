@@ -274,12 +274,7 @@
 ;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
 
 ;; js-mode
-(add-hook 'js-mode-hook
-		  (lambda ()
-			;; Switch to js2
-			(js2-mode)
-			)
-		  )
+(defalias 'js-mode 'js2-mode)
 
 ;; js2-mode
 (add-hook 'js2-mode-hook
