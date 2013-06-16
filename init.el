@@ -8,7 +8,8 @@
 ;; --------
 ;; Identity
 ;; ---------
-(setq user-full-name "Jaseem Abid"
+(setq init-file-user "jaseem"
+	  user-full-name "Jaseem Abid"
 	  user-mail-address "jaseemabid@gmail.com")
 
 ;; ------------
@@ -331,6 +332,11 @@
 
 ;; rinari
 (global-rinari-mode)
+
+;; root-edit : never save file as root
+(if ( = (user-uid) 0)
+	(read-only-mode t)
+  )
 
 ;; show parentheses
 (show-paren-mode t)
