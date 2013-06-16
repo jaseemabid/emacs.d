@@ -7,6 +7,20 @@
   (interactive)
   (find-file "~/Notes/Passwords.org.gpg"))
 
+(defmacro replace-in-file (from-string to-string)
+  `(progn
+     (goto-char (point-min))
+     (while (search-forward ,from-string nil t)
+       (replace-match ,to-string nil t))))
+
+(defun cleanup-fancy-quotes ()
+  (interactive)
+  (progn
+    (replace-in-file "’" "'")
+    (replace-in-file "“" "\"")
+    (replace-in-file "”" "\"")
+    (replace-in-file "" "")))
+
 ;; Custom macros
 (fset 'sink
 	  [?R ?~ ?/ ?. ?l ?o ?c ?a ?l ?/ ?s ?h ?a ?r ?e ?/ ?e ?x ?t ?r ?a ?s tab return])
