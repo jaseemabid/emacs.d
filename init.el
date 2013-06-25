@@ -175,7 +175,9 @@
 ;; flyspell
 (global-set-key (kbd "C-c f") 'flyspell-buffer)
 
-;; make shell more convenient, and suspend-frame less
+;; eshell tweaks
+(defalias 'open 'find-file)
+(defalias 'openo 'find-file-other-window)
 (defun eshell/clear ()
   "clear shell buffer"
   (interactive)
