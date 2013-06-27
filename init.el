@@ -236,6 +236,9 @@
 (add-to-list 'desktop-modes-not-to-save 'completion-list-mode)
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
+;; dired-mode
+(defalias 'ido-list-directory 'dired) ;; list directory is pointless and stupid
+
 ;; eshell
 (setq eshell-buffer-maximum-lines 4096)
 
