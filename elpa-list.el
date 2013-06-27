@@ -48,8 +48,6 @@
                           inf-ruby
                           inflections
                           jade-mode
-                          jinja2-mode
-                          jira
                           js2-mode
                           js2-refactor
                           jump
