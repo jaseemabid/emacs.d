@@ -75,6 +75,7 @@
                           smex
                           solarized-theme
                           sws-mode
+                          web-mode
                           yaml-mode
                           yasnippet
                           zencoding-mode)
