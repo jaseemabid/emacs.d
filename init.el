@@ -129,7 +129,7 @@
 ;; ----------------
 (add-to-list 'auto-mode-alist '("/PKGBUILD$" . pkgbuild-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.asp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.cs$" . csharp-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
