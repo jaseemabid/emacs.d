@@ -264,6 +264,9 @@
 			(set (make-local-variable 'sgml-basic-offset) 4)
 			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
 			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
+
+			(make-local-variable 'tab-width)
+			(set 'tab-width 4)
 			)
 		  )
 
