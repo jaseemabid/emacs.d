@@ -64,7 +64,6 @@
                           packed
                           paredit
                           pcache
-                          php-mode
                           rainbow-mode
                           rinari
                           ruby-compilation
@@ -72,6 +71,7 @@
                           ruby-test-mode
                           ruby-tools
                           rvm
+                          slime
                           smex
                           solarized-theme
                           sws-mode
