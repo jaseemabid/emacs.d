@@ -46,3 +46,7 @@
 
 (fset 'dot-link
 	  [S-end ?\M-w ?S ?~ ?/ ?. ?\C-y return])
+
+(fset 'music-add
+	  [S-end ?\M-w ?S ?~ ?/ ?M ?e return ?P ?l ?a return ?\C-y return])
+(global-set-key (kbd "C-c ma") 'music-add)
