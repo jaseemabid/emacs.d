@@ -159,11 +159,6 @@
 (global-set-key (kbd "C-x <left>") 'windmove-left)
 (global-set-key (kbd "C-c b") 'bury-buffer)
 
-;; bind Caps-Lock to M-x
-(if (eq window-system 'x)
-    (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
-(global-set-key [f13] 'execute-extended-command)
-
 ;; buffer list suck
 ;; (define-key global-map "\C-x\C-b" 'electric-buffer-list)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -351,6 +346,15 @@
 
 ;; show parentheses
 (show-paren-mode t)
+
+;; smex-mode
+;; bind Caps-Lock to smex
+(if (eq window-system 'x)
+    (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
+(global-set-key [f13] 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; snippets
 (yas-global-mode 1)
