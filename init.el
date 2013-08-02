@@ -238,6 +238,10 @@
 ;; dired-mode
 (defalias 'ido-list-directory 'dired) ;; list directory is pointless and stupid
 
+;; emmet-mode
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'emmet-mode)
+
 ;; eshell
 (setq eshell-buffer-maximum-lines 4096)
 
