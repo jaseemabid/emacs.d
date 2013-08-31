@@ -28,6 +28,7 @@
                           doc-mode
                           dropdown-list
                           eimp
+                          elixir-mode
                           emmet-mode
                           erlang
                           findr
