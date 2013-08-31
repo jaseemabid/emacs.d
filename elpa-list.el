@@ -29,6 +29,7 @@
                           dropdown-list
                           eimp
                           elixir-mode
+                          elixir-yasnippets
                           emmet-mode
                           erlang
                           findr
