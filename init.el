@@ -406,9 +406,6 @@
 ;; uniquify buffers
 (setq uniquify-buffer-name-style 'forward)
 
-;; uniquify buffers
-(setq uniquify-buffer-name-style 'forward)
-
 ;; write file hook
 (add-hook 'write-file-hooks
 		  (lambda ()
