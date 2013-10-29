@@ -57,6 +57,7 @@
 (require 'rainbow-mode)
 (require 'remember)
 (require 'rinari)
+(require 'saveplace)
 (require 'server)
 (require 'uniquify)
 (require 'yasnippet)
@@ -82,6 +83,7 @@
 			  nxml-child-indent 4
 			  require-final-newline t
 			  ring-bell-function 'ignore
+			  save-place t
 			  sentence-end-double-space nil
 			  tab-width 4
 			  transient-mark-mode t
