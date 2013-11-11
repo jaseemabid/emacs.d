@@ -178,7 +178,6 @@
 (global-set-key (kbd "C-c f") 'flyspell-buffer)
 
 ;; powerful counterparts ?
-(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
