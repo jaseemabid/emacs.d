@@ -361,6 +361,13 @@
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 (add-hook 'magit-mode-hook 'guru-mode)
 
+;; Python-mode
+(add-hook 'python-mode-hook
+		  (lambda ()
+			(setq indent-tabs-mode nil)
+			(setq tab-width 4)
+			(setq python-indent 4)))
+
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'guru-mode)
