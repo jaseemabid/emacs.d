@@ -2,29 +2,22 @@
 Author : Jaseem Abid <jaseemabid@gmail.com>
 
 Emacs configuration files rebuild for Emacs 24. Feel free to use my config files
-if they are of any interest to you. As of now it is a mess. Use at your own
-risk. Will clean up someday when I get time.
+if they are of any interest to you.
 
 ### Instructions
 
 ```
 	# backup your existing emacs config
 	cd ~/
-	mv .emacs .emacs_
-	mv .emacs.d .emacs.d_
+	mv .emacs .emacs.backup
+	mv .emacs.d .emacs.d.backup
 
 	# Clone the repo to ~/.emacs.d
 	git clone https://github.com/jaseemabid/emacs.d.git .emacs.d
-	cd .emacs.d
-	# Update the submodules. You need this for the awesome solarized-dark theme
-	git submodule update --init
 
-	# Fire up your emacs and Install all packages in elpa_list
-	M-x list-packages # Shows all the packages
-	# Press 'i' to select (coffeescript-mode, js2-mode etc)
-	# Press 'x' to install
+	# Fire up your emacs
+	# All packages in elpa-list.el will be  installed automatically
 	# Restart emacs
-
 ```
 
 ### TODO
@@ -34,3 +27,5 @@ risk. Will clean up someday when I get time.
 * Fix
   * ERB
   * gnus
+  * python-mode
+  * minor mode for tabs <-> space switching in projects
