@@ -76,7 +76,7 @@
 			  fill-adapt-mode t
 			  fill-column 80
 			  font-lock-maximum-decoration t
-			  indent-tabs-mode t
+			  indent-tabs-mode nil
 			  inhibit-startup-message t
 			  initial-scratch-message nil
 			  next-line-add-newlines nil
@@ -296,12 +296,10 @@
 (add-hook 'html-mode-hook
 		  (lambda ()
 			"html-mode-hook"
-			(set (make-local-variable 'sgml-basic-offset) 4)
+			(set (make-local-variable 'sgml-basic-offset) 2)
+			(set (make-local-variable 'tab-width) 2)
 			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
 			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
-
-			(make-local-variable 'tab-width)
-			(set 'tab-width 4)
 			)
 		  )
 
