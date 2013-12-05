@@ -88,6 +88,7 @@
 			  tab-width 4
 			  transient-mark-mode t
 			  uniquify-buffer-name-style 'forward
+			  vc-follow-symlinks t
 			  visible-bell t)
 
 ;; Set the default browser to Chrome
