@@ -78,6 +78,7 @@
                           smex
                           solarized-theme
                           sws-mode
+                          web-beautify
                           web-mode
                           yaml-mode
                           yasnippet
