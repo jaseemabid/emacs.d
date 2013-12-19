@@ -252,6 +252,10 @@
 ;; auto-fill
 (auto-fill-mode 1)
 
+;; auto-complete mode
+(global-auto-complete-mode 1)
+(global-set-key (kbd "M-/") 'auto-complete)
+
 ;; centered cursor mode
 (global-centered-cursor-mode t)
 
