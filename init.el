@@ -47,7 +47,7 @@
 ;; ---------
 ;; Autoloads
 ;; ---------
-(require 'auto-complete)
+(require 'auto-complete-config)
 (require 'centered-cursor-mode)
 (require 'coffee-mode)
 (require 'guru-mode)
@@ -254,12 +254,12 @@
 (auto-fill-mode 1)
 
 ;; auto-complete mode
-(require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.aspell.en.pws")
 (ac-flyspell-workaround)
 (define-key ac-mode-map (kbd "M-/") 'auto-complete)
 (global-set-key (kbd "M-/") 'auto-complete)
+(add-to-list 'ac-modes 'git-commit-mode)
 
 ;; centered cursor mode
 (global-centered-cursor-mode t)
