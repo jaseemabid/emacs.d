@@ -47,6 +47,7 @@
 ;; ---------
 ;; Autoloads
 ;; ---------
+(require 'auto-complete)
 (require 'centered-cursor-mode)
 (require 'coffee-mode)
 (require 'guru-mode)
@@ -253,10 +254,12 @@
 (auto-fill-mode 1)
 
 ;; auto-complete mode
-(global-auto-complete-mode 1)
-(global-set-key (kbd "M-/") 'auto-complete)
-(setq ac-source-yasnippet nil)
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.aspell.en.pws")
 (ac-flyspell-workaround)
+(define-key ac-mode-map (kbd "M-/") 'auto-complete)
+(global-set-key (kbd "M-/") 'auto-complete)
 
 ;; centered cursor mode
 (global-centered-cursor-mode t)
