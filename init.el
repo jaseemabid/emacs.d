@@ -255,6 +255,8 @@
 ;; auto-complete mode
 (global-auto-complete-mode 1)
 (global-set-key (kbd "M-/") 'auto-complete)
+(setq ac-source-yasnippet nil)
+(ac-flyspell-workaround)
 
 ;; centered cursor mode
 (global-centered-cursor-mode t)
