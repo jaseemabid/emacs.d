@@ -117,6 +117,10 @@
 ;; Color themes
 (load-theme 'solarized-dark t)
 
+;; Setting fn key as control on Mac
+(if (eq system-type 'darwin)
+    (setq ns-function-modifier 'control))
+
 ;; Start maximized
 ;; (set-frame-parameter nil 'fullscreen 'maximized)
 
