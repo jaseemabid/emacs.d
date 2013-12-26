@@ -126,7 +126,7 @@
     (setq ns-function-modifier 'control))
 
 ;; Start maximized
-;; (set-frame-parameter nil 'fullscreen 'maximized)
+(set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; No bars and buttons
 (menu-bar-mode -1)
