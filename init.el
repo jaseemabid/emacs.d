@@ -103,7 +103,11 @@
 ;; ----------------------
 ;; Fonts and text styling
 ;; ----------------------
-(set-frame-font "Inconsolata-11")
+
+;; Larger fonts for the mac
+(if (eq system-type 'darwin)
+    (set-frame-font "Inconsolata-14")
+  (set-frame-font "Inconsolata-11"))
 
 ;; --------------
 ;; Display tweaks
