@@ -51,7 +51,6 @@
 (require 'centered-cursor-mode)
 (require 'coffee-mode)
 (require 'guru-mode)
-(require 'hackernews)
 (require 'httpcode)
 (require 'lorem-ipsum)
 (require 'magit)

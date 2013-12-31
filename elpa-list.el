@@ -1,5 +1,4 @@
 (defvar jaseem/packages '(
-                          ac-slime
                           apache-mode
                           auctex
                           auto-compile
@@ -43,7 +42,6 @@
                           gitconfig-mode
                           gitignore-mode
                           guru-mode
-                          hackernews
                           haml-mode
                           handlebars-mode
                           haskell-mode
