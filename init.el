@@ -187,6 +187,7 @@
 ;; flyspell
 (add-to-list 'exec-path "/usr/local/bin")
 (global-set-key (kbd "C-c f") 'flyspell-buffer)
+(global-set-key (kbd "C-.") 'flyspell-correct-word-before-point)
 (setq ispell-program-name "aspell")
 
 ;; powerful counterparts ?
