@@ -185,7 +185,9 @@
 (global-set-key (kbd "C-c e") 'eval-buffer)
 
 ;; flyspell
+(add-to-list 'exec-path "/usr/local/bin")
 (global-set-key (kbd "C-c f") 'flyspell-buffer)
+(setq ispell-program-name "aspell")
 
 ;; powerful counterparts ?
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
