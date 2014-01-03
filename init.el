@@ -243,11 +243,13 @@
 
 ;; navigation bindings
 (global-set-key (kbd "C-M-g") 'goto-line)
+(global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
-;; sorting
+;; sorting and aligning
 (global-set-key (kbd "M-s l") 'sort-lines)
+(global-set-key (kbd "C-c C-a") 'align-regexp)
 
 ;; undo without leaving the ctrl key
 (define-key global-map "\C-x\C-u" 'undo)
