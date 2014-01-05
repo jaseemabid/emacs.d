@@ -439,6 +439,8 @@
 	  tramp-default-method "ssh")
 
 ;; web-beautify mode
+(if (eq system-type 'darwin)
+    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
 (eval-after-load 'js2-mode
   '(define-key js2-mode-map (kbd "C-c SPC") 'web-beautify-js))
 (eval-after-load 'json-mode
