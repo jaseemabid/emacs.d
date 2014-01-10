@@ -125,7 +125,8 @@
     (setq ns-function-modifier 'control))
 
 ;; Start maximized
-(set-frame-parameter nil 'fullscreen 'maximized)
+;; Mac ignores it, i3 don't need it anyway
+;;(set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; No bars and buttons
 (menu-bar-mode -1)
