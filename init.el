@@ -279,12 +279,9 @@
 
 ;; coffee-mode
 (add-hook 'coffee-mode-hook
-		  (lambda ()
-			"coffee-mode-hook"
-			(make-local-variable 'tab-width)
-			(set 'tab-width 2)
-			)
-		  )
+          (lambda ()
+            "coffee-mode-hook"
+            (custom-set-variables '(coffee-tab-width 2))))
 
 ;; desktop-mode
 (desktop-save-mode t)
