@@ -143,6 +143,7 @@
 ;; ----------------
 (add-to-list 'auto-mode-alist '("/PKGBUILD$" . pkgbuild-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+(add-to-list 'auto-mode-alist '("\\._\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.asp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.cs$" . csharp-mode))
