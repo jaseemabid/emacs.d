@@ -128,8 +128,11 @@
 ;; Mac ignores it, i3 don't need it anyway
 ;;(set-frame-parameter nil 'fullscreen 'maximized)
 
-;; No bars and buttons
-(menu-bar-mode -1)
+;; No bars and buttons on linux, show a menu bar on mac anyway
+(if (eq system-type 'darwin)
+	(menu-bar-mode t)
+  (menu-bar-mode -1))
+
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (tooltip-mode -1)
