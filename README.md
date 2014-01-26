@@ -24,3 +24,11 @@ Backup your existing emacs config as this will replace it.
 	# All packages in elpa-list.el will be  installed automatically
 	# Restart emacs
 ```
+
+## TODO
+
+    $ watson
+
+## License
+
+The MIT License (MIT)
