@@ -1,14 +1,19 @@
 ## My emacs configuration
 Author : Jaseem Abid <jaseemabid@gmail.com>
 
-Emacs configuration files rebuild for Emacs 24. Feel free to use my config files
-if they are of any interest to you.
+Emacs configuration files rebuild for Emacs 24.
+
+### Screenshot
+
+![Screenshot](./screens/Emacs, Jan 16 2014.png "Emacs fo")
 
 ### Instructions
 
-```
-	# backup your existing emacs config
-	cd ~/
+Backup your existing emacs config as this will replace it.
+
+```sh
+    # Backup existing files
+    cd ~/
 	mv .emacs .emacs.backup
 	mv .emacs.d .emacs.d.backup
 
