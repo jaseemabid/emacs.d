@@ -5,7 +5,7 @@ Emacs configuration files rebuild for Emacs 24.
 
 ### Screenshot
 
-![Screenshot](./screens/Emacs, Jan 16 2014.png "Emacs fo")
+![Screenshot](./screens/Emacs, Jan 16 2014.png)
 
 ### Instructions
 
@@ -24,13 +24,3 @@ Backup your existing emacs config as this will replace it.
 	# All packages in elpa-list.el will be  installed automatically
 	# Restart emacs
 ```
-
-### TODO
-
-* Read
-  * http://julien.danjou.info/projects/emacs-packages
-* Fix
-  * ERB
-  * gnus
-  * python-mode
-  * minor mode for tabs <-> space switching in projects

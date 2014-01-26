@@ -5,6 +5,10 @@
 ;; Jaseem Abid <jaseemabid@gmail.com>
 ;; ------------------------------------
 
+;; [todo] - ERB
+;; [todo] - gnus
+;; [todo] - http://editorconfig.org/
+
 ;; --------
 ;; Identity
 ;; ---------
