@@ -1,0 +1,30 @@
+# watson - inline issue manager
+
+# Directories
+[dirs]
+./
+
+[show_type]
+dirty
+
+# Tags
+[tags]
+fix
+review
+todo
+
+# Ignores
+[ignore]
+*.elc
+*.dat
+auto-save-list
+backups
+elpa
+eshell
+init.elc
+lambda-fontify.elc
+newsticker
+screens
+tramp
+var
+vendor

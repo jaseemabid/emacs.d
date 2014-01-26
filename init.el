@@ -5,9 +5,9 @@
 ;; Jaseem Abid <jaseemabid@gmail.com>
 ;; ------------------------------------
 
-;; [todo] - ERB
-;; [todo] - gnus
-;; [todo] - http://editorconfig.org/
+;; [todo] - Configure ERB
+;; [todo] - Configure gnus
+;; [todo] - Configure ws per project [http://editorconfig.org/]
 
 ;; --------
 ;; Identity
