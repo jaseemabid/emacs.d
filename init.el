@@ -77,7 +77,6 @@
 			  case-fold-search t
 			  column-number-mode t
 			  default-major-mode 'org-mode
-			  default-tab-width 4
 			  fill-adapt-mode t
 			  fill-column 80
 			  font-lock-maximum-decoration t
