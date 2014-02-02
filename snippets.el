@@ -2,11 +2,6 @@
 ;; Collection of snippets and macros that don't fit anywhere else ;;
 ;; --------------------------------------------------- ;;
 
-(defun passwords-edit ()
-  "Edit the passwords file."
-  (interactive)
-  (find-file "~/Notes/Passwords.org.gpg"))
-
 (defmacro replace-in-file (from-string to-string)
   `(progn
      (goto-char (point-min))
