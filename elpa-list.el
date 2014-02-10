@@ -51,6 +51,7 @@
                           jade-mode
                           js2-mode
                           js2-refactor
+                          json-mode
                           jump
                           kv
                           less-css-mode
