@@ -21,6 +21,14 @@
 ;; --------------------
 ;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
 
+
+;; ---------------
+;; Unicode everywhere
+;; ---------------
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 ;; ---------------
 ;; Custom packages
 ;; ---------------
