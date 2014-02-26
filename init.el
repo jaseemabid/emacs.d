@@ -125,6 +125,8 @@
 
 ;; Setting fn key as control on Mac
 (if (eq system-type 'darwin)
+    (setq mac-option-modifier 'meta)
+    (setq mac-command-modifier 'control)
     (setq ns-function-modifier 'control))
 
 ;; Start maximized
