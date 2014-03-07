@@ -11,16 +11,16 @@ elpa/
 var/
 
 #  Emacs tmp files & Misc
-
-/auto-save-list
+/.mc-lists.el
+/.DS_Store
 /.emacs.desktop
 /.emacs.desktop.lock
-.mc-lists.el
-/snippets/
+/.watsonresults
+/ac-comphist.dat
+/auto-save-list
 /eshell/history
 /eshell/lastdir
 /newsticker/feeds/
+/snippets/
 /tramp
 /url/cookies
-/ac-comphist.dat
-/.watsonresults
