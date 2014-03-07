@@ -60,7 +60,7 @@
 ;; Autoloads
 ;; ---------
 (require 'auto-complete-config)
-(require 'centered-cursor-mode)
+
 (require 'coffee-mode)
 (require 'guru-mode)
 (require 'httpcode)
@@ -75,6 +75,8 @@
 (require 'yasnippet)
 (require 'zone)
 (require 'web-beautify)
+
+(if window-system (require 'centered-cursor-mode))
 
 ;; -----------------
 ;; General settings
@@ -146,9 +148,11 @@
 	(menu-bar-mode t)
   (menu-bar-mode -1))
 
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(tooltip-mode -1)
+(if window-system
+    (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (tooltip-mode -1)
+)
 
 ;; backup files
 (setq backup-directory-alist
@@ -292,7 +296,7 @@
 (add-to-list 'ac-modes 'git-commit-mode)
 
 ;; centered cursor mode
-(global-centered-cursor-mode t)
+(if window-system (global-centered-cursor-mode t))
 
 ;; coffee-mode
 (add-hook 'coffee-mode-hook
