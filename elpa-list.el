@@ -73,7 +73,6 @@
                           ruby-test-mode
                           ruby-tools
                           rvm
-                          slime
                           smex
                           solarized-theme
                           sws-mode
