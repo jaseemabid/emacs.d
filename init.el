@@ -149,10 +149,10 @@
   (menu-bar-mode -1))
 
 (if window-system
-    (scroll-bar-mode -1)
-  (tool-bar-mode -1)
-  (tooltip-mode -1)
-)
+    (progn
+      (scroll-bar-mode -1)
+      (tool-bar-mode -1)
+      (tooltip-mode -1)))
 
 ;; backup files
 (setq backup-directory-alist
