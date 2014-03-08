@@ -366,7 +366,7 @@
 			(setq mode-name "JS2")
             (global-set-key (kbd "C-c d") (lambda ()
                                             (interactive)
-                                            (insert-string "debugger;" )))))
+                                            (insert "debugger;" )))))
 
 (setq-default js-indent-level 4
 			  js2-allow-keywords-as-property-names t
