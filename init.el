@@ -403,6 +403,8 @@
 			(setq indent-tabs-mode nil)
 			(setq tab-width 4)
 			(setq python-indent 4)))
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
 
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
