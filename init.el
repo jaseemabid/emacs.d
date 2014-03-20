@@ -62,6 +62,7 @@
 (require 'auto-complete-config)
 
 (require 'coffee-mode)
+(require 'fill-column-indicator)
 (require 'guru-mode)
 (require 'httpcode)
 (require 'lorem-ipsum)
@@ -323,6 +324,10 @@
 ;; eshell
 (setq eshell-buffer-maximum-lines 4096)
 
+;; fill column indicator
+(setq fci-rule-width 1)
+(setq fci-rule-color "white")
+
 ;; haskell-mode
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 ;; hslint on the command line only likes this indentation mode;
@@ -409,6 +414,7 @@
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'guru-mode)
+(add-hook 'prog-mode-hook 'fci-mode)
 
 ;; rainbow-mode
 (add-hook 'css-mode-hook 'rainbow-mode)

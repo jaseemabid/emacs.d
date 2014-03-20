@@ -31,6 +31,7 @@
                           elixir-yasnippets
                           emmet-mode
                           erlang
+                          fill-column-indicator
                           findr
                           flymake
                           flymake-easy
