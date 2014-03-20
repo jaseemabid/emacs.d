@@ -58,6 +58,8 @@
                           kv
                           less-css-mode
                           logito
+                          python-pep8
+                          python-pylint
                           lorem-ipsum
                           lua-mode
                           magit

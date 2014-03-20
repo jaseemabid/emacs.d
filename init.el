@@ -67,15 +67,17 @@
 (require 'httpcode)
 (require 'lorem-ipsum)
 (require 'magit)
+(require 'python-pep8)
+(require 'python-pylint)
 (require 'rainbow-mode)
 (require 'remember)
 (require 'rinari)
 (require 'saveplace)
 (require 'server)
 (require 'uniquify)
+(require 'web-beautify)
 (require 'yasnippet)
 (require 'zone)
-(require 'web-beautify)
 
 (if window-system (require 'centered-cursor-mode))
 
@@ -405,9 +407,8 @@
 ;; Python-mode
 (add-hook 'python-mode-hook
 		  (lambda ()
-			(setq indent-tabs-mode nil)
-			(setq tab-width 4)
-			(setq python-indent 4)))
+			(setq indent-tabs-mode nil
+                  tab-width 4)))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
