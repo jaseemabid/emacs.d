@@ -471,13 +471,8 @@
 ;; uniquify buffers
 (setq uniquify-buffer-name-style 'forward)
 
-;; write file hook
-(add-hook 'write-file-hooks
-		  (lambda ()
-			;; delete \b at line ends before saving a file
-			(delete-trailing-whitespace)
-			)
-		  )
+;; write file hook, delete \b at line ends before saving a file
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 ;; Real programmers use the real lambda
 (load-file "~/.emacs.d/lambda-fontify.el")
