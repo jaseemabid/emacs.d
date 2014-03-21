@@ -408,6 +408,7 @@
 (add-hook 'python-mode-hook
 		  (lambda ()
 			(setq indent-tabs-mode nil
+                  python-indent 4
                   tab-width 4)))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
