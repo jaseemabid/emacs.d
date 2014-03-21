@@ -136,11 +136,14 @@
 ;; Color themes
 (load-theme 'solarized-dark t)
 
-;; Setting fn key as control on Mac
+;; Mac specific stuff
 (if (eq system-type 'darwin)
-    (setq mac-option-modifier 'meta)
-    (setq mac-command-modifier 'control)
-    (setq ns-function-modifier 'control))
+    (lambda ()
+      "Mac hook"
+      (setq ns-use-srgb-colorspace t)
+      (setq mac-option-modifier 'meta)
+      (setq mac-command-modifier 'control)
+      (setq ns-function-modifier 'control)))
 
 ;; Start maximized
 ;; Mac ignores it, i3 don't need it anyway
