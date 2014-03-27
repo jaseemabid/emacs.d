@@ -312,6 +312,7 @@
 
 ;; desktop-mode
 (desktop-save-mode t)
+(setq desktop-files-not-to-save "^$")
 (add-to-list 'desktop-modes-not-to-save 'dired-mode)
 (add-to-list 'desktop-modes-not-to-save 'help-mode)
 (add-to-list 'desktop-modes-not-to-save 'magit-mode)
