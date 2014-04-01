@@ -332,7 +332,7 @@
 
 ;; fill column indicator
 (setq fci-rule-width 1)
-(setq fci-rule-color "white")
+(setq fci-rule-color "#0A333C")
 
 ;; haskell-mode
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
