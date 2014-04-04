@@ -200,6 +200,10 @@
 (global-set-key (kbd "C-x <left>") 'windmove-left)
 (global-set-key (kbd "C-c b") 'bury-buffer)
 
+;; buffer splitting like tmux
+(global-set-key (kbd "C-x |") 'split-window-right)
+(global-set-key (kbd "C-x -") 'split-window-below)
+
 ;; buffer list suck
 ;; (define-key global-map "\C-x\C-b" 'electric-buffer-list)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
