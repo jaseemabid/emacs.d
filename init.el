@@ -89,7 +89,7 @@
 			  c-default-style "k&r"
 			  case-fold-search t
 			  column-number-mode t
-			  default-major-mode 'org-mode
+			  major-mode 'org-mode
 			  fill-adapt-mode t
 			  fill-column 80
 			  font-lock-maximum-decoration t
