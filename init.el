@@ -133,8 +133,20 @@
 	  (list (format "%s %%S: %%j " (system-name))
 			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
-;; Color themes
-(load-theme 'solarized-dark t)
+;; Solarized theme in an already solarized terminal makes magit pretty unusable.
+;; Setup iterm with solarized colors and use default theme in terminal. Minor
+;; additional color tweaks for magit.
+(if window-system
+    (load-theme 'solarized-dark t)
+  (eval-after-load 'magit
+    '(progn
+       ;; (set-face-foreground 'magit-diff-add "green3")
+       ;; (set-face-foreground 'magit-diff-del "red3")
+       (custom-set-variables
+        '(magit-use-overlays nil))
+       (custom-set-faces
+        '(magit-item-highlight ((t nil)))
+        '(magit-item-mark ((t nil)))))))
 
 ;; Mac specific stuff
 (if (eq system-type 'darwin)
