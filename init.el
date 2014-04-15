@@ -479,7 +479,8 @@
 
 ;; tramp-mode
 (setq tramp-default-host "localhost"
-	  tramp-default-method "ssh")
+      tramp-auto-save-directory "~/.emacs.d/auto-save-list"
+      tramp-default-method "scp")
 
 ;; web-beautify mode
 (if (eq system-type 'darwin)
