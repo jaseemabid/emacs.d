@@ -503,6 +503,11 @@
 ;; write file hook, delete \b at line ends before saving a file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
+;; zoom
+(global-set-key (kbd "M-+") 'text-scale-adjust)
+(global-set-key (kbd "M--") 'text-scale-adjust)
+(global-set-key (kbd "M-0") 'text-scale-adjust)
+
 ;; Real programmers use the real lambda
 (load-file "~/.emacs.d/lambda-fontify.el")
 
