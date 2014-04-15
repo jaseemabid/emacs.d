@@ -266,18 +266,28 @@
         (when (> col-no 0)
           (forward-char (1- col-no)))))))
 
-(defalias 'open 'find-file)
-(defalias 'o 'find-file)
-(defalias 'openo 'find-file-other-window)
-
 (defun eshell/clear ()
   "clear shell buffer"
   (interactive)
   (let ((inhibit-read-only t))
     (erase-buffer)))
-(global-set-key (kbd "C-l") 'eshell/clear)
+
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (local-set-key (kbd "<down>") 'next-line)
+            (local-set-key (kbd "<up>") 'previous-line)
+            (local-set-key (kbd "C-a") 'eshell-bol)
+            (local-set-key (kbd "C-l") 'eshell/clear)
+            (local-set-key (kbd "C-x M-z") 'suspend-frame)
+            (local-set-key (kbd "C-z") 'bury-buffer)))
+
 (global-set-key (kbd "C-z") 'eshell)
-(global-set-key (kbd "C-x M-z") 'suspend-frame)
+(defalias 'eshell/emacs 'find-file)
+(defalias 'eshell/less 'find-file)
+(defalias 'o 'find-file)
+(defalias 'open 'find-file)
+(defalias 'openo 'find-file-other-window)
+(defun eshell/dired () (dired (eshell/pwd)))
 
 ;; mark all
 (global-set-key (kbd "C-c a") 'mark-whole-buffer)
