@@ -172,6 +172,9 @@
       (tool-bar-mode -1)
       (tooltip-mode -1)))
 
+;; A pretty bar cursor
+(setq-default cursor-type '(bar . 2))
+
 ;; backup files
 (setq backup-directory-alist
 	  '(("." . "~/.emacs.d/backups")))
