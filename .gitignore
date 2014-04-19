@@ -27,3 +27,4 @@ var/
 /.python-environments/
 /ido.last
 /places
+/private.el

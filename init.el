@@ -59,8 +59,8 @@
 ;; ---------
 ;; Autoloads
 ;; ---------
-(require 'auto-complete-config)
 
+(require 'auto-complete-config)
 (require 'coffee-mode)
 (require 'fill-column-indicator)
 (require 'guru-mode)
@@ -526,3 +526,8 @@
 
 ;; elisp snippets
 (load-file "~/.emacs.d/snippets.el")
+
+;; Private setup, passwords and key
+(let ((private-file "~/.emacs.d/private.el"))
+  (if (file-readable-p private-file)
+      (load-file private-file)))
