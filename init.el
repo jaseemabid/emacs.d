@@ -499,13 +499,13 @@
 (if (eq system-type 'darwin)
     (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
 (eval-after-load 'js2-mode
-  '(define-key js2-mode-map (kbd "C-c SPC") 'web-beautify-js))
+  '(define-key js2-mode-map (kbd "C-c w") 'web-beautify-js))
 (eval-after-load 'json-mode
-  '(define-key json-mode-map (kbd "C-c SPC") 'web-beautify-js))
+  '(define-key json-mode-map (kbd "C-c w") 'web-beautify-js))
 (eval-after-load 'sgml-mode
-  '(define-key html-mode-map (kbd "C-c SPC") 'web-beautify-html))
+  '(define-key html-mode-map (kbd "C-c w") 'web-beautify-html))
 (eval-after-load 'css-mode
-  '(define-key css-mode-map (kbd "C-c SPC") 'web-beautify-css))
+  '(define-key css-mode-map (kbd "C-c w") 'web-beautify-css))
 
 ;; type over a region
 (pending-delete-mode t)
