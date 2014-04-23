@@ -1,4 +1,5 @@
 (defvar jaseem/packages '(
+                          ace-jump-mode
                           apache-mode
                           auctex
                           auto-compile

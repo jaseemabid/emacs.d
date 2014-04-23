@@ -59,7 +59,7 @@
 ;; ---------
 ;; Autoloads
 ;; ---------
-
+(require 'ace-jump-mode)
 (require 'auto-complete-config)
 (require 'coffee-mode)
 (require 'dired)
@@ -320,6 +320,9 @@
 ;; ------------------------
 ;; Mode level customization
 ;; ------------------------
+
+;; ace-jump
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; auto-fill
 (auto-fill-mode 1)
