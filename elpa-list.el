@@ -23,7 +23,7 @@
                           csv-mode
                           dash
                           desktop
-                          dired+
+                          dired-details
                           doc-mode
                           dropdown-list
                           eimp

@@ -62,6 +62,8 @@
 
 (require 'auto-complete-config)
 (require 'coffee-mode)
+(require 'dired)
+(require 'dired-details)
 (require 'fill-column-indicator)
 (require 'guru-mode)
 (require 'httpcode)
@@ -351,6 +353,8 @@
 
 ;; dired-mode
 (defalias 'ido-list-directory 'dired) ;; list directory is pointless and stupid
+(dired-details-install)
+(setq dired-details-hidden-string "")
 
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
