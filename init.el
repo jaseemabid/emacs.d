@@ -359,6 +359,10 @@
 (dired-details-install)
 (setq dired-details-hidden-string "")
 
+;; emacs-lisp-mode
+;; [todo] - Make the parenthesis near invisible like
+;; http://blog.binchen.org/posts/why-gnus-is-better-than-gmail.html
+
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
