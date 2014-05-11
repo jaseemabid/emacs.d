@@ -363,6 +363,7 @@
 ;; emacs-lisp-mode
 ;; [todo] - Make the parenthesis near invisible like
 ;; http://blog.binchen.org/posts/why-gnus-is-better-than-gmail.html
+(global-set-key (kbd "C-h C-f") 'find-function)
 
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
