@@ -449,6 +449,9 @@
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 (add-hook 'magit-mode-hook 'guru-mode)
 
+;; org-mode
+(add-hook 'org-mode-hook 'org-indent-mode)
+
 ;; Python-mode
 (add-hook 'python-mode-hook
 		  (lambda ()
