@@ -81,7 +81,8 @@
 (require 'yasnippet)
 (require 'zone)
 
-(if window-system (require 'centered-cursor-mode))
+(when window-system
+  (require 'centered-cursor-mode))
 
 ;; -----------------
 ;; General settings
@@ -152,13 +153,12 @@
         '(magit-item-mark ((t nil)))))))
 
 ;; Mac specific stuff
-(if (eq system-type 'darwin)
-    (lambda ()
-      "Mac hook"
-      (setq ns-use-srgb-colorspace t)
-      (setq mac-option-modifier 'meta)
-      (setq mac-command-modifier 'control)
-      (setq ns-function-modifier 'control)))
+(when (eq system-type 'darwin)
+  ;; "Mac hook"
+  (setq ns-use-srgb-colorspace t)
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'control)
+  (setq ns-function-modifier 'control))
 
 ;; Start maximized
 ;; Mac ignores it, i3 don't need it anyway
@@ -169,11 +169,10 @@
 	(menu-bar-mode t)
   (menu-bar-mode -1))
 
-(if window-system
-    (progn
-      (scroll-bar-mode -1)
-      (tool-bar-mode -1)
-      (tooltip-mode -1)))
+(when window-system
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (tooltip-mode -1))
 
 ;; A pretty bar cursor
 (setq-default cursor-type '(bar . 2))
@@ -476,9 +475,8 @@
 (global-rinari-mode)
 
 ;; root-edit : never save file as root
-(if ( = (user-uid) 0)
-	(read-only-mode t)
-  )
+(when (= (user-uid) 0)
+  (read-only-mode t))
 
 ;; server-mode
 (unless (server-running-p)
@@ -489,7 +487,7 @@
 
 ;; smex-mode
 ;; bind Caps-Lock to smex
-(if (eq window-system 'x)
+(when (eq window-system 'x)
     (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
 (global-set-key [f13] 'smex)
 (global-set-key (kbd "M-x") 'smex)
@@ -509,8 +507,8 @@
       tramp-default-method "scp")
 
 ;; web-beautify mode
-(if (eq system-type 'darwin)
-    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
+(when (eq system-type 'darwin)
+  (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
 (eval-after-load 'js2-mode
   '(define-key js2-mode-map (kbd "C-c w") 'web-beautify-js))
 (eval-after-load 'json-mode
@@ -542,5 +540,5 @@
 
 ;; Private setup, passwords and key
 (let ((private-file "~/.emacs.d/private.el"))
-  (if (file-readable-p private-file)
-      (load-file private-file)))
+  (when (file-readable-p private-file)
+    (load-file private-file)))
