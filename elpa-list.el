@@ -12,8 +12,10 @@
                           buster-mode
                           buster-snippets
                           centered-cursor-mode
+                          cider
                           cl-lib
                           clojure-mode
+                          clojure-test-mode
                           cm-mode
                           cmake-mode
                           cmake-project
