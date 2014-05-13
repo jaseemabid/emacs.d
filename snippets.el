@@ -32,6 +32,11 @@
 	(occur (if isearch-regexp isearch-string (regexp-quote isearch-string)))))
 (define-key isearch-mode-map (kbd "C-c o") 'isearch-occur)
 
+(defun insert-timestamp ()
+  "Insert time-stamp at the current `point'."
+  (interactive)
+  (insert (format-time-string "%A %d %B %Y %r %Z")))
+
 ;; Custom macros
 (fset 'sink
 	  [?R ?~ ?/ ?. ?l ?o ?c ?a ?l ?/ ?s ?h ?a ?r ?e ?/ ?e ?x ?t ?r ?a ?s tab return])
