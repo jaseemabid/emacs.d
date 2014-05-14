@@ -447,6 +447,10 @@
 (add-hook 'magit-mode-hook 'guru-mode)
 
 ;; org-mode
+(setq org-src-fontify-natively t
+      org-agenda-files `("~/.notes" "~/Notes/todo.org"))
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c r") 'org-capture)
 (add-hook 'org-mode-hook 'org-indent-mode)
 
 ;; Python-mode
