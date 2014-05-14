@@ -294,9 +294,6 @@
 (defalias 'openo 'find-file-other-window)
 (defun eshell/dired () (dired (eshell/pwd)))
 
-;; mark all
-(global-set-key (kbd "C-c a") 'mark-whole-buffer)
-
 ;; menu bar for exploring new modes
 (global-set-key (kbd "C-c C-m") 'menu-bar-mode)
 
@@ -469,10 +466,6 @@
 ;; rainbow-mode
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'html-mode-hook 'rainbow-mode)
-
-;; remember-mode
-(define-key global-map (kbd "C-c r") 'remember)
-(define-key global-map (kbd "C-c R") 'remember-region)
 
 ;; rinari
 (global-rinari-mode)
