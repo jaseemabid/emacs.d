@@ -155,10 +155,14 @@
 ;; Mac specific stuff
 (when (eq system-type 'darwin)
   ;; "Mac hook"
-  (setq ns-use-srgb-colorspace t)
-  (setq mac-option-modifier 'meta)
-  (setq mac-command-modifier 'control)
-  (setq ns-function-modifier 'control))
+  (setq mac-command-modifier 'control
+        mac-option-modifier 'meta
+        ns-use-srgb-colorspace t
+        ns-alternate-modifier 'meta
+        ns-auto-hide-menu-bar nil
+        ns-command-modifier 'control
+        ns-control-modifier 'control
+        ns-function-modifier 'control))
 
 ;; Start maximized
 ;; Mac ignores it, i3 don't need it anyway
