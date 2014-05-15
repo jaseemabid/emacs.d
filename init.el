@@ -423,6 +423,7 @@
 			  js2-concat-multiline-strings t
 			  js2-global-externs '( "$"
                                     "Y"
+                                    "YUI"
                                     "_")
 			  js2-highlight-level 3
 			  js2-include-browser-externs t
