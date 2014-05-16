@@ -66,7 +66,6 @@
 (require 'dired)
 (require 'dired-details)
 (require 'fill-column-indicator)
-(require 'guru-mode)
 (require 'httpcode)
 (require 'lorem-ipsum)
 (require 'magit)
@@ -456,7 +455,6 @@
       magit-process-connection-type nil
       process-connection-type nil)
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
-(add-hook 'magit-mode-hook 'guru-mode)
 
 ;; org-mode
 (setq org-src-fontify-natively t
@@ -476,7 +474,6 @@
 
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook 'guru-mode)
 (add-hook 'prog-mode-hook 'fci-mode)
 
 ;; rainbow-mode

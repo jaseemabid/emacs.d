@@ -1,57 +1,39 @@
 (defvar jaseem/packages '(
                           ace-jump-mode
-                          apache-mode
-                          auctex
-                          auto-compile
                           auto-complete
                           auto-indent-mode
-                          autopair
                           bash-completion
-                          bitlbee
-                          bundler
-                          buster-mode
-                          buster-snippets
                           centered-cursor-mode
                           cider
                           cl-lib
                           clojure-mode
                           clojure-test-mode
                           cm-mode
-                          cmake-mode
-                          cmake-project
                           coffee-mode
                           combinators
                           creole
-                          crontab-mode
                           csv-mode
                           dash
                           desktop
                           dired-details
                           doc-mode
                           dropdown-list
-                          eimp
                           elixir-mode
                           elixir-yasnippets
                           emmet-mode
                           erlang
                           fill-column-indicator
-                          findr
                           flymake
                           flymake-easy
                           flymake-haskell-multi
                           flymake-hlint
-                          gh
-                          gist
                           git-commit-mode
                           gitconfig-mode
                           gitignore-mode
-                          guru-mode
                           haml-mode
                           handlebars-mode
                           haskell-mode
                           httpcode
-                          inf-ruby
-                          inflections
                           jade-mode
                           jedi
                           js2-mode
@@ -62,7 +44,6 @@
                           less-css-mode
                           logito
                           lorem-ipsum
-                          lua-mode
                           magit
                           markdown-mode
                           marmalade
@@ -82,10 +63,8 @@
                           rvm
                           smex
                           solarized-theme
-                          sws-mode
                           web-beautify
                           web-mode
                           yaml-mode
-                          yasnippet
-                          zencoding-mode)
+                          yasnippet)
   "Default packages")
