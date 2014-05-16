@@ -13,8 +13,9 @@
 ;; Identity
 ;; ---------
 (setq init-file-user "jaseem"
-	  user-full-name "Jaseem Abid"
-	  user-mail-address "jaseemabid@gmail.com")
+      user-full-name "Jaseem Abid"
+      user-nick "jaseemabid"
+      user-mail-address "jaseemabid@gmail.com")
 
 ;; --------------------
 ;; Recompile everything
@@ -368,6 +369,12 @@
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
+
+;; erc
+(setq erc-email-userid  user-mail-address
+      erc-nick user-nick
+      erc-server nil
+      erc-user-full-name  user-full-name)
 
 ;; eshell
 (setq eshell-buffer-maximum-lines 4096)
