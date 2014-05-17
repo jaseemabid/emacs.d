@@ -463,6 +463,18 @@
 (global-set-key (kbd "C-c r") 'org-capture)
 (add-hook 'org-mode-hook 'org-indent-mode)
 
+;; org-present mode
+(defvar org-present-text-scale 10)
+(add-hook 'org-present-mode-hook (lambda ()
+                                   (linum-mode -1)
+                                   (org-present-big)
+                                   (org-display-inline-images)))
+
+(add-hook 'org-present-mode-quit-hook (lambda ()
+                                        (linum-mode t)
+                                        (org-present-small)
+                                        (org-remove-inline-images)))
+
 ;; Python-mode
 (add-hook 'python-mode-hook
 		  (lambda ()

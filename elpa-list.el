@@ -49,6 +49,7 @@
                           marmalade
                           nginx-mode
                           org
+                          org-present
                           packed
                           paredit
                           pcache
