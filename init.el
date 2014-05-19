@@ -374,7 +374,10 @@
       erc-nick user-nick
       erc-server nil
       erc-user-full-name  user-full-name)
-(add-hook 'erc-mode-hook 'erc-spelling-mode)
+(add-hook 'erc-mode-hook (lambda ()
+                           (centered-cursor-mode -1)
+                           (erc-spelling-mode)
+                           (add-to-list 'erc-modules 'notifications)))
 
 ;; eshell
 (setq eshell-buffer-maximum-lines 4096)
