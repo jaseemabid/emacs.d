@@ -40,7 +40,7 @@
 			 ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-;; Install all packages requied
+;; Install all packages required
 (load-file "~/.emacs.d/elpa-list.el")
 
 (package-initialize)
