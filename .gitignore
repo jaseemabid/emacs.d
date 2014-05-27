@@ -30,3 +30,5 @@ var/
 /places
 /private.el
 /games/
+/bookmarks
+/projectile-bookmarks.eld
