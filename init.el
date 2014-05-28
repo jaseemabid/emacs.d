@@ -302,8 +302,6 @@
 (global-set-key (kbd "C-c C-m") 'menu-bar-mode)
 
 ;; navigation bindings
-(global-set-key (kbd "C-M-g") 'goto-line)
-(global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
@@ -446,9 +444,21 @@
 ;; js2-refactor-mode
 (js2r-add-keybindings-with-prefix "C-c C-r")
 
-;; line-number-mode
-(global-linum-mode t)
+;; line-number-mode disabled by default and shown while jumping
+(global-linum-mode -1)
 (global-hl-line-mode t)
+
+(defun goto-line-with-feedback ()
+  "Show line numbers only while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (goto-line (read-number "Goto line: ")))
+    (linum-mode -1)))
+
+(global-set-key (kbd "C-M-g") 'goto-line-with-feedback)
+(global-set-key (kbd "C-c C-l") 'goto-line-with-feedback)
 
 ;; magit
 (define-key global-map (kbd "C-c i") 'magit-status)
