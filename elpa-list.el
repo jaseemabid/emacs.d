@@ -55,6 +55,7 @@
                           pcache
                           python-pep8
                           python-pylint
+                          rainbow-delimiters
                           rainbow-mode
                           rinari
                           ruby-compilation
