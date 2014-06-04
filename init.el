@@ -436,10 +436,7 @@
 			  js2-allow-keywords-as-property-names t
 			  js2-auto-insert-catch-block t
 			  js2-concat-multiline-strings t
-			  js2-global-externs '( "$"
-                                    "Y"
-                                    "YUI"
-                                    "_")
+			  js2-global-externs '("$" "Y" "YUI" "_")
 			  js2-highlight-level 3
 			  js2-include-browser-externs t
 			  js2-include-node-externs t)
