@@ -287,7 +287,6 @@
             (local-set-key (kbd "<up>") 'previous-line)
             (local-set-key (kbd "C-a") 'eshell-bol)
             (local-set-key (kbd "C-l") 'eshell/clear)
-            (local-set-key (kbd "C-x M-z") 'suspend-frame)
             (local-set-key (kbd "C-z") 'bury-buffer)))
 
 (global-set-key (kbd "C-z") 'eshell)
