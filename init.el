@@ -37,8 +37,8 @@
 (require 'package)
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Install all packages required
 (load-file "~/.emacs.d/elpa-list.el")
@@ -525,7 +525,7 @@
 ;; smex-mode
 ;; bind Caps-Lock to smex
 (when (eq window-system 'x)
-    (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
+  (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
 (global-set-key [f13] 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
