@@ -16,7 +16,6 @@
                           dash
                           desktop
                           dired-details
-                          doc-mode
                           dropdown-list
                           elixir-mode
                           elixir-yasnippets
