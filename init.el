@@ -427,7 +427,7 @@
 (add-hook 'js2-mode-hook
 		  (lambda ()
 			(setq mode-name "JS2")
-            (global-set-key (kbd "C-c d") (lambda ()
+            (local-set-key (kbd "C-c d") (lambda ()
                                             (interactive)
                                             (insert "debugger;" )))))
 
@@ -493,7 +493,11 @@
 		  (lambda ()
 			(setq indent-tabs-mode nil
                   python-indent 4
-                  tab-width 4)))
+                  tab-width 4)
+            (local-set-key (kbd "C-c d")
+                           (lambda ()
+                             (interactive)
+                             (insert "import ipdb; ipdb.set_trace()")))))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
