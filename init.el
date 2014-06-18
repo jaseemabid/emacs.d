@@ -136,6 +136,9 @@
 	  (list (format "%s %%S: %%j " (system-name))
 			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
+;; Always split horizontally
+(setq split-height-threshold most-positive-fixnum)
+
 ;; Solarized theme in an already solarized terminal makes magit pretty unusable.
 ;; Setup iterm with solarized colors and use default theme in terminal. Minor
 ;; additional color tweaks for magit.
