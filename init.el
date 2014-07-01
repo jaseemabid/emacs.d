@@ -487,7 +487,8 @@
 		  (lambda ()
 			(setq indent-tabs-mode nil
                   python-indent 4
-                  tab-width 4)
+                  tab-width 4
+                  python-fill-docstring-style 'pep-257-nn)
             (local-set-key (kbd "C-c d")
                            (lambda ()
                              (interactive)
