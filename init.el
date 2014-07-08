@@ -144,9 +144,12 @@
 ;; Setup iterm with solarized colors and use default theme in terminal. Minor
 ;; additional color tweaks for magit.
 (if window-system
-    (let ((solarized-use-variable-pitch nil))
-      (load-theme 'solarized-dark t))
-  (eval-after-load 'magit
+    (if (yes-or-no-p "Load color theme?")
+        (let ((solarized-use-variable-pitch nil))
+          (load-theme 'solarized-dark t))
+      (set-face-attribute 'fringe nil :background "white")
+      (set-face-attribute 'linum nil :background "white"))
+    (eval-after-load 'magit
     '(progn
        ;; (set-face-foreground 'magit-diff-add "green3")
        ;; (set-face-foreground 'magit-diff-del "red3")
