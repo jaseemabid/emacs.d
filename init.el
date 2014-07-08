@@ -294,11 +294,6 @@
             (local-set-key (kbd "C-z") 'bury-buffer)))
 
 (global-set-key (kbd "C-z") 'eshell)
-(defalias 'eshell/emacs 'find-file)
-(defalias 'eshell/less 'find-file)
-(defalias 'o 'find-file)
-(defalias 'open 'find-file)
-(defalias 'openo 'find-file-other-window)
 (defun eshell/dired () (dired (eshell/pwd)))
 
 ;; menu bar for exploring new modes
