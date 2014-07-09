@@ -65,7 +65,6 @@
                           smex
                           solarized-theme
                           web-beautify
-                          web-mode
                           yaml-mode
                           yasnippet)
   "Default packages")
