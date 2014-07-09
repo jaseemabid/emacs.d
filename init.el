@@ -5,33 +5,23 @@
 ;; Jaseem Abid <jaseemabid@gmail.com>
 ;; ------------------------------------
 
-;; [todo] - Configure ERB
-;; [todo] - Configure gnus
-;; [todo] - Configure ws per project [http://editorconfig.org/]
-
 ;; --------
 ;; Identity
-;; ---------
+;; --------
 (setq init-file-user "jaseem"
       user-full-name "Jaseem Abid"
       user-nick "jaseemabid"
       user-mail-address "jaseemabid@gmail.com")
 
-;; --------------------
-;; Recompile everything
-;; --------------------
-;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
-
-
-;; ---------------
-;; Unicode everywhere
-;; ---------------
+;; --------
+;; Encoding
+;; --------
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
 ;; ---------------
-;; Custom packages
+;; Custom Packages
 ;; ---------------
 (require 'cl)
 (require 'package)
@@ -87,29 +77,33 @@
 ;; -----------------
 ;; General settings
 ;; -----------------
-(setq-default c-basic-indent 4
-              c-basic-offset 4
-              c-default-style "k&r"
-              case-fold-search t
-              column-number-mode t
-              major-mode 'org-mode
-              fill-adapt-mode t
-              fill-column 80
-              font-lock-maximum-decoration t
-              indent-tabs-mode nil
-              inhibit-startup-message t
-              initial-scratch-message nil
-              next-line-add-newlines nil
-              nxml-child-indent 4
-              require-final-newline t
-              ring-bell-function 'ignore
-              save-place t
-              sentence-end-double-space nil
-              tab-width 4
-              transient-mark-mode t
-              uniquify-buffer-name-style 'forward
-              vc-follow-symlinks t
-              visible-bell t)
+(setq case-fold-search t
+      column-number-mode t
+      major-mode 'org-mode
+      inhibit-startup-message t
+      initial-scratch-message nil
+      ring-bell-function 'ignore
+      save-place t
+      transient-mark-mode t
+      uniquify-buffer-name-style 'forward
+      vc-follow-symlinks t
+      visible-bell t)
+
+;; ----------------------------------
+;; Indentation, layout and whitespace
+;; ----------------------------------
+(setq c-basic-indent 4
+      c-basic-offset 4
+      c-default-style "k&r"
+      fill-adapt-mode t
+      fill-column 80
+      indent-tabs-mode nil
+      next-line-add-newlines nil
+      nxml-child-indent 4
+      python-indent 4
+      require-final-newline t
+      sentence-end-double-space nil
+      tab-width 4)
 
 ;; Set the default browser to Chrome on linux
 (when (eq system-type 'gnu/linux)
@@ -122,7 +116,7 @@
 ;; ----------------------
 ;; Fonts and text styling
 ;; ----------------------
-
+(setq font-lock-maximum-decoration t)
 ;; Larger fonts for the mac
 (if (eq system-type 'darwin)
     (set-frame-font "Inconsolata-14")
@@ -151,10 +145,6 @@
         ns-command-modifier 'control
         ns-control-modifier 'control
         ns-function-modifier 'control))
-
-;; Start maximized
-;; Mac ignores it, i3 don't need it anyway
-;;(set-frame-parameter nil 'fullscreen 'maximized)
 
 ;; No bars and buttons on linux, show a menu bar on mac anyway
 (if (eq system-type 'darwin)
@@ -199,7 +189,6 @@
 (global-set-key (kbd "C-x -") 'split-window-below)
 
 ;; buffer list suck
-;; (define-key global-map "\C-x\C-b" 'electric-buffer-list)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; comment/uncomment block
@@ -226,14 +215,13 @@
 (global-set-key (kbd "C-c C-m") 'menu-bar-mode)
 
 ;; navigation bindings
-(global-set-key (kbd "C-M-g") 'goto-line)
-(global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
 ;; sorting and aligning
-(global-set-key (kbd "M-s l") 'sort-lines)
 (global-set-key (kbd "C-c C-a") 'align-regexp)
+(global-set-key (kbd "M-s l") 'sort-lines)
+(global-set-key (kbd "M-s r") 'reverse-region)
 
 ;; undo without leaving the ctrl key
 (define-key global-map "\C-x\C-u" 'undo)
@@ -256,7 +244,6 @@
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.aspell.en.pws")
 (ac-flyspell-workaround)
-(define-key ac-mode-map (kbd "M-/") 'auto-complete)
 (global-set-key (kbd "M-/") 'auto-complete)
 (add-to-list 'ac-modes 'git-commit-mode)
 
@@ -266,8 +253,7 @@
 ;; coffee-mode
 (add-hook 'coffee-mode-hook
           (lambda ()
-            "coffee-mode-hook"
-            (custom-set-variables '(coffee-tab-width 2))))
+            (setq coffee-tab-width 2)))
 
 ;; desktop-mode
 (desktop-save-mode t)
@@ -285,8 +271,6 @@
 (setq dired-details-hidden-string "")
 
 ;; emacs-lisp-mode
-;; [todo] - Make the parenthesis near invisible like
-;; http://blog.binchen.org/posts/why-gnus-is-better-than-gmail.html
 (global-set-key (kbd "C-h C-f") 'find-function)
 
 ;; emmet-mode
@@ -338,10 +322,6 @@
       ido-create-new-buffer 'prompt
       ido-everywhere t)
 (ido-mode t)
-
-;; image modes
-(add-hook 'image-mode-hook 'eimp-mode)
-;; (add-hook 'eimp-mode-hook 'eimp-fit-image-to-window)
 
 ;; js-mode
 (defalias 'js-mode 'js2-mode)
@@ -400,12 +380,9 @@
                                         (org-remove-inline-images)))
 
 ;; Python-mode
+(setq-default python-fill-docstring-style 'pep-257-nn)
 (add-hook 'python-mode-hook
           (lambda ()
-            (setq indent-tabs-mode nil
-                  python-indent 4
-                  tab-width 4
-                  python-fill-docstring-style 'pep-257-nn)
             (local-set-key (kbd "C-c d")
                            (lambda ()
                              (interactive)
@@ -442,7 +419,6 @@
 ;; bind Caps-Lock to smex
 (when (eq window-system 'x)
   (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'"))
-(global-set-key [f13] 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
@@ -477,7 +453,7 @@
 ;; uniquify buffers
 (setq uniquify-buffer-name-style 'forward)
 
-;; write file hook, delete \b at line ends before saving a file
+;; write file hook
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 ;; zoom
@@ -488,7 +464,7 @@
 ;; Real programmers use the real lambda
 (load-file "~/.emacs.d/lambda-fontify.el")
 
-;; elisp snippets
+;; Snippets
 (load-file "~/.emacs.d/snippets.el")
 
 ;; Private setup, passwords and key

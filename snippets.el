@@ -1,6 +1,6 @@
-;; --------------------------------------------------- ;;
+;; -------------------------------------------------------------- ;;
 ;; Collection of snippets and macros that don't fit anywhere else ;;
-;; --------------------------------------------------- ;;
+;; -------------------------------------------------------------- ;;
 
 (defmacro replace-in-file (from-string to-string)
   `(progn
@@ -36,3 +36,6 @@
   "Insert time-stamp at the current `point'."
   (interactive)
   (insert (format-time-string "%A %d %B %Y %r %Z")))
+
+;; Recompile everything
+;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
