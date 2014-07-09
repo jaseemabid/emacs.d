@@ -88,28 +88,28 @@
 ;; General settings
 ;; -----------------
 (setq-default c-basic-indent 4
-			  c-basic-offset 4
-			  c-default-style "k&r"
-			  case-fold-search t
-			  column-number-mode t
-			  major-mode 'org-mode
-			  fill-adapt-mode t
-			  fill-column 80
-			  font-lock-maximum-decoration t
-			  indent-tabs-mode nil
-			  inhibit-startup-message t
-			  initial-scratch-message nil
-			  next-line-add-newlines nil
-			  nxml-child-indent 4
-			  require-final-newline t
-			  ring-bell-function 'ignore
-			  save-place t
-			  sentence-end-double-space nil
-			  tab-width 4
-			  transient-mark-mode t
-			  uniquify-buffer-name-style 'forward
-			  vc-follow-symlinks t
-			  visible-bell t)
+              c-basic-offset 4
+              c-default-style "k&r"
+              case-fold-search t
+              column-number-mode t
+              major-mode 'org-mode
+              fill-adapt-mode t
+              fill-column 80
+              font-lock-maximum-decoration t
+              indent-tabs-mode nil
+              inhibit-startup-message t
+              initial-scratch-message nil
+              next-line-add-newlines nil
+              nxml-child-indent 4
+              require-final-newline t
+              ring-bell-function 'ignore
+              save-place t
+              sentence-end-double-space nil
+              tab-width 4
+              transient-mark-mode t
+              uniquify-buffer-name-style 'forward
+              vc-follow-symlinks t
+              visible-bell t)
 
 ;; Set the default browser to Chrome on linux
 (when (eq system-type 'gnu/linux)
@@ -134,8 +134,8 @@
 
 ;; Set the name of the host and current path/file in title bar:
 (setq frame-title-format
-	  (list (format "%s %%S: %%j " (system-name))
-			'(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+      (list (format "%s %%S: %%j " (system-name))
+            '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; Always split horizontally
 (setq split-height-threshold most-positive-fixnum)
@@ -158,7 +158,7 @@
 
 ;; No bars and buttons on linux, show a menu bar on mac anyway
 (if (eq system-type 'darwin)
-	(menu-bar-mode t)
+    (menu-bar-mode t)
   (menu-bar-mode -1))
 
 (when window-system
@@ -167,8 +167,7 @@
   (tooltip-mode -1))
 
 ;; backup files
-(setq backup-directory-alist
-	  '(("." . "~/.emacs.d/backups")))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 
 ;; ----------------
 ;; auto-mode-alists
@@ -334,21 +333,21 @@
 ;; html-mode
 ;; Better navigation
 (add-hook 'html-mode-hook
-		  (lambda ()
-			"html-mode-hook"
-			(set (make-local-variable 'sgml-basic-offset) 2)
-			(set (make-local-variable 'tab-width) 2)
-			(define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
-			(define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
-			)
-		  )
+          (lambda ()
+            "html-mode-hook"
+            (set (make-local-variable 'sgml-basic-offset) 2)
+            (set (make-local-variable 'tab-width) 2)
+            (define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
+            (define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
+            )
+          )
 
 ;; ido-mode
 (setq ido-enable-flex-matching t
-	  ido-all-frames 'visible
-	  ido-case-fold t
-	  ido-create-new-buffer 'prompt
-	  ido-everywhere t)
+      ido-all-frames 'visible
+      ido-case-fold t
+      ido-create-new-buffer 'prompt
+      ido-everywhere t)
 (ido-mode t)
 
 ;; image modes
@@ -360,20 +359,20 @@
 
 ;; js2-mode
 (add-hook 'js2-mode-hook
-		  (lambda ()
-			(setq mode-name "JS2")
+          (lambda ()
+            (setq mode-name "JS2")
             (local-set-key (kbd "C-c d") (lambda ()
                                             (interactive)
                                             (insert "debugger;" )))))
 
 (setq-default js-indent-level 4
-			  js2-allow-keywords-as-property-names t
-			  js2-auto-insert-catch-block t
-			  js2-concat-multiline-strings t
-			  js2-global-externs '("$" "Y" "YUI" "_")
-			  js2-highlight-level 3
-			  js2-include-browser-externs t
-			  js2-include-node-externs t)
+              js2-allow-keywords-as-property-names t
+              js2-auto-insert-catch-block t
+              js2-concat-multiline-strings t
+              js2-global-externs '("$" "Y" "YUI" "_")
+              js2-highlight-level 3
+              js2-include-browser-externs t
+              js2-include-node-externs t)
 
 ;; js2-refactor-mode
 (js2r-add-keybindings-with-prefix "C-c C-r")
@@ -413,8 +412,8 @@
 
 ;; Python-mode
 (add-hook 'python-mode-hook
-		  (lambda ()
-			(setq indent-tabs-mode nil
+          (lambda ()
+            (setq indent-tabs-mode nil
                   python-indent 4
                   tab-width 4
                   python-fill-docstring-style 'pep-257-nn)
