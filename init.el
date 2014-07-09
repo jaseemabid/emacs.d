@@ -140,25 +140,6 @@
 ;; Always split horizontally
 (setq split-height-threshold most-positive-fixnum)
 
-;; Solarized theme in an already solarized terminal makes magit pretty unusable.
-;; Setup iterm with solarized colors and use default theme in terminal. Minor
-;; additional color tweaks for magit.
-(if window-system
-    (if (yes-or-no-p "Load color theme?")
-        (let ((solarized-use-variable-pitch nil))
-          (load-theme 'solarized-dark t))
-      (set-face-attribute 'fringe nil :background "white")
-      (set-face-attribute 'linum nil :background "white"))
-    (eval-after-load 'magit
-    '(progn
-       ;; (set-face-foreground 'magit-diff-add "green3")
-       ;; (set-face-foreground 'magit-diff-del "red3")
-       (custom-set-variables
-        '(magit-use-overlays nil))
-       (custom-set-faces
-        '(magit-item-highlight ((t nil)))
-        '(magit-item-mark ((t nil)))))))
-
 ;; Mac specific stuff
 (when (eq system-type 'darwin)
   ;; "Mac hook"
@@ -184,9 +165,6 @@
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
   (tooltip-mode -1))
-
-;; A pretty bar cursor
-(setq-default cursor-type '(bar . 2))
 
 ;; backup files
 (setq backup-directory-alist
@@ -342,10 +320,6 @@
 
 ;; eshell
 (load-file "~/.emacs.d/eshell/init.el")
-
-;; fill column indicator
-(setq fci-rule-width 1)
-(setq fci-rule-color "#0A333C")
 
 ;; haskell-mode
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -533,3 +507,7 @@
 (let ((private-file "~/.emacs.d/private.el"))
   (when (file-readable-p private-file)
     (load-file private-file)))
+
+;; Custom theme
+(if window-system
+    (load-theme 'Angel t))
