@@ -14,7 +14,7 @@ alias gits git status $*
 alias gl git log --one-line $*
 alias go git checkout $*
 alias got git $*
-alias gs git status $*
+alias gs (magit-status (eshell/pwd)) > /dev/null
 alias gt git $*
 alias la ls -lha $*
 alias less find-file $1
