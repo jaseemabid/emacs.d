@@ -266,7 +266,8 @@
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
 ;; dired-mode
-(defalias 'ido-list-directory 'dired) ;; list directory is pointless and stupid
+(global-set-key (kbd "C-x C-d") 'dired)
+(global-set-key (kbd "C-x d") 'dired)
 (dired-details-install)
 (setq dired-details-hidden-string "")
 
