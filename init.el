@@ -131,6 +131,9 @@
       (list (format "%s %%S: %%j " (system-name))
             '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
+;; Prevent accidentally suspending the frame
+(global-unset-key (kbd "C-x C-z"))
+
 ;; Always split horizontally
 (setq split-height-threshold most-positive-fixnum)
 
