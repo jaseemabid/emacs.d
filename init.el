@@ -305,9 +305,7 @@
             (set (make-local-variable 'sgml-basic-offset) 2)
             (set (make-local-variable 'tab-width) 2)
             (define-key html-mode-map (kbd "<M-left>") 'sgml-skip-tag-backward)
-            (define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)
-            )
-          )
+            (define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)))
 
 ;; ido-mode
 (setq ido-enable-flex-matching t
