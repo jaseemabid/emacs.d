@@ -79,7 +79,7 @@
 ;; -----------------
 (setq case-fold-search t
       column-number-mode t
-      major-mode 'org-mode
+      default-major-mode 'org-mode
       inhibit-startup-message t
       initial-scratch-message nil
       ring-bell-function 'ignore
