@@ -282,17 +282,7 @@
 (add-hook 'css-mode-hook 'emmet-mode)
 
 ;; erc
-(setq erc-email-userid  user-mail-address
-      erc-nick user-nick
-      erc-server nil
-      erc-user-full-name  user-full-name
-      ;; Hide join part messages
-      erc-hide-list '("JOIN" "PART" "QUIT"))
-
-(add-hook 'erc-mode-hook (lambda ()
-                           (centered-cursor-mode -1)
-                           (erc-spelling-mode)
-                           (add-to-list 'erc-modules 'notifications)))
+(load-file "~/.emacs.d/erc.el")
 
 ;; eshell
 (load-file "~/.emacs.d/eshell/init.el")
