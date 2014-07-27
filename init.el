@@ -371,7 +371,7 @@
                                         (org-present-small)
                                         (org-remove-inline-images)))
 
-;; Python-mode
+;; Python mode
 (setq-default python-fill-docstring-style 'pep-257-nn)
 (add-hook 'python-mode-hook
           (lambda ()
@@ -381,6 +381,20 @@
                              (insert "import ipdb; ipdb.set_trace()")))))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+
+(defun j/python-method-space-replace ()
+  "SPC while naming a defined method insert an underscore"
+  (interactive)
+  (if (and (looking-back "def .+")
+	   (not (and
+		 (looking-at ".*)")
+		 (looking-back "(.*"))))
+      (insert "_")
+    (insert " ")))
+
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "SPC") 'j/python-method-space-replace)))
 
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
