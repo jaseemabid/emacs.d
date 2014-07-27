@@ -454,6 +454,27 @@
 ;; type over a region
 (pending-delete-mode t)
 
+;; The Toggle-Map and Wizardry
+;; http://endlessparentheses.com/the-toggle-map-and-wizardry.html
+
+(define-prefix-command 'j/toggle-map)
+
+;; The manual recommends C-c for user keys, but C-x t is always free,
+;; whereas C-c t is used by some modes.
+(define-key ctl-x-map "t" 'j/toggle-map)
+
+(define-key j/toggle-map "c" 'column-number-mode)
+(define-key j/toggle-map "d" 'toggle-debug-on-error)
+(define-key j/toggle-map "e" 'toggle-debug-on-error)
+(define-key j/toggle-map "f" 'auto-fill-mode)
+(define-key j/toggle-map "l" 'linum-mode)
+(define-key j/toggle-map "q" 'toggle-debug-on-quit)
+;; Generalized `read-only-mode'
+(define-key j/toggle-map "r" 'dired-toggle-read-only)
+(define-key j/toggle-map "|" 'fci-mode)
+
+(autoload 'dired-toggle-read-only "dired" nil t)
+
 ;; uniquify buffers
 (setq uniquify-buffer-name-style 'forward)
 
