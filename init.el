@@ -344,6 +344,7 @@
 
 ;; magit
 (define-key global-map (kbd "C-c i") 'magit-status)
+(define-key global-map (kbd "C-c C-i") 'magit-status)
 (define-key global-map (kbd "C-c g") 'magit-status)
 (define-key global-map (kbd "C-c l") 'magit-log-simple)
 (setq magit-commit-all-when-nothing-staged nil
