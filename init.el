@@ -254,9 +254,7 @@
 (if window-system (global-centered-cursor-mode t))
 
 ;; coffee-mode
-(add-hook 'coffee-mode-hook
-          (lambda ()
-            (setq coffee-tab-width 2)))
+(setq coffee-tab-width 2)
 
 ;; desktop-mode
 (desktop-save-mode t)
@@ -319,12 +317,17 @@
 (defalias 'js-mode 'js2-mode)
 
 ;; js2-mode
+(defun j/js-insert-debugger ()
+  "Insert a debugger statement at point"
+  (interactive)
+  (insert "debugger;"))
+
+(eval-after-load 'js2-mode
+  (lambda ()
+    (define-key js2-mode-map  (kbd "C-c d")  'j/js-insert-debugger)))
+
 (add-hook 'js2-mode-hook
-          (lambda ()
-            (setq mode-name "JS2")
-            (local-set-key (kbd "C-c d") (lambda ()
-                                            (interactive)
-                                            (insert "debugger;" )))))
+	  (lambda () (setq mode-name "JS2")))
 
 (setq-default js-indent-level 4
               js2-allow-keywords-as-property-names t
@@ -373,15 +376,10 @@
                                         (org-remove-inline-images)))
 
 ;; Python mode
-(setq-default python-fill-docstring-style 'pep-257-nn)
-(add-hook 'python-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-c d")
-                           (lambda ()
-                             (interactive)
-                             (insert "import ipdb; ipdb.set_trace()")))))
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+(defun j/python-insert-debugger ()
+  "Insert a debugger statement at point"
+  (interactive)
+  (insert "import ipdb; ipdb.set_trace()"))
 
 (defun j/python-method-space-replace ()
   "SPC while naming a defined method insert an underscore"
@@ -393,9 +391,15 @@
       (insert "_")
     (insert " ")))
 
-(add-hook 'python-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "SPC") 'j/python-method-space-replace)))
+(setq-default python-fill-docstring-style 'pep-257-nn)
+
+(setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook 'jedi:setup)
+
+(eval-after-load 'python
+  (lambda ()
+    (define-key python-mode-map (kbd "C-c d") 'j/python-insert-debugger)
+    (define-key python-mode-map (kbd "SPC") 'j/python-method-space-replace)))
 
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
