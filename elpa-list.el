@@ -22,6 +22,7 @@
                           emmet-mode
                           erlang
                           fill-column-indicator
+                          flx-ido
                           flymake
                           flymake-easy
                           flymake-haskell-multi

@@ -56,6 +56,7 @@
 (require 'dired)
 (require 'dired-details)
 (require 'fill-column-indicator)
+(require 'flx-ido)
 (require 'httpcode)
 (require 'lorem-ipsum)
 (require 'magit)
@@ -309,9 +310,11 @@
 (setq ido-enable-flex-matching t
       ido-all-frames 'visible
       ido-case-fold t
+      ido-use-faces nil
       ido-create-new-buffer 'prompt
       ido-everywhere t)
 (ido-mode t)
+(flx-ido-mode t)
 
 ;; js-mode
 (defalias 'js-mode 'js2-mode)
