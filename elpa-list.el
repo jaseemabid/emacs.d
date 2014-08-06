@@ -3,7 +3,6 @@
                           auto-complete
                           auto-indent-mode
                           bash-completion
-                          centered-cursor-mode
                           cider
                           cl-lib
                           clojure-mode

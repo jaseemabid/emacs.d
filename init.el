@@ -72,9 +72,6 @@
 (require 'yasnippet)
 (require 'zone)
 
-(when window-system
-  (require 'centered-cursor-mode))
-
 ;; -----------------
 ;; General settings
 ;; -----------------
@@ -251,8 +248,9 @@
 (global-set-key (kbd "M-/") 'auto-complete)
 (add-to-list 'ac-modes 'git-commit-mode)
 
-;; centered cursor mode
-(if window-system (global-centered-cursor-mode t))
+;; centered cursor
+(setq scroll-margin 10)
+
 
 ;; coffee-mode
 (setq coffee-tab-width 2)
