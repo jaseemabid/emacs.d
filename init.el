@@ -248,6 +248,15 @@
 (global-set-key (kbd "M-/") 'auto-complete)
 (add-to-list 'ac-modes 'git-commit-mode)
 
+;; bookmarks
+(defun ido-bookmark-jump ()
+  "*Switch to bookmark interactively using `ido'."
+  (interactive)
+  (bookmark-jump
+   (ido-completing-read "Bookmark: " (bookmark-all-names))))
+
+(global-set-key (kbd "C-x r b") 'ido-bookmark-jump)
+
 ;; centered cursor
 (setq scroll-margin 10)
 
