@@ -485,7 +485,7 @@
 (define-key j/toggle-map "e" 'toggle-debug-on-error)
 (define-key j/toggle-map "f" 'auto-fill-mode)
 (define-key j/toggle-map "h" 'global-hl-line-mode)
-(define-key j/toggle-map "l" 'linum-mode)
+(define-key j/toggle-map "l" 'global-linum-mode)
 (define-key j/toggle-map "q" 'toggle-debug-on-quit)
 (define-key j/toggle-map "w" 'whitespace-mode)
 ;; Generalized `read-only-mode'
