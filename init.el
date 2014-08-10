@@ -275,10 +275,19 @@
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
 ;; dired-mode
+(defun j/dired-open-here ()
+  "Open current directory."
+  (interactive)
+  (dired (file-name-directory buffer-file-name)))
+
 (global-set-key (kbd "C-x C-d") 'dired)
-(global-set-key (kbd "C-x d") 'dired)
+(global-set-key (kbd "C-x d") 'j/dired-open-here)
 (dired-details-install)
 (setq dired-details-hidden-string "")
+
+(eval-after-load 'dired
+  (lambda ()
+    (define-key dired-mode-map (kbd "C-x d") 'bury-buffer)))
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
