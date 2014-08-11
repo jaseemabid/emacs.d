@@ -278,7 +278,7 @@
 (defun j/dired-open-here ()
   "Open current directory."
   (interactive)
-  (dired (file-name-directory buffer-file-name)))
+  (dired (file-name-directory (or buffer-file-name "~/"))))
 
 (global-set-key (kbd "C-x C-d") 'dired)
 (global-set-key (kbd "C-x d") 'j/dired-open-here)
