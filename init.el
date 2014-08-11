@@ -377,10 +377,14 @@
 
 ;; org-mode
 (setq org-src-fontify-natively t
-      org-agenda-files `("~/.notes" "~/Notes/todo.org"))
+      org-agenda-files `("~/Notes/todo.org")
+      org-default-notes-file "~/Notes/todo.org"
+      org-directory "~/Notes")
+
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c r") 'org-capture)
-(add-hook 'org-mode-hook 'org-indent-mode)
+;; org-indent is messing up layout once in a while.
+;; (add-hook 'org-mode-hook 'org-indent-mode)
 
 ;; org-present mode
 (defvar org-present-text-scale 10)
