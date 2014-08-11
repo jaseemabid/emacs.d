@@ -532,3 +532,12 @@
 ;; Custom theme
 (if window-system
     (load-theme 'Angel t))
+
+;; [todo] - Derive a "Angel Dark" theme from solarized & move there
+(setq solarized-height-plus-1 1
+      solarized-height-plus-2 1
+      solarized-height-plus-3 1
+      solarized-height-plus-4 1
+      solarized-use-less-bold t
+      solarized-use-more-italic t
+      solarized-use-variable-pitch nil)
