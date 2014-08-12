@@ -500,6 +500,7 @@
 (define-key j/toggle-map "h" 'global-hl-line-mode)
 (define-key j/toggle-map "l" 'global-linum-mode)
 (define-key j/toggle-map "q" 'toggle-debug-on-quit)
+(define-key j/toggle-map "t" 'j/toggle-theme)
 (define-key j/toggle-map "w" 'whitespace-mode)
 ;; Generalized `read-only-mode'
 (define-key j/toggle-map "r" 'dired-toggle-read-only)
@@ -529,15 +530,18 @@
   (when (file-readable-p private-file)
     (load-file private-file)))
 
-;; Custom theme
-(if window-system
-    (load-theme 'Angel t))
 
-;; [todo] - Derive a "Angel Dark" theme from solarized & move there
-(setq solarized-height-plus-1 1
-      solarized-height-plus-2 1
-      solarized-height-plus-3 1
-      solarized-height-plus-4 1
-      solarized-use-less-bold t
-      solarized-use-more-italic t
-      solarized-use-variable-pitch nil)
+;; Custom theme
+(defun j/toggle-theme ()
+  "Switch b/w angel dark and light themes."
+  (interactive)
+  (if (member 'angel-dark custom-enabled-themes)
+      (progn
+	(disable-theme 'solarized-dark)
+	(disable-theme 'angel-dark)
+	(load-theme 'angel-light t))
+    (disable-theme 'angel-light)
+    (load-theme 'angel-dark t)))
+
+(if window-system
+    (load-theme 'solarized-dark t))
