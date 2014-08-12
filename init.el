@@ -545,4 +545,4 @@
     (load-theme 'angel-dark t)))
 
 (if window-system
-    (load-theme 'solarized-dark t))
+    (load-theme 'angel-dark t))
