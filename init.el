@@ -377,6 +377,7 @@
 
 ;; org-mode
 (setq org-src-fontify-natively t
+      org-agenda-timegrid-use-ampm 1 ;; 12hr format for agenda view
       org-agenda-files `("~/Notes/todo.org")
       org-default-notes-file "~/Notes/todo.org"
       org-directory "~/Notes")
