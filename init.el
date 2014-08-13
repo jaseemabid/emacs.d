@@ -376,11 +376,12 @@
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 
 ;; org-mode
-(setq org-src-fontify-natively t
+(setq org-agenda-files `("~/Notes/todo.org")
       org-agenda-timegrid-use-ampm 1 ;; 12hr format for agenda view
-      org-agenda-files `("~/Notes/todo.org")
       org-default-notes-file "~/Notes/todo.org"
-      org-directory "~/Notes")
+      org-directory "~/Notes"
+      org-return-follows-link t
+      org-src-fontify-natively t)
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c r") 'org-capture)
