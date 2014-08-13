@@ -55,6 +55,7 @@
 (require 'coffee-mode)
 (require 'dired)
 (require 'dired-details)
+(require 'edit-server)
 (require 'fill-column-indicator)
 (require 'flx-ido)
 (require 'httpcode)
@@ -288,6 +289,10 @@
 (eval-after-load 'dired
   (lambda ()
     (define-key dired-mode-map (kbd "C-x d") 'bury-buffer)))
+
+;; Edit server
+;; Chrome extension[1]  to edit textareas in Emacs
+(edit-server-start)
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
@@ -547,3 +552,7 @@
 
 (if window-system
     (load-theme 'angel-dark t))
+
+
+;; Footnotes
+;; 1: https://chrome.google.com/webstore/detail/edit-with-emacs/ljobjlafonikaiipfkggjbhkghgicgoh

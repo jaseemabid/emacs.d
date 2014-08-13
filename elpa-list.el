@@ -16,6 +16,7 @@
                           desktop
                           dired-details
                           dropdown-list
+                          edit-server
                           elixir-mode
                           elixir-yasnippets
                           emmet-mode
