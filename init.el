@@ -435,6 +435,17 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'fci-mode)
 
+;; Rectangle mode
+(defalias 'rectangle-insert-string 'string-insert-rectangle
+  "Because I think so!
+
+`string-insert-rectangle' should have been called
+`rectangle-insert-string' because its coming from the rectangle
+package. Its so much easier to remember/ido-complete stuff if
+they have sane names.
+
+Emacs lisp really need namespaces and closures.")
+
 ;; rainbow-mode
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'html-mode-hook 'rainbow-mode)
