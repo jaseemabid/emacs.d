@@ -101,8 +101,8 @@
       nxml-child-indent 4
       python-indent 4
       require-final-newline t
-      sentence-end-double-space nil
-      tab-width 4)
+      sentence-end-double-space nil)
+(setq-default tab-width 4)
 
 ;; Set the default browser to Chrome on linux
 (when (eq system-type 'gnu/linux)
