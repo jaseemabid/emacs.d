@@ -351,7 +351,7 @@
     (define-key js2-mode-map  (kbd "C-c d")  'j/js-insert-debugger)))
 
 (add-hook 'js2-mode-hook
-	  (lambda () (setq mode-name "JS2")))
+          (lambda () (setq mode-name "JS2")))
 
 (setq-default js-indent-level 4
               js2-allow-keywords-as-property-names t
@@ -415,9 +415,9 @@
   "SPC while naming a defined method insert an underscore"
   (interactive)
   (if (and (looking-back "def .+")
-	   (not (and
-		 (looking-at ".*)")
-		 (looking-back "(.*"))))
+           (not (and
+                 (looking-at ".*)")
+                 (looking-back "(.*"))))
       (insert "_")
     (insert " ")))
 
@@ -555,9 +555,9 @@ Emacs lisp really need namespaces and closures.")
   (interactive)
   (if (member 'angel-dark custom-enabled-themes)
       (progn
-	(disable-theme 'solarized-dark)
-	(disable-theme 'angel-dark)
-	(load-theme 'angel-light t))
+        (disable-theme 'solarized-dark)
+        (disable-theme 'angel-dark)
+        (load-theme 'angel-light t))
     (disable-theme 'angel-light)
     (load-theme 'angel-dark t)))
 
