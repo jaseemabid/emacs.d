@@ -215,9 +215,6 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; menu bar for exploring new modes
-(global-set-key (kbd "C-c C-m") 'menu-bar-mode)
-
 ;; navigation bindings
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
@@ -522,6 +519,8 @@ Emacs lisp really need namespaces and closures.")
 (define-key j/toggle-map "f" 'auto-fill-mode)
 (define-key j/toggle-map "h" 'global-hl-line-mode)
 (define-key j/toggle-map "l" 'global-linum-mode)
+;; menu bar for exploring new modes
+(define-key j/toggle-map "m" 'menu-bar-mode)
 (define-key j/toggle-map "q" 'toggle-debug-on-quit)
 (define-key j/toggle-map "t" 'j/toggle-theme)
 (define-key j/toggle-map "w" 'whitespace-mode)
@@ -553,7 +552,6 @@ Emacs lisp really need namespaces and closures.")
   (when (file-readable-p private-file)
     (load-file private-file)))
 
-
 ;; Custom theme
 (defun j/toggle-theme ()
   "Switch b/w angel dark and light themes."
@@ -568,7 +566,6 @@ Emacs lisp really need namespaces and closures.")
 
 (if window-system
     (load-theme 'angel-dark t))
-
 
 ;; Footnotes
 ;; 1: https://chrome.google.com/webstore/detail/edit-with-emacs/ljobjlafonikaiipfkggjbhkghgicgoh
