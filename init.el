@@ -62,6 +62,7 @@
 (require 'httpcode)
 (require 'lorem-ipsum)
 (require 'magit)
+(require 'projectile)
 (require 'python-pep8)
 (require 'python-pylint)
 (require 'rainbow-mode)
@@ -405,6 +406,9 @@
                                         (linum-mode t)
                                         (org-present-small)
                                         (org-remove-inline-images)))
+
+;; Projectile mode
+(projectile-global-mode)
 
 ;; Python mode
 (defun j/python-insert-debugger ()

@@ -1,5 +1,4 @@
-(defvar jaseem/packages '(
-                          ace-jump-mode
+(defvar jaseem/packages '(ace-jump-mode
                           auto-complete
                           auto-indent-mode
                           bash-completion
@@ -53,6 +52,7 @@
                           packed
                           paredit
                           pcache
+                          projectile
                           python-pep8
                           python-pylint
                           rainbow-delimiters
