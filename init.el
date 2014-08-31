@@ -26,9 +26,10 @@
 (require 'cl)
 (require 'package)
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives '(("org" . "http://orgmode.org/elpa/")
+						 ("gnu" . "http://elpa.gnu.org/packages/")
+						 ("marmalade" . "http://marmalade-repo.org/packages/")
+						 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; Install all packages required
 (load-file "~/.emacs.d/elpa-list.el")
