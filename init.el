@@ -315,6 +315,7 @@
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 ;; Ignore compiled Haskell files in filename completions
 (add-to-list 'completion-ignored-extensions ".hi")
+(setq haskell-interactive-popup-errors nil)
 
 ;; html-mode
 ;; Better navigation
