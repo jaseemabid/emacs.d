@@ -171,6 +171,7 @@
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
@@ -375,6 +376,10 @@
 
 ;; js2-refactor-mode
 (js2r-add-keybindings-with-prefix "C-c C-r")
+
+;; ledger mode
+ (setq ledger-post-use-completion-engine :ido
+       ledger-use-iso-dates t)
 
 ;; line-number-mode
 (global-linum-mode t)
