@@ -249,6 +249,7 @@
 (ac-flyspell-workaround)
 (global-set-key (kbd "M-/") 'auto-complete)
 (add-to-list 'ac-modes 'git-commit-mode)
+(add-to-list 'ac-modes 'org-mode)
 
 ;; bookmarks
 (defun ido-bookmark-jump ()
@@ -403,7 +404,8 @@
       org-default-notes-file "~/Notes/todo.org"
       org-directory "~/Notes"
       org-return-follows-link t
-      org-src-fontify-natively t)
+      org-src-fontify-natively t
+      org-startup-folded nil)
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c r") 'org-capture)
