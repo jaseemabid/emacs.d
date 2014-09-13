@@ -309,19 +309,20 @@
 ;; eshell
 (load-file "~/.emacs.d/eshell/init.el")
 
-;; haskell-mode
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-;; hslint on the command line only likes this indentation mode;
-;; alternatives commented out below.
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+;; Haskell mode
+(setq haskell-mode-hook '(imenu-add-menubar-index
+                          turn-on-eldoc-mode
+                          turn-on-haskell-doc
+                          turn-on-haskell-indentation
+                          turn-on-haskell-doc-mode))
+
 ;; Ignore compiled Haskell files in filename completions
 (add-to-list 'completion-ignored-extensions ".hi")
-(setq haskell-interactive-popup-errors nil)
+
 ;; Haskell shell stuff
 (eval-after-load "haskell-mode"
   '(progn
+     (setq haskell-interactive-popup-errors nil)
      (define-key haskell-mode-map (kbd "C-x C-d") nil)
      (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
      (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
