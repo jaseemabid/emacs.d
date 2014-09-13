@@ -299,6 +299,7 @@
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
+(add-hook 'emacs-lisp-mode 'paredit-mode)
 
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
