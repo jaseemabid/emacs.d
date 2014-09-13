@@ -20,5 +20,4 @@ alias la ls -lha $*
 alias less find-file $1
 alias ll ls -lh $*
 alias o find-file $1
-alias open find-file $1
 alias top proced
