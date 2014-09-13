@@ -66,6 +66,7 @@
 (require 'python-pep8)
 (require 'python-pylint)
 (require 'rainbow-mode)
+(require 'recentf)
 (require 'remember)
 (require 'rinari)
 (require 'saveplace)
@@ -478,6 +479,11 @@ Emacs lisp really need namespaces and closures.")
 
 ;; rinari
 (global-rinari-mode)
+
+;; Recent files mode
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; root-edit : never save file as root
 (when (= (user-uid) 0)
