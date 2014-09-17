@@ -12,6 +12,7 @@
                           creole
                           csv-mode
                           dash
+                          diminish
                           desktop
                           dired-details
                           dropdown-list

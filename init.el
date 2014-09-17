@@ -54,6 +54,7 @@
 (require 'ace-jump-mode)
 (require 'auto-complete-config)
 (require 'coffee-mode)
+(require 'diminish)
 (require 'dired)
 (require 'dired-details)
 (require 'edit-server)
@@ -203,6 +204,13 @@
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 
+;; Diminish mode
+(diminish 'auto-complete-mode)
+(diminish 'flyspell-mode)
+(diminish 'magit-auto-revert-mode)
+(diminish 'paredit-mode " φ")
+(diminish 'yas-minor-mode)
+
 ;; eval buffer
 (global-set-key (kbd "C-c e") 'eval-buffer)
 
@@ -299,7 +307,9 @@
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
-(add-hook 'emacs-lisp-mode 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook
+          (lambda () (setq mode-name "ξ")))
 
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
@@ -429,6 +439,9 @@
 
 ;; Projectile mode
 (projectile-global-mode)
+(setq projectile-mode-line
+      (quote (:eval (format " [ρ %s]" (projectile-project-name)))))
+
 
 ;; Python mode
 (defun j/python-insert-debugger ()
