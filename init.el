@@ -562,6 +562,7 @@ Emacs lisp really need namespaces and closures.")
 (define-key j/toggle-map "l" 'global-linum-mode)
 ;; menu bar for exploring new modes
 (define-key j/toggle-map "m" 'menu-bar-mode)
+(define-key j/toggle-map "p" 'paredit-mode)
 (define-key j/toggle-map "q" 'toggle-debug-on-quit)
 (define-key j/toggle-map "t" 'j/toggle-theme)
 (define-key j/toggle-map "w" 'whitespace-mode)
