@@ -103,6 +103,7 @@
       python-indent 4
       require-final-newline t
       sentence-end-double-space nil)
+
 (setq-default tab-width 4
               indent-tabs-mode nil)
 
