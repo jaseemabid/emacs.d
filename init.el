@@ -87,7 +87,6 @@
       ring-bell-function 'ignore
       save-place t
       transient-mark-mode t
-      uniquify-buffer-name-style 'forward
       vc-follow-symlinks t
       visible-bell t)
 
@@ -559,7 +558,8 @@ Emacs lisp really need namespaces and closures.")
 (autoload 'dired-toggle-read-only "dired" nil t)
 
 ;; uniquify buffers
-(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-buffer-name-style 'forward
+      uniquify-min-dir-content 1)
 
 ;; write file hook
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
