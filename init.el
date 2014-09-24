@@ -323,6 +323,9 @@
 ;; eshell
 (load-file "~/.emacs.d/eshell/init.el")
 
+;; fci
+(setq fci-rule-column 81)
+
 ;; Haskell mode
 (setq haskell-mode-hook '(imenu-add-menubar-index
                           turn-on-eldoc-mode
