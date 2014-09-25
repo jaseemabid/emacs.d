@@ -337,6 +337,8 @@
 (add-hook 'god-mode-enabled-hook 'j/god-cursor)
 (add-hook 'god-mode-disabled-hook 'j/god-cursor)
 
+(global-set-key (kbd "<escape>") 'god-local-mode)
+
 ;; Haskell mode
 (setq haskell-mode-hook '(imenu-add-menubar-index
                           turn-on-eldoc-mode
