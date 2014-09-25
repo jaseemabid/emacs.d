@@ -494,7 +494,7 @@ Emacs lisp really need namespaces and closures.")
 (add-hook 'html-mode-hook 'rainbow-mode)
 
 ;; rainbow-delimiters-mode
-(global-rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
 ;; rinari
 (global-rinari-mode)
