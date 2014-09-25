@@ -273,7 +273,6 @@
 ;; centered cursor
 (setq scroll-margin 10)
 
-
 ;; coffee-mode
 (setq coffee-tab-width 2)
 
@@ -324,6 +323,19 @@
 
 ;; fci
 (setq fci-rule-column 81)
+
+;; God mode
+;; [todo] - Cursor color wont be updated in case of a theme change
+(setq j/god-cursor-enabled "red"
+      j/god-cursor-disabled (cdr (assoc 'cursor-color  (frame-parameters))))
+
+(defun j/god-cursor ()
+  (set-cursor-color (if (or god-local-mode buffer-read-only)
+                        j/god-cursor-enabled
+                      j/god-cursor-disabled)))
+
+(add-hook 'god-mode-enabled-hook 'j/god-cursor)
+(add-hook 'god-mode-disabled-hook 'j/god-cursor)
 
 ;; Haskell mode
 (setq haskell-mode-hook '(imenu-add-menubar-index
