@@ -100,15 +100,14 @@
       c-basic-offset 4
       c-default-style "k&r"
       fill-adapt-mode t
-      fill-column 80
       next-line-add-newlines nil
       nxml-child-indent 4
-      python-indent 4
       require-final-newline t
       sentence-end-double-space nil)
 
-(setq-default tab-width 4
-              indent-tabs-mode nil)
+(setq-default fill-column 80
+              indent-tabs-mode nil
+              tab-width 4)
 
 ;; Set the default browser to Chrome on linux
 (when (eq system-type 'gnu/linux)
