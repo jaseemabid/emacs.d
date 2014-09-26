@@ -205,13 +205,6 @@
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 
-;; Diminish mode
-(diminish 'auto-complete-mode)
-(diminish 'flyspell-mode)
-(diminish 'magit-auto-revert-mode)
-(diminish 'paredit-mode " φ")
-(diminish 'yas-minor-mode)
-
 ;; eval buffer
 (global-set-key (kbd "C-c e") 'eval-buffer)
 
@@ -288,6 +281,13 @@
 (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
 (add-to-list 'desktop-modes-not-to-save 'completion-list-mode)
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
+
+;; Diminish mode
+(diminish 'auto-complete-mode)
+(diminish 'flyspell-mode)
+(diminish 'magit-auto-revert-mode)
+(diminish 'paredit-mode " φ")
+(diminish 'yas-minor-mode)
 
 ;; dired-mode
 (defun j/dired-open-here ()
