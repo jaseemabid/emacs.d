@@ -239,6 +239,9 @@
 ;; undo without leaving the ctrl key
 (define-key global-map "\C-x\C-u" 'undo)
 
+;; string-replace
+(global-set-key (kbd "C-l") 'replace-string)
+
 ;; webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
