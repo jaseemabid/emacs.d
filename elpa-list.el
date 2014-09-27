@@ -48,7 +48,6 @@
                           magit
                           markdown-mode
                           marmalade
-                          nginx-mode
                           org
                           org-present
                           packed
