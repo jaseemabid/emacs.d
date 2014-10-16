@@ -481,7 +481,7 @@
 
 (setq jedi:complete-on-dot t)
 (add-hook 'python-mode-hook 'jedi:setup)
-
+(add-hook 'python-mode-hook (lambda () (setq mode-name "Py")))
 (eval-after-load 'python
   (lambda ()
     (define-key python-mode-map (kbd "C-c d") 'j/python-insert-debugger)
