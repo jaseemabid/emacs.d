@@ -266,9 +266,6 @@
 
 (global-set-key (kbd "C-x r b") 'ido-bookmark-jump)
 
-;; centered cursor
-(setq scroll-margin 10)
-
 ;; coffee-mode
 (setq coffee-tab-width 2)
 
