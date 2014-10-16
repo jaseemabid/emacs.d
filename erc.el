@@ -5,21 +5,6 @@
 ;; Inspired by GH/bbatsov/emacs-dev-kit/blob/master/erc-config.el ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'erc)
-(require 'erc-autoaway)
-(require 'erc-button)
-(require 'erc-list)
-(require 'erc-log)
-(require 'erc-match)
-(require 'erc-menu)
-(require 'erc-networks)
-(require 'erc-notify)
-(require 'erc-ring)
-(require 'erc-services)
-(require 'erc-spelling)
-(require 'erc-stamp)
-(require 'erc-track)
-
 ;; Enable services mode
 (erc-services-mode 1)
 
@@ -48,7 +33,7 @@
       erc-save-buffer-on-part t
       erc-log-channels-directory "~/.erc/logs/"
 
-      erc-prompt (lambda () (concat " " (buffer-name) "> "))
+      erc-prompt (lambda () (format " %s>" (buffer-name)))
 
       ;; Hide join part messages
       erc-hide-list '("JOIN" "PART" "QUIT")
