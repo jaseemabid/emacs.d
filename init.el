@@ -318,9 +318,6 @@
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
 
-;; erc
-(load-file "~/.emacs.d/erc.el")
-
 ;; eshell
 (load-file "~/.emacs.d/eshell/init.el")
 
@@ -615,6 +612,9 @@ Emacs lisp really need namespaces and closures.")
 (let ((private-file "~/.emacs.d/private.el"))
   (when (file-readable-p private-file)
     (load-file private-file)))
+
+;; Load ERC late, after private
+(load-file "~/.emacs.d/erc.el")
 
 ;; Custom theme
 (defun j/toggle-theme ()
