@@ -48,3 +48,10 @@
           (lambda ()
             (auto-fill-mode 0)
             (erc-spelling-mode)))
+
+;; Entry point to start ERC
+(defun j/erc ()
+  (interactive)
+  (erc :server "irc.freenode.net"
+       :full-name user-full-name
+       :password freenode-password))
