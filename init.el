@@ -304,6 +304,8 @@
 ;; Edit server
 ;; Chrome extension[1]  to edit textareas in Emacs
 (edit-server-start)
+(setq edit-server-default-major-mode 'org-mode
+      edit-server-new-frame nil)
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
