@@ -226,7 +226,7 @@
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
 ;; sorting and aligning
-(global-set-key (kbd "C-c C-a") 'align-regexp)
+(global-set-key (kbd "M-s a") 'align-regexp)
 (global-set-key (kbd "M-s l") 'sort-lines)
 (global-set-key (kbd "M-s r") 'reverse-region)
 
