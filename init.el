@@ -180,6 +180,7 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.wf\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("mutt-.*-" . mail-mode))
 
 ;; ------------------
