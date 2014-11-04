@@ -546,8 +546,10 @@ Emacs lisp really need namespaces and closures.")
 (add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; tramp-mode
-(setq tramp-default-host "localhost"
-      tramp-auto-save-directory "~/.emacs.d/auto-save-list"
+(setq tramp-auto-save-directory "~/.emacs.d/auto-save-list"
+      tramp-completion-reread-directory-timeout nil
+      tramp-connection-timeout 10
+      tramp-default-host "localhost"
       tramp-default-method "scp")
 
 ;; web-beautify mode
