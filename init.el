@@ -576,6 +576,7 @@ Emacs lisp really need namespaces and closures.")
 ;; whereas C-c t is used by some modes.
 (define-key ctl-x-map "t" 'j/toggle-map)
 
+(define-key j/toggle-map "-" 'toggle-truncate-lines)
 (define-key j/toggle-map "c" 'column-number-mode)
 (define-key j/toggle-map "d" 'toggle-debug-on-error)
 (define-key j/toggle-map "e" 'toggle-debug-on-error)
