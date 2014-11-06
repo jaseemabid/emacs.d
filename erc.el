@@ -16,9 +16,7 @@
       erc-user-full-name  user-full-name
 
       ;; Freenode channels
-      erc-autojoin-channels-alist '(("freenode.net"
-                                     "#haskell" "#emacs" "#sqlalchemy"
-                                     "#pyramid" "#pyconindia" "#ledger"))
+      erc-autojoin-channels-alist j/erc-channels
 
       ;; Interpret mIRC-style color commands in IRC chats
       erc-interpret-mirc-color t

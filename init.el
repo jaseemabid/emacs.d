@@ -426,7 +426,6 @@
 (define-key global-map (kbd "C-c g") 'magit-status)
 (define-key global-map (kbd "C-c l") 'magit-log-simple)
 (setq magit-commit-all-when-nothing-staged nil
-      magit-revert-item-confirm t
       magit-process-connection-type nil
       process-connection-type nil)
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
@@ -467,7 +466,7 @@
 (defun j/python-insert-debugger ()
   "Insert a debugger statement at point"
   (interactive)
-  (insert "import pdb; pdb.set_trace()"))
+  (insert "import ipdb; ipdb.set_trace()"))
 
 (defun j/python-method-space-replace ()
   "SPC while naming a defined method insert an underscore"
