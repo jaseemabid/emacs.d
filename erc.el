@@ -14,15 +14,13 @@
 (setq erc-email-userid user-mail-address
       erc-nick user-nick
       erc-user-full-name  user-full-name
-
-      ;; Freenode channels
       erc-autojoin-channels-alist j/erc-channels
+      erc-nickserv-passwords j/erc-passwords
 
       ;; Interpret mIRC-style color commands in IRC chats
       erc-interpret-mirc-color t
 
       erc-prompt-for-nickserv-password nil
-      erc-nickserv-passwords `((freenode (("jaseemabid" . ,freenode-password))))
 
       ;; Logging
       erc-enable-logging t
