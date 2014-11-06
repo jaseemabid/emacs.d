@@ -548,7 +548,7 @@ Emacs lisp really need namespaces and closures.")
 ;; tramp-mode
 (setq tramp-auto-save-directory "~/.emacs.d/auto-save-list"
       tramp-completion-reread-directory-timeout nil
-      tramp-connection-timeout 10
+      tramp-connection-timeout 30
       tramp-default-host "localhost"
       tramp-default-method "scp")
 
