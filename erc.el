@@ -31,6 +31,8 @@
 
       erc-prompt (lambda () (format " %s>" (buffer-name)))
 
+      erc-join-buffer 'bury
+
       ;; Hide join part messages
       erc-hide-list '("JOIN" "PART" "QUIT")
       erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
