@@ -107,7 +107,8 @@
 
 (setq-default fill-column 80
               indent-tabs-mode nil
-              tab-width 4)
+              tab-width 4
+              truncate-lines t)
 
 ;; Set the default browser to Chrome on linux
 (when (eq system-type 'gnu/linux)
