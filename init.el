@@ -490,7 +490,7 @@
 
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook 'fci-mode)
+;; (add-hook 'prog-mode-hook 'fci-mode)
 
 ;; Rectangle mode
 (defalias 'rectangle-insert-string 'string-insert-rectangle
