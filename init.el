@@ -343,10 +343,11 @@
 (global-set-key (kbd "<escape>") 'god-local-mode)
 
 ;; Haskell mode
+(setq haskell-indent-spaces 4)
 (setq haskell-mode-hook '(imenu-add-menubar-index
                           turn-on-eldoc-mode
                           turn-on-haskell-doc
-                          turn-on-haskell-indentation
+                          turn-on-haskell-indent
                           turn-on-haskell-doc-mode))
 
 ;; Ignore compiled Haskell files in filename completions
