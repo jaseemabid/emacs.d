@@ -226,6 +226,14 @@
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
+;; Revert with F5
+(defun j/revert ()
+  (interactive)
+  (when (buffer-file-name)
+    (revert-buffer t t t)))
+
+(global-set-key (kbd "<f5>") 'j/revert)
+
 ;; sorting and aligning
 (global-set-key (kbd "M-s a") 'align-regexp)
 (global-set-key (kbd "M-s l") 'sort-lines)
@@ -636,6 +644,3 @@ Emacs lisp really need namespaces and closures.")
 
 (if window-system
     (load-theme 'angel-dark t))
-
-;; Footnotes
-;; 1: https://chrome.google.com/webstore/detail/edit-with-emacs/ljobjlafonikaiipfkggjbhkghgicgoh
