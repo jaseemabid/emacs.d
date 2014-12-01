@@ -98,7 +98,7 @@
 ;; ----------------------------------
 (setq c-basic-indent 4
       c-basic-offset 4
-      c-default-style "k&r"
+      c-default-style nil
       fill-adapt-mode t
       next-line-add-newlines nil
       nxml-child-indent 4
