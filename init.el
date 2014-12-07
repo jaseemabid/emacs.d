@@ -442,13 +442,26 @@
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 
 ;; org-mode
-(setq org-agenda-files `("~/Notes/todo.org")
+(setq org-agenda-files `("~/Notes/todo.org" "~/Notes/work.org")
       org-agenda-timegrid-use-ampm 1 ;; 12hr format for agenda view
       org-default-notes-file "~/Notes/todo.org"
       org-directory "~/Notes"
       org-return-follows-link t
       org-src-fontify-natively t
-      org-startup-folded nil)
+      org-startup-folded nil
+      org-capture-templates
+      '(("t" "Add personal todo" entry (file+headline "~/Notes/todo.org" "Tasks")
+         "* TODO %?\n  %i"
+         :kill-buffer t
+         :empty-lines 1)
+
+        ("w" "Add a work todo" entry (file+headline "~/Notes/work.org" "Tasks")
+         "* TODO %?\n  %i"
+         :kill-buffer t)
+
+        ("r" "Refile" plain (file "~/Notes/refile.org")
+         "%?\n %i"
+         :kill-buffer t)))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c r") 'org-capture)
