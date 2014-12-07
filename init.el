@@ -239,8 +239,8 @@
 (global-set-key (kbd "M-s l") 'sort-lines)
 (global-set-key (kbd "M-s r") 'reverse-region)
 
-;; undo without leaving the ctrl key
-(define-key global-map "\C-x\C-u" 'undo)
+;; undo tree
+(global-undo-tree-mode)
 
 ;; string-replace
 (global-set-key (kbd "C-l") 'replace-string)

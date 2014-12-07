@@ -66,6 +66,7 @@
                           rvm
                           smex
                           solarized-theme
+                          undo-tree
                           web-beautify
                           yaml-mode
                           yasnippet)
