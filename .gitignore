@@ -12,27 +12,28 @@ elpa/
 var/
 
 #  Emacs tmp files & Misc
-/.mc-lists.el
 /.DS_Store
 /.emacs.desktop
 /.emacs.desktop.lock
+/.mc-lists.el
+/.python-environments/
 /.watsonresults
+/abbrev_defs
 /ac-comphist.dat
 /auto-save-list
+/bookmarks
 /eshell/history
 /eshell/lastdir
-/newsticker/feeds/
-/snippets/
-/tramp
-/url/cookies
-/.python-environments/
+/games/
 /ido.last
+/newsticker/feeds/
 /places
 /private.el
-/games/
-/bookmarks
 /projectile-bookmarks.eld
 /projectile.cache
 /recentf
+/smex-items
+/snippets/
+/tramp
 /url/
-/abbrev_defs
+/url/cookies
