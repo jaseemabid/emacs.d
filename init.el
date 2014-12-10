@@ -91,6 +91,7 @@
       save-place t
       transient-mark-mode t
       vc-follow-symlinks t
+      mouse-autoselect-window t
       visible-bell t)
 
 ;; ----------------------------------
