@@ -51,33 +51,21 @@
 ;; ---------
 ;; Autoloads
 ;; ---------
-(require 'ace-jump-mode)
-(require 'auto-complete-config)
-(require 'coffee-mode)
 (require 'diminish)
 (require 'dired)
 (require 'dired-details)
 (require 'edit-server)
-(require 'fill-column-indicator)
 (require 'flx-ido)
 (require 'flyspell)
-(require 'httpcode)
-(require 'lorem-ipsum)
 (require 'magit)
-(require 'projectile)
 (require 'paredit)
 (require 'python-pep8)
 (require 'python-pylint)
-(require 'rainbow-mode)
-(require 'recentf)
-(require 'remember)
-(require 'rinari)
 (require 'saveplace)
 (require 'server)
 (require 'uniquify)
 (require 'web-beautify)
 (require 'yasnippet)
-(require 'zone)
 
 ;; -----------------
 ;; General settings

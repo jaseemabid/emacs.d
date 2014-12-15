@@ -58,12 +58,6 @@
                           python-pylint
                           rainbow-delimiters
                           rainbow-mode
-                          rinari
-                          ruby-compilation
-                          ruby-mode
-                          ruby-test-mode
-                          ruby-tools
-                          rvm
                           smex
                           solarized-theme
                           undo-tree
