@@ -447,6 +447,7 @@
       org-agenda-timegrid-use-ampm 1 ;; 12hr format for agenda view
       org-default-notes-file "~/Notes/todo.org"
       org-directory "~/Notes"
+      org-log-done 'time
       org-return-follows-link t
       org-src-fontify-natively t
       org-startup-folded nil
