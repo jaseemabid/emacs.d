@@ -178,10 +178,14 @@
 ;; ------------------
 
 ;; buffer switching
-(global-set-key (kbd "C-x <up>") 'windmove-up)
 (global-set-key (kbd "C-x <down>") 'windmove-down)
-(global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+
+( global-set-key (kbd "C-x C-<left>") 'switch-to-prev-buffer)
+( global-set-key (kbd "C-x C-<right>") 'switch-to-next-buffer)
+
 (global-set-key (kbd "C-c b") 'bury-buffer)
 
 ;; buffer splitting like tmux
