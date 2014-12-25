@@ -651,4 +651,4 @@ Emacs lisp really need namespaces and closures.")
     (load-theme 'angel-dark t)))
 
 (if window-system
-    (load-theme 'angel-dark t))
+    (load-theme 'angel-light t))
