@@ -58,6 +58,7 @@
                           python-pylint
                           rainbow-delimiters
                           rainbow-mode
+                          restclient
                           smex
                           solarized-theme
                           undo-tree
