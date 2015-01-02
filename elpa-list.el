@@ -1,24 +1,15 @@
 (defvar jaseem/packages '(ace-jump-mode
                           auto-complete
                           auto-indent-mode
-                          bash-completion
                           cider
                           cl-lib
                           clojure-mode
-                          clojure-test-mode
-                          cm-mode
                           coffee-mode
-                          combinators
-                          creole
-                          csv-mode
-                          dash
                           diminish
                           desktop
                           dired-details
                           dropdown-list
                           edit-server
-                          elixir-mode
-                          elixir-yasnippets
                           emmet-mode
                           erlang
                           fill-column-indicator
@@ -35,24 +26,18 @@
                           handlebars-mode
                           haskell-mode
                           httpcode
-                          jade-mode
                           jedi
                           js2-mode
                           js2-refactor
                           json-mode
-                          jump
-                          kv
                           less-css-mode
-                          logito
                           lorem-ipsum
                           magit
                           markdown-mode
                           marmalade
                           org
                           org-present
-                          packed
                           paredit
-                          pcache
                           projectile
                           python-pep8
                           python-pylint

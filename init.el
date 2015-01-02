@@ -528,9 +528,6 @@ Emacs lisp really need namespaces and closures.")
 ;; rainbow-delimiters-mode
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
-;; rinari
-(global-rinari-mode)
-
 ;; Recent files mode
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
