@@ -5,13 +5,14 @@
                           cl-lib
                           clojure-mode
                           coffee-mode
-                          diminish
                           desktop
+                          diminish
                           dired-details
                           dropdown-list
                           edit-server
                           emmet-mode
                           erlang
+                          exec-path-from-shell
                           fill-column-indicator
                           flx-ido
                           flymake
