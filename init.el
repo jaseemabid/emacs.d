@@ -501,7 +501,10 @@
 
 (setq-default python-fill-docstring-style 'pep-257-nn)
 
-(setq jedi:complete-on-dot t)
+;; Jedi setup
+(setq jedi:complete-on-dot t
+      python-environment-default-root-name "jedi"
+      python-environment-directory "~/.virtualenvs")
 (add-hook 'python-mode-hook 'jedi:setup)
 (add-hook 'python-mode-hook (lambda () (setq mode-name "Py")))
 (eval-after-load 'python
