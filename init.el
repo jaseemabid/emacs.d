@@ -458,7 +458,14 @@
 
         ("r" "Refile" plain (file "~/Notes/refile.org")
          "%?\n %i"
-         :kill-buffer t)))
+         :kill-buffer t)
+
+        ("j" "Journal" plain (file (format "%s%s.org" "~/Notes/Journal/"
+                                           (format-time-string "%d %m %Y")))
+         "%U\n\n%?%i"
+         :kill-buffer t
+         :unnarrowed t
+         )))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c r") 'org-capture)
