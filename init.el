@@ -79,7 +79,6 @@
       inhibit-startup-message t
       initial-scratch-message nil
       ring-bell-function 'ignore
-      save-place t
       transient-mark-mode t
       vc-follow-symlinks t
       mouse-autoselect-window t
@@ -99,6 +98,8 @@
 
 (setq-default fill-column 80
               indent-tabs-mode nil
+              save-place t
+              save-place-file "~/.emacs.d/places"
               tab-width 4
               truncate-lines t)
 
@@ -279,7 +280,8 @@
 
 ;; desktop-mode
 (desktop-save-mode t)
-(setq desktop-files-not-to-save "^$")
+(setq desktop-files-not-to-save "^$"
+      desktop-path '("~/.emacs.d/"))
 (add-to-list 'desktop-modes-not-to-save 'dired-mode)
 (add-to-list 'desktop-modes-not-to-save 'help-mode)
 (add-to-list 'desktop-modes-not-to-save 'magit-mode)
