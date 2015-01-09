@@ -462,12 +462,15 @@
          "%?\n %i"
          :kill-buffer t)
 
+        ("b" "Reading" entry (file+headline "~/Notes/reading.org" "Reading")
+         "** %^{title}\n   %T\n\n%?"
+         :kill-buffer t)
+
         ("j" "Journal" plain (file (format "%s%s.org" "~/Notes/Journal/"
                                            (format-time-string "%d %m %Y")))
          "%U\n\n%?%i"
          :kill-buffer t
-         :unnarrowed t
-         )))
+         :unnarrowed t)))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c r") 'org-capture)
