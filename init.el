@@ -303,6 +303,15 @@
   (interactive)
   (dired (file-name-directory (or buffer-file-name "~/"))))
 
+(defun j/dired-open-external ()
+  "In dired, open the file named on this line with external tool."
+  (interactive)
+  (let* ((file (dired-get-filename nil t)))
+    (message "Opening %s.." file)
+    (call-process "open" nil 0 nil file)
+    (message "Opening %s done" file)))
+
+(define-key  dired-mode-map "r" 'j/dired-open-external)
 (global-set-key (kbd "C-x C-d") 'dired)
 (global-set-key (kbd "C-x d") 'j/dired-open-here)
 (dired-details-install)
