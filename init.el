@@ -271,7 +271,8 @@
   (bookmark-jump
    (ido-completing-read "Bookmark: " (bookmark-all-names))))
 
-(global-set-key (kbd "C-x r b") 'ido-bookmark-jump)
+(define-key bookmark-map "b" 'ido-bookmark-jump)
+(global-set-key (kbd "C-x r")  bookmark-map)
 
 (setq scroll-margin 10)
 
