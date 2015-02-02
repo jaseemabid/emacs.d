@@ -227,7 +227,7 @@
 (defun j/revert ()
   (interactive)
   (when (buffer-file-name)
-    (revert-buffer t t t)))
+    (revert-buffer t t nil)))
 
 (global-set-key (kbd "<f5>") 'j/revert)
 
