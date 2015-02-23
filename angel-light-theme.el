@@ -4,7 +4,7 @@
 (custom-theme-set-variables
  'angel-light
  '(magit-use-overlays t)
- '(fci-rule-color "#0A333C")
+ '(fci-rule-color "#DFDFDF")
  '(fci-rule-width 1)
  '(cursor-type (quote (bar . 2))))
 
