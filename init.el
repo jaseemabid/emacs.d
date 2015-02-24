@@ -595,10 +595,21 @@ Emacs lisp really need namespaces and closures.")
       tramp-default-method "scp")
 
 ;; web-beautify mode
+
+;; Custom prettifier
+(defun j/js-pretty ()
+  "Transform code after pretty printing"
+  (interactive)
+  (web-beautify-js)
+
+  (save-excursion
+    (goto-char (point-min))
+    (replace-string "function (" "function(")))
+
 (when (eq system-type 'darwin)
   (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))
 (eval-after-load 'js2-mode
-  '(define-key js2-mode-map (kbd "C-c w") 'web-beautify-js))
+  '(define-key js2-mode-map (kbd "C-c w") 'j/js-pretty))
 (eval-after-load 'json-mode
   '(define-key json-mode-map (kbd "C-c w") 'web-beautify-js))
 (eval-after-load 'sgml-mode
