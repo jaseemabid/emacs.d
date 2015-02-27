@@ -168,6 +168,7 @@
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'auto-mode-alist '("\\.mako\\'" . html-mode))
@@ -413,7 +414,8 @@
 
 (eval-after-load 'js2-mode
   (lambda ()
-    (define-key js2-mode-map  (kbd "C-c d")  'j/js-insert-debugger)))
+    (define-key js2-mode-map  (kbd "C-c d")  'j/js-insert-debugger)
+    (define-key js2-mode-map  (kbd "M-RET")  'electric-indent-just-newline)))
 
 (add-hook 'js2-mode-hook
           (lambda () (setq mode-name "JS2")))
@@ -422,7 +424,8 @@
               js2-allow-keywords-as-property-names t
               js2-auto-insert-catch-block t
               js2-concat-multiline-strings t
-              js2-global-externs '("$" "Y" "YUI" "_")
+              js2-global-externs '("$" "Y" "YUI" "_" "__PROD__"
+                                   "__DEV__" "JS_ROOT")
               js2-highlight-level 3
               js2-include-browser-externs t
               js2-include-node-externs t)
