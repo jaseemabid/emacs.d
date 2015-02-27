@@ -145,7 +145,16 @@
         ns-auto-hide-menu-bar nil
         ns-command-modifier 'control
         ns-control-modifier 'control
-        ns-function-modifier 'control))
+        ns-function-modifier 'hyper)
+
+;; Set single keys shortcuts for most common operations
+(global-set-key (kbd "H--") 'split-window-below)
+(global-set-key (kbd "H-\\") 'split-window-right)
+(global-set-key (kbd "H-b") 'ido-bookmark-jump)
+(global-set-key (kbd "H-f") 'projectile-find-file)
+(global-set-key (kbd "H-k") 'kill-this-buffer)
+(global-set-key (kbd "H-l") 'sort-lines)
+(global-set-key (kbd "H-o") 'find-file))
 
 ;; No bars and buttons on linux, show a menu bar on mac anyway
 (if (eq system-type 'darwin)
