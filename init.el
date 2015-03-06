@@ -154,7 +154,9 @@
 (global-set-key (kbd "H-f") 'projectile-find-file)
 (global-set-key (kbd "H-k") 'kill-this-buffer)
 (global-set-key (kbd "H-l") 'sort-lines)
-(global-set-key (kbd "H-o") 'find-file))
+(global-set-key (kbd "H-o") 'find-file)
+(global-set-key (kbd "H-p") 'projectile-switch-project)
+(global-set-key (kbd "H-s") 'occur))
 
 ;; No bars and buttons on linux, show a menu bar on mac anyway
 (if (eq system-type 'darwin)
