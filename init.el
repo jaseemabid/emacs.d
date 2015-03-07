@@ -60,6 +60,7 @@
 (require 'edit-server)
 (require 'flx-ido)
 (require 'flyspell)
+(require 'ido-vertical-mode)
 (require 'magit)
 (require 'paredit)
 (require 'python-pep8)
@@ -405,14 +406,16 @@
             (define-key html-mode-map (kbd "<M-right>") 'sgml-skip-tag-forward)))
 
 ;; ido-mode
-(setq ido-enable-flex-matching t
-      ido-all-frames 'visible
+(setq ido-all-frames 'visible
       ido-case-fold t
-      ido-use-faces nil
       ido-create-new-buffer 'prompt
-      ido-everywhere t)
-(ido-mode t)
+      ido-enable-flex-matching t
+      ido-everywhere t
+      ido-use-faces nil
+      ido-vertical-define-keys 'C-n-C-p-up-and-down)
 (flx-ido-mode t)
+(ido-mode t)
+(ido-vertical-mode 1)
 
 ;; js-mode
 (defalias 'js-mode 'js2-mode)
