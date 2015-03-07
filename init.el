@@ -179,7 +179,7 @@
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'auto-mode-alist '("\\.mako\\'" . html-mode))
@@ -630,6 +630,15 @@ Emacs lisp really need namespaces and closures.")
   '(define-key html-mode-map (kbd "C-c w") 'web-beautify-html))
 (eval-after-load 'css-mode
   '(define-key css-mode-map (kbd "C-c w") 'web-beautify-css))
+
+;; web-mode
+(setq-default web-mode-enable-auto-expanding t
+              web-mode-enable-comment-keywords t
+              web-mode-enable-element-tag-fontification t)
+(eval-after-load 'web-mode
+  (lambda ()
+    (define-key web-mode-map (kbd "C-c d") 'j/js-insert-debugger)
+    (define-key web-mode-map (kbd "M-RET") 'electric-indent-just-newline)))
 
 ;; type over a region
 (pending-delete-mode t)

@@ -49,6 +49,7 @@
                           solarized-theme
                           undo-tree
                           web-beautify
+                          web-mode
                           yaml-mode
                           yasnippet)
   "Default packages")
