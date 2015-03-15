@@ -121,6 +121,9 @@
     (set-frame-font "Inconsolata-14")
   (set-frame-font "Inconsolata-11"))
 
+;; Snippets
+(load-file "~/.emacs.d/snippets.el")
+
 ;; --------------
 ;; Display tweaks
 ;; --------------
@@ -148,16 +151,17 @@
         ns-control-modifier 'control
         ns-function-modifier 'hyper)
 
-;; Set single keys shortcuts for most common operations
-(global-set-key (kbd "H--") 'split-window-below)
-(global-set-key (kbd "H-\\") 'split-window-right)
-(global-set-key (kbd "H-b") 'ido-bookmark-jump)
-(global-set-key (kbd "H-f") 'projectile-find-file)
-(global-set-key (kbd "H-k") 'kill-this-buffer)
-(global-set-key (kbd "H-l") 'sort-lines)
-(global-set-key (kbd "H-o") 'find-file)
-(global-set-key (kbd "H-p") 'projectile-switch-project)
-(global-set-key (kbd "H-s") 'occur))
+  ;; Set single keys shortcuts for most common operations
+  (global-set-key (kbd "H--") 'split-window-below)
+  (global-set-key (kbd "H-\\") 'split-window-right)
+  (global-set-key (kbd "H-b") 'ido-bookmark-jump)
+  (global-set-key (kbd "H-f") 'projectile-find-file)
+  (global-set-key (kbd "H-k") 'kill-this-buffer)
+  (global-set-key (kbd "H-t") 'transpose-windows)
+  (global-set-key (kbd "H-l") 'sort-lines)
+  (global-set-key (kbd "H-o") 'find-file)
+  (global-set-key (kbd "H-p") 'projectile-switch-project)
+  (global-set-key (kbd "H-s") 'occur))
 
 ;; No bars and buttons on linux, show a menu bar on mac anyway
 (if (eq system-type 'darwin)
@@ -688,9 +692,6 @@ Emacs lisp really need namespaces and closures.")
 
 ;; Real programmers use the real lambda
 (load-file "~/.emacs.d/lambda-fontify.el")
-
-;; Snippets
-(load-file "~/.emacs.d/snippets.el")
 
 ;; Private setup, passwords and key
 (let ((private-file "~/.emacs.d/private.el"))
