@@ -222,8 +222,8 @@
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 
-;; eval buffer
-(global-set-key (kbd "C-c e") 'eval-buffer)
+;; eval and replace
+(global-set-key (kbd "C-c e") 'eval-and-replace)
 
 ;; flyspell
 (add-to-list 'exec-path "/usr/local/bin")
