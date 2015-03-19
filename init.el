@@ -62,6 +62,7 @@
 (require 'flyspell)
 (require 'ido-vertical-mode)
 (require 'magit)
+(require 'multiple-cursors)
 (require 'paredit)
 (require 'python-pep8)
 (require 'python-pylint)
@@ -472,6 +473,12 @@
       magit-process-connection-type nil
       process-connection-type nil)
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
+
+;; multiple-cursors
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; org-mode
 (setq org-agenda-files `("~/Notes/todo.org" "~/Notes/work.org")

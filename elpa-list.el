@@ -34,6 +34,7 @@
                           json-mode
                           less-css-mode
                           lorem-ipsum
+                          multiple-cursors
                           magit
                           markdown-mode
                           marmalade
