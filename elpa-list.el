@@ -24,13 +24,11 @@
                           gitignore-mode
                           god-mode
                           haml-mode
-                          handlebars-mode
                           haskell-mode
                           httpcode
                           ido-vertical-mode
                           jedi
                           js2-mode
-                          js2-refactor
                           json-mode
                           less-css-mode
                           lorem-ipsum

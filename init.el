@@ -54,10 +54,8 @@
 ;; ---------
 ;; Autoloads
 ;; ---------
-(require 'diminish)
 (require 'dired)
 (require 'dired-details)
-(require 'edit-server)
 (require 'flx-ido)
 (require 'flyspell)
 (require 'ido-vertical-mode)
@@ -71,7 +69,6 @@
 (require 'uniquify)
 (require 'web-beautify)
 (require 'yasnippet)
-
 ;; -----------------
 ;; General settings
 ;; -----------------
@@ -446,14 +443,11 @@
               js2-allow-keywords-as-property-names t
               js2-auto-insert-catch-block t
               js2-concat-multiline-strings t
-              js2-global-externs '("$" "Y" "YUI" "_" "__PROD__"
-                                   "__DEV__" "JS_ROOT")
+              js2-global-externs '("$" "Y" "YUI" "_" "__PROD__" "__DEV__"
+                                   "JS_ROOT", "describe", "it")
               js2-highlight-level 3
               js2-include-browser-externs t
               js2-include-node-externs t)
-
-;; js2-refactor-mode
-(js2r-add-keybindings-with-prefix "C-c C-r")
 
 ;; ledger mode
  (setq ledger-post-use-completion-engine :ido
@@ -464,6 +458,7 @@
 (global-hl-line-mode t)
 
 ;; magit
+(setq magit-last-seen-setup-instructions "1.4.0")
 (define-key global-map (kbd "C-c i") 'magit-status)
 (define-key global-map (kbd "C-c C-i") 'magit-status)
 (define-key global-map (kbd "C-c g") 'magit-status)
