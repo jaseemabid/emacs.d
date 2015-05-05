@@ -354,6 +354,7 @@
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
 
 ;; eshell
 (load-file "~/.emacs.d/eshell/init.el")
@@ -563,6 +564,7 @@
 ;; prog-mode
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'fci-mode)
+(add-hook 'web-mode-hook 'turn-off-fci-mode)
 
 ;; Rectangle mode
 (defalias 'rectangle-insert-string 'string-insert-rectangle
