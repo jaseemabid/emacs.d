@@ -271,9 +271,6 @@
 ;; ace-jump
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-;; auto-fill
-(auto-fill-mode 1)
-
 ;; auto-complete mode
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.aspell.en.pws")
