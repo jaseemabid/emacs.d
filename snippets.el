@@ -2,6 +2,8 @@
 ;; Collection of snippets and macros that don't fit anywhere else ;;
 ;; -------------------------------------------------------------- ;;
 
+(require 'mm-url) ; to include mm-url-decode-entities-string
+
 (defmacro replace-in-file (from-string to-string)
   `(progn
      (goto-char (point-min))
@@ -109,3 +111,21 @@ See `sort-regexp-fields'."
              (current-buffer))
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
+
+(defun j/org-insert-link ()
+  "Insert org link where default description is set to html title."
+  (interactive)
+  (let* ((url (read-string "URL: "))
+         (title (get-html-title-from-url url)))
+    (org-insert-link nil url title)))
+
+(defun get-html-title-from-url (url)
+  "Return content in <title> tag."
+  (let (x1 x2 (download-buffer (url-retrieve-synchronously url)))
+    (save-excursion
+      (set-buffer download-buffer)
+      (beginning-of-buffer)
+      (setq x1 (search-forward "<title>"))
+      (search-forward "</title>")
+      (setq x2 (search-backward "<"))
+      (mm-url-decode-entities-string (buffer-substring-no-properties x1 x2)))))

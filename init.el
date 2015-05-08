@@ -506,6 +506,12 @@
          :kill-buffer t
          :unnarrowed t)))
 
+(eval-after-load 'org
+  (lambda ()
+    (define-key org-mode-map (kbd "C-c l") 'org-insert-link)
+    ;; Replace standard insert link with one that fetches the title
+    (define-key org-mode-map (kbd "C-c C-l") 'j/org-insert-link)))
+
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c r") 'org-capture)
 ;; org-indent is messing up layout once in a while.
