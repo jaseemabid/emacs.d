@@ -30,12 +30,13 @@
                           jedi
                           js2-mode
                           json-mode
+                          ledger-mode
                           less-css-mode
                           lorem-ipsum
-                          multiple-cursors
                           magit
                           markdown-mode
                           marmalade
+                          multiple-cursors
                           org
                           org-present
                           paredit
