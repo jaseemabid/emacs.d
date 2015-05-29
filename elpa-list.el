@@ -29,6 +29,7 @@
                           ido-vertical-mode
                           jedi
                           js2-mode
+                          js2-refactor
                           json-mode
                           ledger-mode
                           less-css-mode
