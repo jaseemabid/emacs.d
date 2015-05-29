@@ -211,8 +211,14 @@
 (global-set-key (kbd "C-x |") 'split-window-right)
 (global-set-key (kbd "C-x -") 'split-window-below)
 
-;; buffer list suck
+;; buffer list suck, switch to ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(setq ibuffer-formats
+      '((mark modified read-only " "
+              (name 30 30 :left :elide) " "
+              (size 9 -1 :right) " "
+              (mode 16 16 :left :elide) " " filename-and-process)
+        (mark " " (name 16 -1) " " filename)))
 
 ;; comment/uncomment block
 (global-set-key (kbd "C-M-f") 'comment-or-uncomment-region)
