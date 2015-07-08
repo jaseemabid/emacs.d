@@ -10,6 +10,7 @@
                           dired-details
                           dropdown-list
                           edit-server
+                          edit-server-htmlize
                           emmet-mode
                           erlang
                           exec-path-from-shell
