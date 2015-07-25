@@ -685,6 +685,9 @@ Emacs lisp really need namespaces and closures.")
 (setq uniquify-buffer-name-style 'forward
       uniquify-min-dir-content 1)
 
+;; find file hooks
+(add-hook 'find-file-hook 'j/find-file-large-hook)
+
 ;; write file hook
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
