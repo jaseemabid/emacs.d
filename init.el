@@ -23,30 +23,16 @@
 ;; ---------------
 ;; Custom Packages
 ;; ---------------
-(require 'cl)
-(require 'package)
-
-(setq package-archives '(("org" . "http://orgmode.org/elpa/")
-						 ("gnu" . "http://elpa.gnu.org/packages/")
-						 ("marmalade" . "http://marmalade-repo.org/packages/")
-						 ("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives
+      '(("org" . "http://orgmode.org/elpa/")
+        ("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")
+        ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 ;; Install all packages required
 (load-file "~/.emacs.d/elpa-list.el")
-
 (package-initialize)
-
-(defun jaseem/packages-installed-p ()
-  (loop for pkg in jaseem/packages
-        when (not (package-installed-p pkg)) do (return nil)
-        finally (return t)))
-
-(unless (jaseem/packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg jaseem/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+(package-install-selected-packages)
 
 ;; Set the paths
 (exec-path-from-shell-initialize)
@@ -62,8 +48,6 @@
 (require 'magit)
 (require 'multiple-cursors)
 (require 'paredit)
-(require 'python-pep8)
-(require 'python-pylint)
 (require 'saveplace)
 (require 'server)
 (require 'uniquify)
@@ -314,7 +298,6 @@
 ;; Diminish mode
 (diminish 'auto-complete-mode)
 (diminish 'flyspell-mode)
-(diminish 'magit-auto-revert-mode)
 (diminish 'paredit-mode " φ")
 (diminish 'yas-minor-mode)
 
