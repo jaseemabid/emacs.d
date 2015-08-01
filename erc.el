@@ -14,13 +14,12 @@
 (setq erc-email-userid user-mail-address
       erc-nick user-nick
       erc-user-full-name  user-full-name
-      erc-autojoin-channels-alist j/erc-channels
-      erc-nickserv-passwords j/erc-passwords
 
       ;; Interpret mIRC-style color commands in IRC chats
       erc-interpret-mirc-color t
 
       erc-prompt-for-nickserv-password nil
+      erc-prompt-for-password nil
 
       ;; Logging
       erc-enable-logging t
@@ -51,5 +50,6 @@
 (defun j/erc ()
   (interactive)
   (erc :server "irc.freenode.net"
+       :port 6667
        :full-name user-full-name
-       :password freenode-password))
+       :nick user-nick))
