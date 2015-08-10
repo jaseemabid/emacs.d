@@ -618,6 +618,9 @@ Emacs lisp really need namespaces and closures.")
       tramp-default-host "localhost"
       tramp-default-method "scp")
 
+;; Tuareg mode
+(add-hook 'tuareg-mode-hook 'merlin-mode)
+
 ;; web-beautify mode
 
 ;; Custom prettifier
