@@ -32,6 +32,7 @@ var/
 /projectile-bookmarks.eld
 /projectile.cache
 /recentf
+/session*
 /smex-items
 /snippets/
 /tramp
