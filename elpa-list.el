@@ -34,7 +34,6 @@
         magit
         markdown-mode
         marmalade
-        merlin
         org-present
         paredit
         projectile
@@ -43,7 +42,6 @@
         restclient
         smex
         solarized-theme
-        tuareg
         undo-tree
         web-beautify
         web-mode
