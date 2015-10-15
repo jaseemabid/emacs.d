@@ -9,6 +9,7 @@
         dropdown-list
         edit-server
         edit-server-htmlize
+        edts
         emmet-mode
         erlang
         exec-path-from-shell

@@ -22,6 +22,7 @@ var/
 /ac-comphist.dat
 /auto-save-list
 /bookmarks
+/edts
 /eshell/history
 /eshell/lastdir
 /games/

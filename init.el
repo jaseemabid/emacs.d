@@ -335,6 +335,10 @@
 (add-hook 'edit-server-done-hook  'edit-server-maybe-htmlize-buffer)
 (edit-server-start)
 
+;; Erlang mode
+(setq edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
+      erlang-root-dir edts-man-root)
+
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
