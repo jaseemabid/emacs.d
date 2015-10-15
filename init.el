@@ -461,6 +461,7 @@
 (setq magit-commit-all-when-nothing-staged nil
       magit-item-highlight-face nil
       magit-process-connection-type nil
+      magit-revision-show-gravatars nil
       process-connection-type nil)
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 
