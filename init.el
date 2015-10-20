@@ -42,6 +42,7 @@
 ;; ---------
 (require 'dired)
 (require 'dired-details)
+(require 'edts-start)
 (require 'flx-ido)
 (require 'flyspell)
 (require 'ido-vertical-mode)
@@ -299,9 +300,11 @@
 (define-key global-map (kbd "C-c s") 'desktop-save-in-desktop-dir)
 
 ;; Diminish mode
+(diminish 'abbrev-mode)
 (diminish 'auto-complete-mode)
 (diminish 'flyspell-mode)
 (diminish 'paredit-mode " φ")
+(diminish 'superword-mode)
 (diminish 'yas-minor-mode)
 
 ;; dired-mode
@@ -342,6 +345,13 @@
 (setq erlang-compile-extra-opts '((i . "../include"))
       edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
       erlang-root-dir edts-man-root)
+
+(add-hook 'erlang-mode-hook
+          (lambda () (setq mode-name "erl")))
+
+;; Restore keys messed up by eproject
+(define-key eproject-mode-map (kbd "C-c b")  nil)
+(global-set-key (kbd "C-c b") 'bury-buffer)
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
@@ -533,8 +543,7 @@
 
 ;; Projectile mode
 (projectile-global-mode)
-(setq projectile-mode-line
-      (quote (:eval (format " [ρ %s]" (projectile-project-name)))))
+(setq projectile-mode-line "")
 
 
 ;; Python mode
