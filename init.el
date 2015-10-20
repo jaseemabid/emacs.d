@@ -218,6 +218,9 @@
 (global-set-key (kbd "C-.") 'flyspell-correct-word-before-point)
 (setq ispell-program-name "aspell")
 
+;; flycheck
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
 ;; powerful counterparts ?
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
@@ -336,7 +339,8 @@
 (edit-server-start)
 
 ;; Erlang mode
-(setq edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
+(setq erlang-compile-extra-opts '((i . "../include"))
+      edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
       erlang-root-dir edts-man-root)
 
 ;; emacs-lisp-mode
