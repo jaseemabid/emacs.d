@@ -65,7 +65,6 @@
 ;; ---------
 (require 'dired)
 (require 'dired-details)
-(require 'edts-start)
 (require 'flx-ido)
 (require 'flyspell)
 (require 'ido-vertical-mode)
@@ -368,6 +367,9 @@
 (setq erlang-compile-extra-opts '((i . "../include"))
       edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
       erlang-root-dir edts-man-root)
+
+(add-hook 'after-init-hook
+          (lambda () (require 'edts-start)))
 
 (add-hook 'erlang-mode-hook
           (lambda () (setq mode-name "erl")))
