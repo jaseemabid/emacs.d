@@ -369,14 +369,14 @@
       erlang-root-dir edts-man-root)
 
 (add-hook 'after-init-hook
-          (lambda () (require 'edts-start)))
+          (lambda ()
+            (require 'edts-start)
+            ;; Restore keys messed up by eproject
+            (define-key eproject-mode-map (kbd "C-c b")  nil)
+            (global-set-key (kbd "C-c b") 'bury-buffer)))
 
 (add-hook 'erlang-mode-hook
           (lambda () (setq mode-name "erl")))
-
-;; Restore keys messed up by eproject
-(define-key eproject-mode-map (kbd "C-c b")  nil)
-(global-set-key (kbd "C-c b") 'bury-buffer)
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
