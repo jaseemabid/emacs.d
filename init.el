@@ -32,6 +32,29 @@
 ;; Install all packages required
 (load-file "~/.emacs.d/elpa-list.el")
 (package-initialize)
+
+;; Polyfill `package-install-selected-packages`, for Emacs < 25
+(unless (fboundp 'package-install-selected-packages)
+  (progn
+
+    (require 'cl)
+
+    (defun j/packages-installed-p ()
+      (loop for pkg in package-selected-packages
+            when (not (package-installed-p pkg)) do
+            (progn
+              (message "Required package %s missing" pkg)
+              (return nil))
+            finally (return t)))
+
+    (defun package-install-selected-packages ()
+      (unless (j/packages-installed-p)
+        (message "%s" "Refreshing package database...")
+        (package-refresh-contents)
+        (dolist (pkg package-selected-packages)
+          (when (not (package-installed-p pkg))
+            (package-install pkg)))))))
+
 (package-install-selected-packages)
 
 ;; Set the paths
