@@ -15,9 +15,6 @@
         exec-path-from-shell
         fill-column-indicator
         flx-ido
-        flymake
-        flymake-haskell-multi
-        flymake-hlint
         gitconfig-mode
         gitignore-mode
         god-mode
