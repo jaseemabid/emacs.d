@@ -364,10 +364,6 @@
 (edit-server-start)
 
 ;; Erlang mode
-(setq erlang-compile-extra-opts '((i . "../include"))
-      edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
-      erlang-root-dir edts-man-root)
-
 (add-hook 'after-init-hook
           (lambda ()
             (require 'edts-start)
@@ -376,7 +372,14 @@
             (global-set-key (kbd "C-c b") 'bury-buffer)))
 
 (add-hook 'erlang-mode-hook
-          (lambda () (setq mode-name "erl")))
+          (lambda ()
+            (setq mode-name "erl"
+                  indent-tabs-mode t
+                  erlang-compile-extra-opts '((i . "../include"))
+                  edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
+                  erlang-root-dir  "/usr/local/lib/erlang"
+                  flycheck-erlang-include-path '("../include/")
+                  flycheck-erlang-lib-path '("../ebin"))))
 
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
