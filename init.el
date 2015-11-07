@@ -414,12 +414,10 @@
 (global-set-key (kbd "<escape>") 'god-local-mode)
 
 ;; Haskell mode
-(setq haskell-indent-spaces 4)
-(setq haskell-mode-hook '(imenu-add-menubar-index
-                          turn-on-eldoc-mode
-                          turn-on-haskell-doc
-                          turn-on-haskell-indent
-                          turn-on-haskell-doc-mode))
+(add-hook 'haskell-mode-hook
+          (lambda ()
+            (setq haskell-indent-spaces 4
+                  haskell-indentation-left-offset 4)))
 
 ;; Ignore compiled Haskell files in filename completions
 (add-to-list 'completion-ignored-extensions ".hi")
