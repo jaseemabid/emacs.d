@@ -493,7 +493,6 @@
 (global-hl-line-mode t)
 
 ;; magit
-(setq magit-last-seen-setup-instructions "1.4.0")
 (define-key global-map (kbd "C-c i") 'magit-status)
 (define-key global-map (kbd "C-c C-i") 'magit-status)
 (define-key global-map (kbd "C-c g") 'magit-status)
@@ -501,6 +500,7 @@
 (setq magit-commit-all-when-nothing-staged nil
       magit-item-highlight-face nil
       magit-process-connection-type nil
+      magit-push-always-verify nil
       magit-revision-show-gravatars nil
       process-connection-type nil)
 (add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
