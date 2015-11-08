@@ -414,13 +414,13 @@
 (global-set-key (kbd "<escape>") 'god-local-mode)
 
 ;; Haskell mode
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
 (add-hook 'haskell-mode-hook
           (lambda ()
             (setq haskell-indent-spaces 4
-                  haskell-indentation-left-offset 4)))
-
-;; Ignore compiled Haskell files in filename completions
-(add-to-list 'completion-ignored-extensions ".hi")
+                  haskell-indentation-left-offset 4)
+            ;; Ignore compiled Haskell files in filename completions
+            (add-to-list 'completion-ignored-extensions ".hi")))
 
 ;; Haskell shell stuff
 (eval-after-load "haskell-mode"
