@@ -602,8 +602,9 @@
     (define-key python-mode-map (kbd "SPC") 'j/python-method-space-replace)))
 
 ;; prog-mode
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'fci-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'web-mode-hook 'turn-off-fci-mode)
 
 ;; Rectangle mode
