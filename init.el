@@ -419,7 +419,8 @@
 (add-hook 'haskell-mode-hook
           (lambda ()
             (setq haskell-indent-spaces 4
-                  haskell-indentation-left-offset 4)
+                  haskell-indentation-left-offset 4
+                  haskell-tags-on-save t)
             ;; Ignore compiled Haskell files in filename completions
             (add-to-list 'completion-ignored-extensions ".hi")))
 
@@ -434,7 +435,8 @@
      (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
      (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
      (define-key haskell-mode-map (kbd "C-c M-.") nil)
-     (define-key haskell-mode-map (kbd "C-c C-d") nil)))
+     (define-key haskell-mode-map (kbd "C-c C-d") nil)
+     (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)))
 
 ;; html-mode
 ;; Better navigation
