@@ -324,6 +324,7 @@
 ;; Diminish mode
 (diminish 'abbrev-mode)
 (diminish 'auto-complete-mode)
+(diminish 'eproject-mode)
 (diminish 'flyspell-mode)
 (diminish 'paredit-mode " φ")
 (diminish 'superword-mode)
