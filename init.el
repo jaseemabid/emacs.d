@@ -325,7 +325,6 @@
 ;; Diminish mode
 (diminish 'abbrev-mode)
 (diminish 'auto-complete-mode)
-(diminish 'eproject-mode)
 (diminish 'flyspell-mode)
 (diminish 'paredit-mode " φ")
 (diminish 'superword-mode)
@@ -370,6 +369,7 @@
           (lambda ()
             (require 'edts-start)
             ;; Restore keys messed up by eproject
+            (diminish 'eproject-mode)
             (define-key eproject-mode-map (kbd "C-c b")  nil)
             (global-set-key (kbd "C-c b") 'bury-buffer)))
 
