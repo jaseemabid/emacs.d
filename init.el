@@ -269,6 +269,7 @@
 
 ;; undo tree
 (global-undo-tree-mode)
+(global-set-key (kbd "C-\\") 'undo)
 
 ;; string-replace
 (global-set-key (kbd "C-l") 'replace-string)
