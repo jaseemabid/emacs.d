@@ -379,7 +379,7 @@
             (setq mode-name "erl"
                   indent-tabs-mode t
                   erlang-compile-extra-opts '((i . "../include"))
-                  edts-man-root "/Users/j/.emacs.d/edts/doc/17.5"
+                  edts-man-root "~/.emacs.d/edts/doc/17.5"
                   erlang-root-dir  "/usr/local/lib/erlang"
                   flycheck-erlang-include-path '("../include/")
                   flycheck-erlang-lib-path '("../ebin"))))
