@@ -81,13 +81,14 @@
 ;; -----------------
 (setq case-fold-search t
       column-number-mode t
+      create-lockfiles nil
       default-major-mode 'org-mode
       inhibit-startup-message t
       initial-scratch-message nil
+      mouse-autoselect-window t
       ring-bell-function 'ignore
       transient-mark-mode t
       vc-follow-symlinks t
-      mouse-autoselect-window t
       visible-bell t)
 
 ;; ----------------------------------
