@@ -384,6 +384,12 @@
                   flycheck-erlang-include-path '("../include/")
                   flycheck-erlang-lib-path '("../ebin"))))
 
+;; Tabify erlang buffers before save
+(add-hook 'before-save-hook
+          (lambda ()
+            (when (eq major-mode 'erlang-mode)
+              (tabify (point-min) (point-max)))))
+
 ;; emacs-lisp-mode
 (global-set-key (kbd "C-h C-f") 'find-function)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
