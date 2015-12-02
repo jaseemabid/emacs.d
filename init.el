@@ -297,6 +297,10 @@
 (add-to-list 'ac-modes 'git-commit-mode)
 (add-to-list 'ac-modes 'org-mode)
 
+;; auto-highlight-symbol mode
+(global-auto-highlight-symbol-mode t)
+(setq ahs-default-range 'ahs-range-whole-buffer)
+
 ;; bookmarks
 (defun ido-bookmark-jump ()
   "*Switch to bookmark interactively using `ido'."
@@ -613,7 +617,6 @@
     (define-key python-mode-map (kbd "SPC") 'j/python-method-space-replace)))
 
 ;; prog-mode
-(add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'fci-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'web-mode-hook 'turn-off-fci-mode)
