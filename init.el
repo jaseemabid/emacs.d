@@ -368,6 +368,7 @@
           (lambda ()
             (setq mode-name "erl"
                   indent-tabs-mode t
+                  edts-doc-style 'buffer
                   erlang-compile-extra-opts '((i . "../include"))
                   edts-man-root "~/.emacs.d/edts/doc/17.5"
                   erlang-root-dir  "/usr/local/lib/erlang"
