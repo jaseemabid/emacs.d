@@ -286,11 +286,14 @@
 
 (use-package edts
   :diminish eproject-mode
+  :diminish edts-mode
   ;; Restore keys messed up by eproject
-  :bind ("C-c b" . bury-buffer)
+  :bind
   :init
   (add-hook 'after-init-hook (lambda () (require 'edts-start)))
   :config
+  (unbind-key "C-c b")
+  (bind-key "C-c b" 'bury-buffer)
   (setq edts-doc-style 'buffer
 	edts-man-root "~/.emacs.d/edts/doc/18.1"))
 
