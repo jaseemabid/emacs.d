@@ -578,8 +578,8 @@
 
 (use-package saveplace
   :config
-  (setq save-place t
-        save-place-file "~/.emacs.d/places"))
+  (setq-default save-place t)
+  (setq save-place-file "~/.emacs.d/places"))
 
 (use-package server
   :config
