@@ -35,13 +35,11 @@
         org-present
         paredit
         projectile
-        rainbow-delimiters
         rainbow-mode
         restclient
         smex
         solarized-theme
         undo-tree
         web-beautify
-        web-mode
         yaml-mode
         yasnippet))

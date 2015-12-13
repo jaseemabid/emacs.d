@@ -18,3 +18,5 @@
 (add-hook 'scheme-mode-hook 'sm-lambda-mode-hook)
 
 (add-hook 'js2-mode-hook 'sm-lambda-mode-hook)
+
+(provide 'dot-lambda-fontify) 
