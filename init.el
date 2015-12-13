@@ -285,13 +285,14 @@
   (add-hook 'edit-server-done-hook  'edit-server-maybe-htmlize-buffer))
 
 (use-package edts
-  :diminish eproject-mode
-  :diminish edts-mode
-  ;; Restore keys messed up by eproject
-  :bind
   :init
-  (add-hook 'after-init-hook (lambda () (require 'edts-start)))
+  (add-hook 'after-init-hook
+            (lambda ()
+              (require 'edts-start)
+	      (diminish 'eproject-mode)
+              (diminish 'edts-mode)))
   :config
+  ;; Restore keys messed up by eproject
   (unbind-key "C-c b")
   (bind-key "C-c b" 'bury-buffer)
   (setq edts-doc-style 'buffer
