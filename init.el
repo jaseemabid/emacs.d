@@ -217,6 +217,7 @@
   (add-to-list 'ac-modes 'org-mode))
 
 (use-package auto-highlight-symbol
+  :diminish auto-highlight-symbol-mode
   :config
   (global-auto-highlight-symbol-mode t)
   (setq ahs-default-range 'ahs-range-whole-buffer))
