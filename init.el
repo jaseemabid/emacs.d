@@ -567,9 +567,9 @@
   (add-hook 'css-mode-hook 'rainbow-mode)
   (add-hook 'html-mode-hook 'rainbow-mode))
 
-(use-package recentf-mode
+(use-package recentf
   :bind ("C-x C-r" . recentf-open-files)
-  :init
+  :config
   (recentf-mode 1))
 
 (use-package rect
