@@ -58,33 +58,29 @@
 ;; -----------------
 ;; General settings
 ;; -----------------
-(setq case-fold-search t
-      column-number-mode t
-      create-lockfiles nil
-      major-mode 'org-mode
-      inhibit-startup-message t
-      initial-scratch-message nil
-      mouse-autoselect-window t
-      ring-bell-function 'ignore
-      transient-mark-mode t
-      vc-follow-symlinks t
-      visible-bell t)
-
-;; ----------------------------------
-;; Indentation, layout and whitespace
-;; ----------------------------------
-(setq c-basic-indent 4
-      c-basic-offset 4
-      c-default-style nil
-      fill-adapt-mode t
-      fill-column 80
-      indent-tabs-mode nil
-      next-line-add-newlines nil
-      nxml-child-indent 4
-      require-final-newline t
-      sentence-end-double-space nil
-      tab-width 4
-      truncate-lines t)
+(setq-default c-basic-indent 4
+              c-basic-offset 4
+              c-default-style nil
+              case-fold-search t
+              column-number-mode t
+              create-lockfiles nil
+              fill-adapt-mode t
+              fill-column 80
+              indent-tabs-mode nil
+              inhibit-startup-message t
+              initial-scratch-message nil
+              major-mode 'org-mode
+              mouse-autoselect-window t
+              next-line-add-newlines nil
+              nxml-child-indent 4
+              require-final-newline t
+              ring-bell-function 'ignore
+              sentence-end-double-space nil
+              tab-width 4
+              transient-mark-mode t
+              vc-follow-symlinks t
+              visible-bell t
+              truncate-lines t)
 
 ;; Make y/n suffice for yes/no q
 (fset 'yes-or-no-p 'y-or-n-p)
