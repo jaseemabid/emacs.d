@@ -455,9 +455,9 @@
 (use-package magit
   :bind (("C-c i"   . magit-status)
          ("C-c C-i" . magit-status)
-         ("C-c g"   . magit-status)
-         ("C-c l"   . magit-log-head))
+         ("C-c g"   . magit-status))
   :config
+  (bind-key "C-c l" 'magit-log-head  prog-mode-map)
   (setq magit-process-connection-type nil
         magit-push-always-verify nil
         magit-revision-show-gravatars nil
@@ -475,11 +475,10 @@
   :bind ("C-c c" . comment-or-uncomment-region))
 
 (use-package org
-  :bind (("C-c C-l" . j/org-insert-link)
-         ("C-c a" . org-agenda)
-         ("C-c l" . org-insert-link)
+  :bind (("C-c a" . org-agenda)
          ("C-c r" . org-capture))
   :config
+  (bind-key "C-c l" 'j/org-insert-link org-mode-map)
   (setq org-agenda-files `("~/Notes/todo.org" "~/Notes/work.org")
         org-agenda-timegrid-use-ampm 1 ;; 12hr format for agenda view
         org-default-notes-file "~/Notes/todo.org"
