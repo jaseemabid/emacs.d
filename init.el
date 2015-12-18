@@ -376,15 +376,15 @@
     '(progn
        (setq haskell-interactive-popup-errors nil)
        (bind-keys :map haskell-mode-map
-		  ("C-x C-d" nil)
-		  ("C-c C-z" . haskell-interactive-switch)
-		  ("C-c C-l" . haskell-process-load-file)
-		  ("C-c C-b" . haskell-interactive-switch)
-		  ("C-c C-t" . haskell-process-do-type)
-		  ("C-c C-i" . haskell-process-do-info)
-		  ("C-c M-." nil)
-		  ("C-c C-d" nil)
-		  ("M-."  ' haskell-mode-tag-find)))))
+                  ("C-c C-b" . haskell-interactive-switch)
+                  ("C-c C-d" . nil)
+                  ("C-c C-i" . haskell-process-do-info)
+                  ("C-c C-l" . haskell-process-load-file)
+                  ("C-c C-t" . haskell-process-do-type)
+                  ("C-c C-z" . haskell-interactive-switch)
+                  ("C-c M-." . nil)
+                  ("C-x C-d" . nil)
+                  ("M-." . haskell-mode-tag-find)))))
 
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer)
