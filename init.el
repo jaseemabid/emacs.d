@@ -225,6 +225,11 @@
   :config
   (setq coffee-tab-width 2))
 
+(use-package css-mode
+  :config
+  (use-package web-beautify
+    :config (bind-key "C-c w" 'web-beautify-css css-mode-map)))
+
 (use-package delsel
   :config
   ;; type over a region
@@ -426,6 +431,8 @@
   :init
   (defalias 'js-mode 'js2-mode)
   :config
+  (use-package web-beautify
+    :config (bind-key "C-c w" 'web-beautify-js js2-mode-map))
   (defun j/js-insert-debugger ()
     "Insert a debugger statement at point"
     (interactive)
@@ -540,9 +547,10 @@
 (use-package python
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python" . python-mode)
-  :bind (("C-c d" . j/python-insert-debugger)
-         ("SPC" . j/python-method-space-replace))
   :config
+  (bind-keys :map python-mode-map
+             ("C-c d" . j/python-insert-debugger)
+             ("SPC" . j/python-method-space-replace))
   (setq-default python-fill-docstring-style 'pep-257-nn)
   (add-hook 'python-mode-hook
             (lambda ()
@@ -589,6 +597,8 @@
   :bind (("<M-left>" . sgml-skip-tag-backward)
          ("<M-right>" . sgml-skip-tag-forward))
   :config
+  (use-package web-beautify
+    :config (bind-key "C-c w" 'web-beautify-html sgml-mode-map))
   (add-hook 'html-mode-hook
             (lambda ()
               (set (make-local-variable 'sgml-basic-offset) 2)
@@ -622,11 +632,6 @@
   :config
   (setq uniquify-buffer-name-style 'forward
         uniquify-min-dir-content 1))
-
-(use-package web-beautify
-  :bind (("C-c w" . web-beautify-js)
-         ("C-c w" . web-beautify-html)
-         ("C-c w" . web-beautify-css)))
 
 (use-package yasnippet
   :diminish yas-minor-mode
