@@ -300,7 +300,8 @@
 	edts-man-root "~/.emacs.d/edts/doc/18.1"))
 
 (use-package emacs-lisp-mode
-  :bind ("C-h C-f" . find-function)
+  :bind (("M-." . find-function-at-point)
+         ("C-h C-f" . find-function))
   :init
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ"))))
 
