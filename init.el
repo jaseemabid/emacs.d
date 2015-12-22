@@ -302,6 +302,7 @@
 
 (use-package erlang
   :config
+  (bind-key "C-c l" 'magit-log-head  erlang-mode-map)
   (add-hook 'erlang-mode-hook
             (lambda ()
               (setq mode-name "erl"
