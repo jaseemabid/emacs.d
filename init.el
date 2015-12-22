@@ -301,7 +301,6 @@
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ"))))
 
 (use-package erlang
-  :mode "\\.P\\'"
   :config
   (add-hook 'erlang-mode-hook
             (lambda ()
