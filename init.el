@@ -148,7 +148,6 @@
 ;; ----------------
 (add-to-list 'auto-mode-alist '("\\._\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.ext\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.iced$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'auto-mode-alist '("\\.mako\\'" . html-mode))
@@ -220,10 +219,6 @@
 
 (use-package bookmark
   :bind ("C-x r" . bookmark-map))
-
-(use-package coffee-mode
-  :config
-  (setq coffee-tab-width 2))
 
 (use-package css-mode
   :config
@@ -304,11 +299,6 @@
          ("C-h C-f" . find-function))
   :init
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ"))))
-
-(use-package emmet-mode
-  :config
-  (add-hook 'sgml-mode-hook 'emmet-mode)
-  (add-hook 'css-mode-hook 'emmet-mode))
 
 (use-package erlang
   :mode "\\.P\\'"
@@ -514,20 +504,6 @@
            "%U\n\n%?%i"
            :kill-buffer t
            :unnarrowed t))))
-
-(use-package org-present
-  :config
-  (defvar org-present-text-scale 10)
-  (add-hook 'org-present-mode-hook
-            (lambda ()
-              (linum-mode -1)
-              (org-present-big)
-              (org-display-inline-images)))
-  (add-hook 'org-present-mode-quit-hook
-            (lambda ()
-              (linum-mode t)
-              (org-present-small)
-              (org-remove-inline-images))))
 
 (use-package paredit
   :diminish paredit-mode
