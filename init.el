@@ -331,8 +331,11 @@
   :diminish flycheck-mode
   :config
   (add-hook 'after-init-hook 'global-flycheck-mode)
-  (setq flycheck-erlang-include-path '("../include/")
-        flycheck-erlang-lib-path '("../ebin")))
+  (setq flycheck-display-errors-function nil
+        flycheck-erlang-include-path '("../include")
+        flycheck-erlang-lib-path '("../ebin")
+        flycheck-check-syntax-automatically '(save)
+        flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 (use-package flyspell
   :bind (("C-c f" . flyspell-buffer)
@@ -417,7 +420,7 @@
 
 (use-package js2-mode
   :bind (("C-c d" . j/js-insert-debugger)
-	 ("M-RET" . electric-indent-just-newline))
+         ("M-RET" . electric-indent-just-newline))
   :init
   (defalias 'js-mode 'js2-mode)
   :config
