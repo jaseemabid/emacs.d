@@ -269,6 +269,11 @@
       (call-process "open" nil 0 nil file)
       (message "Opening %s done" file))))
 
+(use-package ediff
+  :init
+  (setq ediff-split-window-function 'split-window-horizontally
+        ediff-window-setup-function 'ediff-setup-windows-plain))
+
 (use-package edit-server
   :if window-system
   :init
