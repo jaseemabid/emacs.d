@@ -598,7 +598,7 @@
   (when (eq window-system 'x)
     (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'")))
 
-(use-package superword
+(use-package subword
   :diminish superword-mode
   :config (global-superword-mode t))
 
