@@ -286,18 +286,19 @@
   (add-hook 'edit-server-done-hook  'edit-server-maybe-htmlize-buffer))
 
 (use-package edts
+  :diminish edts-mode
   :init
-  (add-hook 'after-init-hook
-            (lambda ()
-              (require 'edts-start)
-	      (diminish 'eproject-mode)
-              (diminish 'edts-mode)))
-  :config
-  ;; Restore keys messed up by eproject
-  (unbind-key "C-c b")
-  (bind-key "C-c b" 'bury-buffer)
   (setq edts-doc-style 'buffer
-	edts-man-root "~/.emacs.d/edts/doc/18.1"))
+        edts-inhibit-package-check t
+        edts-man-root "~/.emacs.d/edts/doc/18.1")
+  (add-hook 'after-init-hook
+            (defun j/edts-setup ()
+              (require 'edts-start)
+              (use-package eproject-extras
+                :demand t
+                :diminish eproject-mode
+                :config
+                (define-key eproject-mode-map (kbd "C-c b") 'bury-buffer)))))
 
 (use-package emacs-lisp-mode
   :bind (("M-." . find-function-at-point)
