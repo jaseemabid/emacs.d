@@ -357,8 +357,8 @@
 (use-package god-mode
   :bind ("<escape>" . god-local-mode)
   :config
-  (setq j/god-cursor-enabled "red"
-        j/god-cursor-disabled (cdr (assoc 'cursor-color  (frame-parameters))))
+  (defvar j/god-cursor-enabled "red")
+  (defvar j/god-cursor-disabled (cdr (assoc 'cursor-color (frame-parameters))))
   (defun j/god-cursor ()
     (set-cursor-color (if (or god-local-mode buffer-read-only)
                           j/god-cursor-enabled
