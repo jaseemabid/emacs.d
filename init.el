@@ -487,7 +487,7 @@
          ("C-c r" . org-capture))
   :config
   (bind-key "C-c l" 'j/org-insert-link org-mode-map)
-  (setq org-agenda-files `("~/Notes/todo.org" "~/Notes/work.org")
+  (setq org-agenda-files `("~/Notes")
         org-agenda-timegrid-use-ampm 1 ;; 12hr format for agenda view
         org-default-notes-file "~/Notes/todo.org"
         org-directory "~/Notes"
