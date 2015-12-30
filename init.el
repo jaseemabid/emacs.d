@@ -465,6 +465,7 @@
          ("C-c g"   . magit-status))
   :config
   (bind-key "C-c l" 'magit-log-head  prog-mode-map)
+  (bind-key "C-c l" 'magit-log-head  dired-mode-map)
   (setq magit-process-connection-type nil
         magit-push-always-verify nil
         magit-revision-show-gravatars nil
