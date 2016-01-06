@@ -234,7 +234,6 @@
   :bind ("C-c s" . desktop-save-in-desktop-dir)
   :init
   (desktop-save-mode t)
-  (add-hook 'after-init-hook 'desktop-read)
   :config
   (setq desktop-files-not-to-save "^$"
         desktop-path '("~/.emacs.d/"))
