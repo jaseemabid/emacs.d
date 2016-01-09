@@ -196,7 +196,36 @@
 ;; Package customizations
 ;; ----------------------
 (use-package abbrev
-  :diminish abbrev-mode)
+  :diminish abbrev-mode
+
+  :config
+  ;; stop asking whether to save newly added abbrev when quitting emacs
+  (setq save-abbrevs nil)
+  (setq-default abbrev-mode t)
+
+  (define-abbrev-table 'global-abbrev-table
+    '(
+      ;; math/unicode symbols
+      ("8in" "∈")
+      ("8nin" "∉")
+      ("8inf" "∞")
+      ("8luv" "♥")
+      ("8smly" "☺")
+
+      ;; email
+      ("8me" "jaseemabid@gmail.com")
+      ("8i" "Jaseem Abid")
+
+      ;; normal english words
+      ("8alt" "alternative")
+      ("8char" "character")
+      ("8def" "definition")
+      ("8bg" "background")
+      ("8kb" "keyboard")
+      ("8ex" "example")
+      ("8env" "environment")
+      ("8var" "variable")
+      ("8cp" "computer"))))
 
 (use-package ace-jump-mode
   :bind ("C-c SPC" . ace-jump-mode))
