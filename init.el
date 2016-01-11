@@ -211,6 +211,7 @@
       ("8inf" "∞")
       ("8luv" "♥")
       ("8smly" "☺")
+      ("8meh" "¯\\_(ツ)_/¯")
 
       ;; email
       ("8me" "jaseemabid@gmail.com")
