@@ -336,6 +336,10 @@
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ"))))
 
 (use-package erlang
+  :init
+  (add-to-list 'auto-mode-alist '("\\.P\\'" . erlang-mode))
+  (add-to-list 'auto-mode-alist '("\\.E\\'" . erlang-mode))
+  (add-to-list 'auto-mode-alist '("\\.S\\'" . erlang-mode))
   :config
   (bind-key "C-c l" 'magit-log-head  erlang-mode-map)
   (add-hook 'erlang-mode-hook
