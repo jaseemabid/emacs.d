@@ -209,6 +209,8 @@
   (define-abbrev-table 'global-abbrev-table
     '(
       ;; math/unicode symbols
+      ("8N" "ℕ")
+      ("8R" "ℝ")
       ("8in" "∈")
       ("8nin" "∉")
       ("8inf" "∞")
