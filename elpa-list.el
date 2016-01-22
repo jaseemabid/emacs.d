@@ -22,15 +22,12 @@
         ledger-mode
         magit
         markdown-mode
-        marmalade
         paredit
         projectile
         rainbow-mode
-        restclient
         smex
         solarized-theme
         undo-tree
         use-package
-        web-beautify
         yaml-mode
         yasnippet))

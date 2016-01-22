@@ -26,8 +26,7 @@
 (setq package-archives
       '(("org" . "http://orgmode.org/elpa/")
         ("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")))
+        ("melpa" . "http://melpa.org/packages/")))
 
 ;; Install all packages required
 (load-file "~/.emacs.d/elpa-list.el")
@@ -251,11 +250,6 @@
 (use-package bookmark
   :bind ("C-x r" . bookmark-map))
 
-(use-package css-mode
-  :config
-  (use-package web-beautify
-    :config (bind-key "C-c w" 'web-beautify-css css-mode-map)))
-
 (use-package delsel
   :config
   ;; type over a region
@@ -460,8 +454,6 @@
   :init
   (defalias 'js-mode 'js2-mode)
   :config
-  (use-package web-beautify
-    :config (bind-key "C-c w" 'web-beautify-js js2-mode-map))
   (defun j/js-insert-debugger ()
     "Insert a debugger statement at point"
     (interactive)
@@ -613,8 +605,6 @@
   :bind (("<M-left>" . sgml-skip-tag-backward)
          ("<M-right>" . sgml-skip-tag-forward))
   :config
-  (use-package web-beautify
-    :config (bind-key "C-c w" 'web-beautify-html sgml-mode-map))
   (add-hook 'html-mode-hook
             (lambda ()
               (set (make-local-variable 'sgml-basic-offset) 2)
