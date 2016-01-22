@@ -41,6 +41,10 @@
         (when (not (package-installed-p p))
           (package-install p))))))
 
+;; Fetch packages the first time
+(unless (file-exists-p package-user-dir)
+  (package-refresh-contents))
+
 (package-install-selected-packages)
 
 (eval-and-compile
