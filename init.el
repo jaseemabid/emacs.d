@@ -373,7 +373,7 @@
   (add-hook 'after-init-hook 'global-flycheck-mode)
   (setq flycheck-display-errors-function nil
         flycheck-erlang-include-path '("../include")
-        flycheck-erlang-lib-path '("../ebin")
+        flycheck-erlang-library-path '("../_build/default/lib/coracle/ebin")
         flycheck-check-syntax-automatically '(save)
         flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
