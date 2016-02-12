@@ -319,7 +319,7 @@
   :init
   (setq edts-doc-style 'buffer
         edts-inhibit-package-check t
-        edts-man-root "~/.emacs.d/edts/doc/18.1")
+        edts-man-root "~/.emacs.d/edts/doc/18.2.1")
   (add-hook 'after-init-hook
             (defun j/edts-setup ()
               (require 'edts-start)
