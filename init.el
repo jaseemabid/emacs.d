@@ -601,6 +601,9 @@
   :config
   (defalias 'rectangle-insert-string 'string-insert-rectangle))
 
+(use-package restclient
+  :mode ( "\\.rest\\'" . restclient-mode))
+
 (use-package saveplace
   :config
   (setq-default save-place t)

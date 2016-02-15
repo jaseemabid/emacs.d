@@ -26,6 +26,7 @@
         paredit
         projectile
         rainbow-mode
+        restclient
         smex
         solarized-theme
         undo-tree
