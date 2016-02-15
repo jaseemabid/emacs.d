@@ -22,6 +22,7 @@
         ledger-mode
         magit
         markdown-mode
+        multiple-cursors
         paredit
         projectile
         rainbow-mode
