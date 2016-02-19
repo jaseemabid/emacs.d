@@ -6,15 +6,17 @@
 ;; ------------------------------------
 
 (use-package eshell
-  :init (bind-key "C-z" 'eshell)
-  :bind (("<down>" . next-line)
-         ("<up>" . previous-line)
-         ("C-a" . eshell-bol)
-         ("C-l" . eshell/clear))
+  :init
+  (bind-key "C-z" 'eshell)
   :config
   (setq eshell-buffer-maximum-lines 4096)
+
   (add-hook 'eshell-mode-hook
             (lambda ()
+              (local-set-key (kbd "<down>") 'next-line)
+              (local-set-key (kbd "<up>") 'previous-line)
+              (local-set-key (kbd "C-a") 'eshell-bol)
+              (local-set-key (kbd "C-l") 'eshell/clear)
               (local-set-key (kbd "C-z") 'bury-buffer)))
 
   ;; Open files and go places like we see from error messages, ie: path:line:col
