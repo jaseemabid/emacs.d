@@ -345,14 +345,8 @@
   (add-hook 'erlang-mode-hook
             (lambda ()
               (setq mode-name "erl"
-                    indent-tabs-mode t
                     erlang-compile-extra-opts '((i . "../include"))
-                    erlang-root-dir  "/usr/local/lib/erlang")))
-  ;; Tabify erlang buffers before save
-  (add-hook 'before-save-hook
-            (lambda ()
-              (when (eq major-mode 'erlang-mode)
-                (tabify (point-min) (point-max))))))
+                    erlang-root-dir  "/usr/local/lib/erlang"))))
 
 (use-package face-remap
   :bind (("M-+" . text-scale-adjust)
