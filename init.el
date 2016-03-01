@@ -250,6 +250,7 @@
 (use-package auto-highlight-symbol
   :diminish auto-highlight-symbol-mode
   :config
+  (setq ahs-idle-interval 0.2)
   (global-auto-highlight-symbol-mode t)
   (setq ahs-default-range 'ahs-range-whole-buffer))
 
