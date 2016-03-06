@@ -400,6 +400,9 @@
 
 (use-package haskell-mode
   :config
+  (setq haskell-compile-cabal-build-command "cd %s && stack build"
+        haskell-compile-cabal-build-alt-command "cd %s && stack build"
+        haskell-compile-command "stack build")
   (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
   (add-hook 'haskell-mode-hook
             (lambda ()
