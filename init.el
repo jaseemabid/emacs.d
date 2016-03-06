@@ -349,6 +349,10 @@
                     erlang-compile-extra-opts '((i . "../include"))
                     erlang-root-dir  "/usr/local/lib/erlang"))))
 
+(use-package etags
+  :config
+  (setq tags-revert-without-query t))
+
 (use-package face-remap
   :bind (("M-+" . text-scale-adjust)
          ("M--" . text-scale-adjust)
