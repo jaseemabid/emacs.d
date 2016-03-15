@@ -70,8 +70,8 @@
               fill-adapt-mode t
               fill-column 80
               indent-tabs-mode nil
-              inhibit-startup-message t
               initial-scratch-message nil
+              inhibit-startup-screen t
               major-mode 'org-mode
               mouse-autoselect-window t
               next-line-add-newlines nil
@@ -84,6 +84,12 @@
               vc-follow-symlinks t
               visible-bell t
               truncate-lines t)
+
+(setq initial-buffer-choice
+      (lambda ()
+        (org-agenda-list)
+        (bury-buffer (get-buffer "*scratch*"))
+        (get-buffer "*Org Agenda*")))
 
 ;; Make y/n suffice for yes/no q
 (fset 'yes-or-no-p 'y-or-n-p)
