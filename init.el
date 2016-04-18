@@ -151,6 +151,7 @@
 ;; --------------
 (add-hook 'find-file-hook 'j/find-file-large-hook)
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
+(remove-hook 'find-file-hooks 'vc-find-file-hook)
 
 ;; ----------------
 ;; auto-mode-alists
