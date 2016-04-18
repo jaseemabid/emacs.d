@@ -172,13 +172,15 @@
 ;; ------------------
 
 ;; Buffer management
+;; Switch to previously open buffer
+(bind-key "C-c <left>" 'mode-line-other-buffer)
+(bind-key "C-c <right>" 'mode-line-other-buffer)
 (bind-key "C-c b" 'bury-buffer)
+(bind-key "C-c n" 'mode-line-other-buffer)
 (bind-key "C-x <down>" 'windmove-down)
 (bind-key "C-x <left>" 'windmove-left)
 (bind-key "C-x <right>" 'windmove-right)
 (bind-key "C-x <up>" 'windmove-up)
-(bind-key "C-x C-<left>" 'switch-to-prev-buffer)
-(bind-key "C-x C-<right>" 'switch-to-next-buffer)
 (bind-key "C-x |" 'split-window-right)
 (bind-key "C-x -" 'split-window-below)
 
