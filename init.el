@@ -561,7 +561,7 @@
            "** %^{title}\n   %T\n\n%?"
            :kill-buffer t)
           ("j" "Journal" plain (file (format "%s%s.org" "~/Notes/Journal/"
-                                             (format-time-string "%d %m %Y")))
+                                             (format-time-string "%Y %m %d")))
            "%U\n\n%?%i"
            :kill-buffer t
            :unnarrowed t))))
