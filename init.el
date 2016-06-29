@@ -420,6 +420,10 @@
   (add-hook 'god-mode-enabled-hook 'j/god-cursor)
   (add-hook 'god-mode-disabled-hook 'j/god-cursor))
 
+(use-package intero-mode
+  :config
+  (add-hook 'haskell-mode-hook 'intero-mode))
+
 (use-package haskell-mode
   :config
   (setq haskell-compile-cabal-build-command "cd %s && stack build"
