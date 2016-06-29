@@ -273,7 +273,7 @@
   :diminish auto-highlight-symbol-mode
   :config
   (setq ahs-idle-interval 0.2)
-  (global-auto-highlight-symbol-mode t)
+  (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
   (setq ahs-default-range 'ahs-range-whole-buffer))
 
 (use-package bookmark
