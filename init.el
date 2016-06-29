@@ -128,10 +128,12 @@
   (bind-key "H--" 'split-window-below)
   (bind-key "H-\\" 'split-window-right)
   (bind-key "H-k" 'kill-this-buffer)
-  (bind-key "H-t" 'transpose-windows)
   (bind-key "H-l" 'sort-lines)
+  (bind-key "H-n" 'flycheck-next-error)
   (bind-key "H-o" 'find-file)
-  (bind-key "H-s" 'occur))
+  (bind-key "H-p" 'flycheck-previous-error)
+  (bind-key "H-s" 'occur)
+  (bind-key "H-t" 'transpose-windows))
 
 ;; No bars and buttons on linux, show a menu bar on mac anyway
 (if (eq system-type 'darwin)
