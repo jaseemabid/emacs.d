@@ -136,3 +136,12 @@ See `sort-regexp-fields'."
       (search-forward "</title>")
       (setq x2 (search-backward "<"))
       (mm-url-decode-entities-string (buffer-substring-no-properties x1 x2)))))
+
+;; https://www.emacswiki.org/emacs/CopyWithoutSelection
+(defun copy-word (&optional arg)
+  "Copy words at point into kill-ring"
+  (interactive "P")
+  (save-excursion
+    (let ((beg (progn (backward-word 1) (point)))
+          (end (progn (forward-word arg) (point))))
+      (copy-region-as-kill beg end))))

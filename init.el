@@ -207,6 +207,9 @@
 ;; string-replace
 (bind-key "C-l" 'replace-string)
 
+;; copy word at point
+(bind-key "C-c w" 'copy-word)
+
 ;; ----------------------
 ;; Package customizations
 ;; ----------------------
