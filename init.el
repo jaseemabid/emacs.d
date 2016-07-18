@@ -99,9 +99,10 @@
 ;; ----------------------
 (setq font-lock-maximum-decoration t)
 ;; Larger fonts for the mac
-(if (eq system-type 'darwin)
-    (set-frame-font "Inconsolata-14")
-  (set-frame-font "Inconsolata-11"))
+
+;; Font setup with Fira
+;; https://github.com/tonsky/FiraCode
+(load-file "~/.emacs.d/fira.el")
 
 ;; Snippets
 (load-file "~/.emacs.d/snippets.el")
