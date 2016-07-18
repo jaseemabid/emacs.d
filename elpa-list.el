@@ -10,6 +10,7 @@
         edts
         erlang
         exec-path-from-shell
+        fic-mode
         fill-column-indicator
         flx-ido
         flycheck

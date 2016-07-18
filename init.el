@@ -300,6 +300,10 @@
   (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
   (add-to-list 'desktop-modes-not-to-save 'completion-list-mode))
 
+(use-package fic-mode
+  :config
+  (add-hook 'prog-mode-hook 'fic-mode))
+
 (use-package dired
   :bind (("C-x C-d" . dired)
          ("C-x d" . j/dired-open-here))
