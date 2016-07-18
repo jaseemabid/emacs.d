@@ -17,6 +17,7 @@
         gitignore-mode
         god-mode
         haskell-mode
+        httpcode
         ido-vertical-mode
         js2-mode
         ledger-mode
