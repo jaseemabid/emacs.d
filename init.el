@@ -428,7 +428,7 @@
   (add-hook 'god-mode-enabled-hook 'j/god-cursor)
   (add-hook 'god-mode-disabled-hook 'j/god-cursor))
 
-(use-package intero-mode
+(use-package intero
   :config
   (add-hook 'haskell-mode-hook 'intero-mode))
 

@@ -20,6 +20,7 @@
         haskell-mode
         httpcode
         ido-vertical-mode
+        intero
         js2-mode
         ledger-mode
         magit
