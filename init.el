@@ -695,10 +695,8 @@
 (require 'dot-toggle)
 (require 'dot-lambda-fontify)
 
-;; Private setup, passwords and key
-(let ((private-file "~/.emacs.d/private.el"))
-  (when (file-readable-p private-file)
-    (load-file private-file)))
+;; Private setup, passwords and key, if it exists.
+(load "~/.emacs.d/private.el" 'noerror)
 
 ;; Note, load ERC only after private
 (load-file "~/.emacs.d/erc.el")
