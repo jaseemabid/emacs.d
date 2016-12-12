@@ -113,6 +113,18 @@
 ;; Always split horizontally
 (setq split-height-threshold most-positive-fixnum)
 
+;; Keeping windows always balanced
+;; http://blog.danielgempesaw.com/post/45400072065/keeping-my-emacs-windows-balanced
+(progn
+  (defadvice split-window-below (after restore-balanace-below activate)
+    (balance-windows))
+
+  (defadvice split-window-right (after restore-balance-right activate)
+    (balance-windows))
+
+  (defadvice delete-window (after restore-balance activate)
+    (balance-windows)))
+
 ;; Mac specific stuff
 (when (eq system-type 'darwin)
   ;; "Mac hook"
