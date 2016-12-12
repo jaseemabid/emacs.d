@@ -513,12 +513,11 @@
 
 (use-package jedi
   :config
-  (bind-keys :map python-mode-map
-             ("M-." . jedi:goto-definition))
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t
-      python-environment-default-root-name "jedi"
-      python-environment-directory "~/.virtualenvs"))
+        jedi:use-shortcuts t
+        python-environment-default-root-name "jedi"
+        python-environment-directory "~/.virtualenvs"))
 
 (use-package js2-mode
   :bind (("C-c d" . j/js-insert-debugger)
