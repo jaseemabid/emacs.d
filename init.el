@@ -494,6 +494,13 @@
     (bookmark-jump
      (ido-completing-read "Bookmark: " (bookmark-all-names)))))
 
+(use-package jedi
+  :config
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t
+      python-environment-default-root-name "jedi"
+      python-environment-directory "~/.virtualenvs"))
+
 (use-package js2-mode
   :bind (("C-c d" . j/js-insert-debugger)
          ("M-RET" . electric-indent-just-newline))

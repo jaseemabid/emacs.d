@@ -21,6 +21,7 @@
         httpcode
         ido-vertical-mode
         intero
+        jedi
         js2-mode
         ledger-mode
         magit
