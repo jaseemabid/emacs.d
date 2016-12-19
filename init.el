@@ -302,11 +302,10 @@
 
 (use-package desktop
   :bind ("C-c s" . desktop-save-in-desktop-dir)
-  :init
-  (desktop-save-mode t)
   :config
   (setq desktop-files-not-to-save "^$"
         desktop-path '("~/.emacs.d/"))
+  (desktop-save-mode t)
   (add-to-list 'desktop-modes-not-to-save 'dired-mode)
   (add-to-list 'desktop-modes-not-to-save 'help-mode)
   (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
@@ -343,7 +342,7 @@
       (message "Opening %s done" file))))
 
 (use-package ediff
-  :init
+  :config
   (setq ediff-split-window-function 'split-window-horizontally
         ediff-window-setup-function 'ediff-setup-windows-plain))
 
@@ -362,11 +361,11 @@
                 :config
                 (define-key eproject-mode-map (kbd "C-c b") 'bury-buffer)))))
 
-(use-package emacs-lisp-mode
-  :bind (("M-." . find-function-at-point)
-         ("C-h C-f" . find-function))
-  :init
-  (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ"))))
+use-package emacs-lisp-mode
+:bind (("M-." . find-function-at-point)
+       ("C-h C-f" . find-function))
+:config
+(add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ")))
 
 (use-package erlang
   :init
