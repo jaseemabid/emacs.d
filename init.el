@@ -717,6 +717,10 @@
   :diminish yas-minor-mode
   :config (yas-global-mode 1))
 
+(use-package web-mode
+  :config
+  (setq web-mode-code-indent-offset 2))
+
 (require 'dot-toggle)
 (require 'dot-lambda-fontify)
 
