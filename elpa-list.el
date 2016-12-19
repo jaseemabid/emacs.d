@@ -1,12 +1,11 @@
 (setq package-selected-packages
-      '(ace-jump-mode
+      '(ag
+        ace-jump-mode
         auto-complete
         auto-indent-mode
         diminish
         dired-details
         dropdown-list
-        edit-server
-        edit-server-htmlize
         edts
         erlang
         exec-path-from-shell
@@ -14,16 +13,13 @@
         fill-column-indicator
         flx-ido
         flycheck
-        gitconfig-mode
         gitignore-mode
-        god-mode
         haskell-mode
         httpcode
         ido-vertical-mode
         intero
-        jedi
+        jedi ;; Auto complete for Python
         js2-mode
-        ledger-mode
         magit
         markdown-mode
         multiple-cursors
@@ -31,9 +27,7 @@
         projectile
         rainbow-mode
         restclient
-        smex
+        smex ;; Recent commands under M-x
         solarized-theme
-        undo-tree
         use-package
-        yaml-mode
-        yasnippet))
+        yaml-mode))

@@ -47,6 +47,7 @@
 
 (package-install-selected-packages)
 
+;; use-package.el is no longer needed at runtime
 (eval-and-compile
   (require 'use-package))
 
@@ -173,13 +174,12 @@
 ;; ----------------
 (add-to-list 'auto-mode-alist '("\\._\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.ext\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 (add-to-list 'auto-mode-alist '("\\.mako\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.hdl\\'" . vhdl-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode))
-(add-to-list 'auto-mode-alist '("\\.wf\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("mutt-.*-" . mail-mode))
 
 ;; ------------------
@@ -347,16 +347,6 @@
   (setq ediff-split-window-function 'split-window-horizontally
         ediff-window-setup-function 'ediff-setup-windows-plain))
 
-(use-package edit-server
-  :if window-system
-  :init
-  (add-hook 'after-init-hook 'edit-server-start t)
-  :config
-  (setq edit-server-default-major-mode 'org-mode
-        edit-server-new-frame nil)
-  (add-hook 'edit-server-start-hook 'edit-server-maybe-dehtmlize-buffer)
-  (add-hook 'edit-server-done-hook  'edit-server-maybe-htmlize-buffer))
-
 (use-package edts
   :diminish edts-mode
   :init
@@ -441,6 +431,7 @@
   (add-hook 'god-mode-disabled-hook 'j/god-cursor))
 
 (use-package intero
+  :disabled t
   :config
   (add-hook 'haskell-mode-hook 'intero-mode)
   (defun j/intero-load-and-switch-back ()
@@ -450,6 +441,7 @@
             'j/intero-load-and-switch-back 'make-it-local))
 
 (use-package haskell-mode
+  :disabled t
   :config
   (setq haskell-compile-cabal-build-command "cd %s && stack build"
         haskell-compile-cabal-build-alt-command "cd %s && stack build"
@@ -541,6 +533,7 @@
                 js2-include-node-externs t))
 
 (use-package ledger-mode
+  :disabled t
   :mode "\\.ledger\\'"
   :config
   (setq ledger-post-use-completion-engine :ido
@@ -704,22 +697,10 @@
         tramp-default-host "localhost"
         tramp-default-method "scp"))
 
-(use-package undo-tree
-  :bind ("C-\\" . undo)
-  :config (global-undo-tree-mode))
-
 (use-package uniquify
   :config
   (setq uniquify-buffer-name-style 'forward
         uniquify-min-dir-content 1))
-
-(use-package yasnippet
-  :diminish yas-minor-mode
-  :config (yas-global-mode 1))
-
-(use-package web-mode
-  :config
-  (setq web-mode-code-indent-offset 2))
 
 (require 'dot-toggle)
 (require 'dot-lambda-fontify)
