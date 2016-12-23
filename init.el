@@ -361,11 +361,11 @@
                 :config
                 (define-key eproject-mode-map (kbd "C-c b") 'bury-buffer)))))
 
-use-package emacs-lisp-mode
-:bind (("M-." . find-function-at-point)
-       ("C-h C-f" . find-function))
-:config
-(add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ")))
+(use-package emacs-lisp-mode
+  :bind (("M-." . find-function-at-point)
+         ("C-h C-f" . find-function))
+  :config
+  (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ"))))
 
 (use-package erlang
   :init
