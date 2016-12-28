@@ -709,6 +709,7 @@
   (setq uniquify-buffer-name-style 'forward
         uniquify-min-dir-content 1))
 
+(require 'dot-theme)
 (require 'dot-toggle)
 (require 'dot-lambda-fontify)
 
@@ -721,19 +722,4 @@
 
 ;; Load customized config
 (setq custom-file "~/.emacs.d/custom.el")
-(load custom-file 'noerror) x
-
-;; Custom theme
-(defun j/toggle-theme ()
-  "Switch b/w angel dark and light themes."
-  (interactive)
-  (if (member 'angel-dark custom-enabled-themes)
-      (progn
-        (disable-theme 'solarized-dark)
-        (disable-theme 'angel-dark)
-        (load-theme 'angel-light t))
-    (disable-theme 'angel-light)
-    (load-theme 'angel-dark t)))
-
-(if window-system
-    (load-theme 'angel-light t))
+(load custom-file 'noerror)
