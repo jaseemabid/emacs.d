@@ -54,6 +54,7 @@
 ;; Set the paths early
 (use-package exec-path-from-shell
   :config
+  (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize))
 
 ;; Load lisp files from site-lisp
@@ -485,22 +486,28 @@
         ido-create-new-buffer 'prompt)
   (ido-mode 1)
   (ido-everywhere 1)
+
   (use-package flx-ido
     :config
     (flx-ido-mode 1)
     ;; disable ido faces to see flx highlights.
     (setq ido-enable-flex-matching t)
     (setq ido-use-faces nil))
+
   (use-package ido-vertical-mode
     :config
     (ido-vertical-mode 1)
-    (setq ido-vertical-define-keys 'C-n-C-p-up-and-down))
-  (define-key bookmark-map "b" 'ido-bookmark-jump)
-  (defun ido-bookmark-jump ()
-    "*Switch to bookmark interactively using `ido'."
-    (interactive)
-    (bookmark-jump
-     (ido-completing-read "Bookmark: " (bookmark-all-names)))))
+    (bind-key "b" 'ido-bookmark-jump bookmark-map)
+    (setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
+    (defun ido-bookmark-jump ()
+      "*Switch to bookmark interactively using `ido'."
+      (interactive)
+      (bookmark-jump
+       (ido-completing-read "Bookmark: " (bookmark-all-names)))))
+
+  (use-package ido-ubiquitous
+    :config
+    (ido-ubiquitous-mode 1)))
 
 (use-package jedi
   :config
@@ -573,6 +580,7 @@
   (bind-key "C-c l" 'j/org-insert-link org-mode-map)
   (setq org-agenda-files `("~/Notes")
         org-agenda-timegrid-use-ampm t ;; 12hr format for agenda view
+        org-completion-use-ido t
         org-default-notes-file "~/Notes/todo.org"
         org-directory "~/Notes"
         org-log-done 'time
@@ -647,7 +655,7 @@
 
 (use-package recentf
   :bind ("C-x C-r" . recentf-open-files)
-  :config
+  :init
   (recentf-mode 1))
 
 (use-package rect
@@ -710,6 +718,10 @@
 ;; Note, load ERC only after private
 (load-file "~/.emacs.d/erc.el")
 (load-file "~/.emacs.d/eshell/init.el")
+
+;; Load customized config
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror) x
 
 ;; Custom theme
 (defun j/toggle-theme ()
