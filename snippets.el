@@ -16,7 +16,8 @@
     (replace-in-file "’" "'")
     (replace-in-file "“" "\"")
     (replace-in-file "”" "\"")
-    (replace-in-file "" "")))
+    (replace-in-file "" "")
+    (replace-in-file "—" "—")))
 
 (defun smart-open-line ()
   "Shortcut for C-e RET"
@@ -117,7 +118,8 @@ See `sort-regexp-fields'."
   (interactive)
   (let* ((url (read-string "URL: "))
          (title (get-html-title-from-url url)))
-    (org-insert-link nil url title)))
+    (org-insert-link nil url title)
+    (cleanup-fancy-quotes)))
 
 (defun j/find-file-large-hook ()
   "If a file is over a given size, make the buffer read only."
@@ -128,7 +130,7 @@ See `sort-regexp-fields'."
 
 (defun get-html-title-from-url (url)
   "Return content in <title> tag."
-  (let (x1 x2 (download-buffer (url-retrieve-synchronously url)))
+  (let (x1 x2 (download-buffer (url-retrieve-synchronously url t)))
     (save-excursion
       (set-buffer download-buffer)
       (beginning-of-buffer)
