@@ -20,7 +20,6 @@
         httpcode
         ido-vertical-mode
         ido-ubiquitous
-        intero
         jedi ;; Auto complete for Python
         js2-mode
         ledger-mode

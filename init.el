@@ -443,7 +443,6 @@
             'j/intero-load-and-switch-back 'make-it-local))
 
 (use-package haskell-mode
-  :disabled t
   :config
   (setq haskell-compile-cabal-build-command "cd %s && stack build"
         haskell-compile-cabal-build-alt-command "cd %s && stack build"
