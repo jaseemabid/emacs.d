@@ -627,6 +627,8 @@
 (use-package python
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python" . python-mode)
+  :bind (("M-n" . python-nav-forward-defun)
+         ("M-p" . python-nav-backward-defun))
   :config
   (bind-keys :map python-mode-map
              ("C-c d" . j/python-insert-debugger)
