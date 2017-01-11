@@ -307,7 +307,9 @@
   :bind ("C-c s" . desktop-save-in-desktop-dir)
   :config
   (setq desktop-files-not-to-save "^$"
-        desktop-path '("~/.emacs.d/"))
+        desktop-load-locked-desktop t
+        desktop-path '("~/.emacs.d/")
+        desktop-save t)
   (desktop-save-mode t)
   (add-to-list 'desktop-modes-not-to-save 'dired-mode)
   (add-to-list 'desktop-modes-not-to-save 'help-mode)
