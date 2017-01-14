@@ -395,7 +395,11 @@
          ("M-0" . text-scale-adjust)))
 
 (use-package files
-  :bind ("<f5>" . revert-buffer))
+  :bind ("<f5>" . j/revert)
+  :config
+  (defun j/revert ()
+    (interactive)
+    (revert-buffer t t)))
 
 (use-package fill-column-indicator
   :config
