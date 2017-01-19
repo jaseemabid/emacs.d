@@ -16,6 +16,7 @@
         flx-ido
         flycheck
         gitignore-mode
+        go-mode
         haskell-mode
         httpcode
         ido-vertical-mode
