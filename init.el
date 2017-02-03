@@ -318,6 +318,7 @@
 
 (use-package fic-mode
   :config
+  (setq fic-highlighted-words '("TODO" "BUG" "VERIFY" "NOTE" "XXX"))
   (add-hook 'prog-mode-hook 'fic-mode))
 
 (use-package dired

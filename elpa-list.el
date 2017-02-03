@@ -11,7 +11,7 @@
         edts
         erlang
         exec-path-from-shell
-        fic-mode
+        fic-mode ;; Highlight TODO, XXX etc
         fill-column-indicator
         flx-ido
         flycheck
@@ -21,7 +21,7 @@
         httpcode
         ido-vertical-mode
         ido-ubiquitous
-        jedi ;; Auto complete for Python
+        jedi     ;; Auto complete for Python
         js2-mode
         ledger-mode
         magit
@@ -31,7 +31,7 @@
         projectile
         rainbow-mode
         restclient
-        smex ;; Recent commands under M-x
+        smex     ;; Recent commands under M-x
         solarized-theme
         use-package
         yaml-mode))
