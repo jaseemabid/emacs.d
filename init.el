@@ -440,14 +440,8 @@
   (add-hook 'god-mode-disabled-hook 'j/god-cursor))
 
 (use-package intero
-  :disabled t
   :config
-  (add-hook 'haskell-mode-hook 'intero-mode)
-  (defun j/intero-load-and-switch-back ()
-    (intero-repl-load)
-    (intero-repl-switch-back))
-  (add-hook 'after-save-hook
-            'j/intero-load-and-switch-back 'make-it-local))
+  (add-hook 'haskell-mode-hook 'intero-mode))
 
 (use-package haskell-mode
   :config
