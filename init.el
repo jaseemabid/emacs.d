@@ -547,11 +547,6 @@
   (setq ledger-post-use-completion-engine :ido
         ledger-use-iso-dates t))
 
-(use-package linum
-  :config
-  (global-linum-mode t)
-  (global-hl-line-mode t))
-
 (use-package magit
   :bind (("C-c i"   . magit-status)
          ("C-c C-i" . magit-status)
