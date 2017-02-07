@@ -34,6 +34,7 @@
         smex     ;; Recent commands under M-x
         solarized-theme
         use-package
+        virtualenvwrapper
         yaml-mode))
 
 (provide 'elpa-list)

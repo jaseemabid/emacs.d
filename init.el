@@ -522,8 +522,14 @@
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t
         jedi:use-shortcuts t
-        python-environment-default-root-name "jedi"
+        jedi:environment-root "jedi"
         python-environment-directory "~/.virtualenvs"))
+
+(use-package virtualenvwrapper
+  :ensure t
+  :config
+  (venv-initialize-interactive-shells)
+  (venv-initialize-eshell))
 
 (use-package js2-mode
   :bind (("C-c d" . j/js-insert-debugger)
