@@ -519,12 +519,6 @@
         jedi:environment-root "jedi"
         python-environment-directory "~/.virtualenvs"))
 
-(use-package virtualenvwrapper
-  :ensure t
-  :config
-  (venv-initialize-interactive-shells)
-  (venv-initialize-eshell))
-
 (use-package js2-mode
   :bind (("C-c d" . j/js-insert-debugger)
          ("M-RET" . electric-indent-just-newline))
@@ -718,6 +712,12 @@
   :config
   (setq uniquify-buffer-name-style 'forward
         uniquify-min-dir-content 1))
+
+(use-package virtualenvwrapper
+  :config
+  (venv-initialize-interactive-shells)
+  (venv-initialize-eshell))
+
 
 (require 'dot-theme)
 (require 'dot-toggle)
