@@ -306,7 +306,7 @@
 
 (use-package desktop
   :bind ("C-c s" . desktop-save-in-desktop-dir)
-  :config
+  :init
   (setq desktop-files-not-to-save "^$"
         desktop-load-locked-desktop t
         desktop-path '("~/.emacs.d/")
