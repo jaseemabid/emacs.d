@@ -608,6 +608,7 @@
 (use-package paredit
   :diminish paredit-mode
   :config
+  (add-hook 'scheme-mode-hook 'paredit-mode)
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
 
 (use-package paren
