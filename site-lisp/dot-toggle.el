@@ -14,14 +14,14 @@
 (define-key j/toggle-map "f" 'auto-fill-mode)
 (define-key j/toggle-map "h" 'global-hl-line-mode)
 (define-key j/toggle-map "l" 'linum-mode)
-;; menu bar for exploring new modes
 (define-key j/toggle-map "m" 'menu-bar-mode)
 (define-key j/toggle-map "p" 'paredit-mode)
 (define-key j/toggle-map "q" 'toggle-debug-on-quit)
-(define-key j/toggle-map "t" 'j/toggle-theme)
-(define-key j/toggle-map "w" 'whitespace-mode)
 ;; Generalized `read-only-mode'
 (define-key j/toggle-map "r" 'dired-toggle-read-only)
+(define-key j/toggle-map "s" 'flyspell-mode)
+(define-key j/toggle-map "t" 'j/toggle-theme)
+(define-key j/toggle-map "w" 'whitespace-mode)
 (define-key j/toggle-map "|" 'fci-mode)
 
 (provide 'dot-toggle)
