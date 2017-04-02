@@ -454,6 +454,9 @@
             (lambda ()
               (setq haskell-indent-spaces 4
                     haskell-indentation-left-offset 4
+                    haskell-indentation-starter-offset 4
+                    haskell-indentation-where-post-offset 2
+                    haskell-indentation-where-pre-offset 2
                     haskell-tags-on-save t)
               ;; Ignore compiled Haskell files in filename completions
               (add-to-list 'completion-ignored-extensions ".hi")))
