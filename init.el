@@ -626,12 +626,11 @@
 (use-package python
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python" . python-mode)
-  :bind (("M-n" . python-nav-forward-defun)
-         ("M-p" . python-nav-backward-defun))
   :config
   (bind-keys :map python-mode-map
              ("C-c d" . j/python-insert-debugger)
-             ("SPC" . j/python-method-space-replace))
+             ("M-n" . python-nav-forward-defun)
+             ("M-p" . python-nav-backward-defun))
   (setq-default python-fill-docstring-style 'pep-257-nn)
   (add-hook 'python-mode-hook
             (lambda ()
