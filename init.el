@@ -291,7 +291,7 @@
   (setq ahs-default-range 'ahs-range-whole-buffer))
 
 (use-package bookmark
-  :bind ("C-x r" . bookmark-map))
+  :bind-keymap ("C-x m" . bookmark-map))
 
 (use-package delsel
   :config
@@ -318,9 +318,10 @@
 
 (use-package dired
   :bind (("C-x C-d" . dired)
-         ("C-x d" . j/dired-open-here))
+         ("C-x d" . j/dired-open-here)
+         :map dired-mode-map
+         ("r" . j/dired-open-external))
   :config
-  (bind-keys :map dired-mode-map ("r" . j/dired-open-external))
   ;; Set the name of the host and current path/file in title bar:
   (setq frame-title-format
         (list (format "%s %%S: %%j " (system-name))
@@ -359,9 +360,7 @@
               (use-package eproject-extras
                 :demand t
                 :diminish eproject-mode
-                :config
-                (bind-keys :map eproject-mode-map
-                           ("C-c b" . bury-buffer))))))
+                :bind (:map eproject-mode-map ("C-c b" . bury-buffer))))))
 
 (use-package emacs-lisp-mode
   :bind (("M-." . find-function-at-point)
@@ -374,8 +373,8 @@
   (add-to-list 'auto-mode-alist '("\\.P\\'" . erlang-mode))
   (add-to-list 'auto-mode-alist '("\\.E\\'" . erlang-mode))
   (add-to-list 'auto-mode-alist '("\\.S\\'" . erlang-mode))
+  :bind (:map erlang-mode-map ("C-c l" . magit-log-head))
   :config
-  (bind-key "C-c l" 'magit-log-head  erlang-mode-map)
   (add-hook 'erlang-mode-hook
             (lambda ()
               (setq mode-name "erl"
@@ -494,9 +493,9 @@
     (setq ido-use-faces nil))
 
   (use-package ido-vertical-mode
+    :bind (:map bookmark-map ("b" . ido-bookmark-jump))
     :config
     (ido-vertical-mode 1)
-    (bind-key "b" 'ido-bookmark-jump bookmark-map)
     (setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
     (defun ido-bookmark-jump ()
       "*Switch to bookmark interactively using `ido'."
@@ -547,10 +546,12 @@
 (use-package magit
   :bind (("C-c i"   . magit-status)
          ("C-c C-i" . magit-status)
-         ("C-c g"   . magit-status))
+         ("C-c g"   . magit-status)
+         :map prog-mode-map
+         ("C-c l" . magit-log-head)
+         :map dired-mode-map
+         ("C-c l" . magit-log-head))
   :config
-  (bind-key "C-c l" 'magit-log-head  prog-mode-map)
-  (bind-key "C-c l" 'magit-log-head  dired-mode-map)
   (setq magit-process-connection-type nil
         magit-push-always-verify nil
         magit-revision-show-gravatars nil
@@ -569,9 +570,10 @@
 
 (use-package org
   :bind (("C-c a" . org-agenda)
-         ("C-c r" . org-capture))
+         ("C-c r" . org-capture)
+         :map org-mode-map
+         ("C-c l" . j/org-insert-link))
   :config
-  (bind-key "C-c l" 'j/org-insert-link org-mode-map)
   (setq org-agenda-files `("~/Notes")
         org-agenda-timegrid-use-ampm t ;; 12hr format for agenda view
         org-completion-use-ido t
@@ -614,22 +616,19 @@
   :diminish projectile-mode
   :commands projectile-mode
   :bind-keymap ("C-c p" . projectile-command-map)
-  :config
-  (setq projectile-mode-line "")
-  (projectile-global-mode))
+  :init (setq projectile-mode-line "")
+  :config (projectile-global-mode))
 
 (use-package python
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python" . python-mode)
+  :bind (:map python-mode-map
+              ("C-c d" . j/python-insert-debugger)
+              ("M-n" . python-nav-forward-defun)
+              ("M-p" . python-nav-backward-defun))
   :config
-  (bind-keys :map python-mode-map
-             ("C-c d" . j/python-insert-debugger)
-             ("M-n" . python-nav-forward-defun)
-             ("M-p" . python-nav-backward-defun))
   (setq-default python-fill-docstring-style 'pep-257-nn)
-  (add-hook 'python-mode-hook
-            (lambda ()
-              (setq mode-name "Py")))
+  (add-hook 'python-mode-hook (lambda () (setq mode-name "Py")))
   (defun j/python-insert-debugger ()
     "Insert a debugger statement at point"
     (interactive)
