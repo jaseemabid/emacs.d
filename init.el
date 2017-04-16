@@ -87,12 +87,6 @@
               visible-bell t
               truncate-lines t)
 
-(setq initial-buffer-choice
-      (lambda ()
-        (org-agenda-list)
-        (bury-buffer (get-buffer "*scratch*"))
-        (get-buffer "*Org Agenda*")))
-
 ;; Make y/n suffice for yes/no q
 (fset 'yes-or-no-p 'y-or-n-p)
 
