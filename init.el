@@ -327,10 +327,6 @@
          ("C-x d" . j/dired-open-here))
   :config
   (bind-keys :map dired-mode-map ("r" . j/dired-open-external))
-  (use-package dired-details
-    :config
-    (dired-details-install)
-    (setq dired-details-hidden-string ""))
   ;; Set the name of the host and current path/file in title bar:
   (setq frame-title-format
         (list (format "%s %%S: %%j " (system-name))
@@ -346,6 +342,11 @@
       (message "Opening %s.." file)
       (call-process "open" nil 0 nil file)
       (message "Opening %s done" file))))
+
+(use-package dired-details
+    :config
+    (dired-details-install)
+    (setq dired-details-hidden-string ""))
 
 (use-package ediff
   :config
