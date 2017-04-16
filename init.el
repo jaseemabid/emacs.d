@@ -471,8 +471,6 @@
                   ("C-c C-l" . haskell-process-load-file)
                   ("C-c C-t" . haskell-process-do-type)
                   ("C-c C-z" . haskell-interactive-switch)
-                  ("C-c M-." . nil)
-                  ("C-x C-d" . nil)
                   ("M-." . haskell-mode-tag-find)))))
 
 (use-package ibuffer
