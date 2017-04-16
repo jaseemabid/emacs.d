@@ -326,12 +326,11 @@
   :bind (("C-x C-d" . dired)
          ("C-x d" . j/dired-open-here))
   :config
+  (bind-keys :map dired-mode-map ("r" . j/dired-open-external))
   (use-package dired-details
     :config
     (dired-details-install)
     (setq dired-details-hidden-string ""))
-  ;; [todo] - Replace define-key with :bind
-  (define-key  dired-mode-map "r" 'j/dired-open-external)
   ;; Set the name of the host and current path/file in title bar:
   (setq frame-title-format
         (list (format "%s %%S: %%j " (system-name))
@@ -366,7 +365,8 @@
                 :demand t
                 :diminish eproject-mode
                 :config
-                (define-key eproject-mode-map (kbd "C-c b") 'bury-buffer)))))
+                (bind-keys :map eproject-mode-map
+                           ("C-c b" . bury-buffer))))))
 
 (use-package emacs-lisp-mode
   :bind (("M-." . find-function-at-point)
