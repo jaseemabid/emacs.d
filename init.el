@@ -160,9 +160,18 @@
 ;; ---------------
 ;; Top level hooks
 ;; --------------
-(add-hook 'find-file-hook 'j/find-file-large-hook)
-(add-hook 'write-file-hooks 'delete-trailing-whitespace)
-(remove-hook 'find-file-hooks 'vc-find-file-hook)
+
+(use-package files
+  :init
+  (add-hook 'find-file-hook 'j/find-file-large-hook)
+  (add-hook 'write-file-hooks 'delete-trailing-whitespace)
+  (remove-hook 'find-file-hook 'vc-find-file-hook)
+  (defun j/find-file-large-hook ()
+    "If a file is over a given size, make the buffer read only."
+    (when (> (buffer-size) (* 1024 1024))
+      (setq buffer-read-only t)
+      (buffer-disable-undo)
+      (fundamental-mode))))
 
 ;; ----------------
 ;; auto-mode-alists
@@ -334,9 +343,7 @@
     "In dired, open the file named on this line with external tool."
     (interactive)
     (let* ((file (dired-get-filename nil t)))
-      (message "Opening %s.." file)
-      (call-process "open" nil 0 nil file)
-      (message "Opening %s done" file))))
+      (call-process "open" nil 0 nil file))))
 
 (use-package dired-details
     :config

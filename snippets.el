@@ -121,13 +121,6 @@ See `sort-regexp-fields'."
     (org-insert-link nil url title)
     (cleanup-fancy-quotes)))
 
-(defun j/find-file-large-hook ()
-  "If a file is over a given size, make the buffer read only."
-  (when (> (buffer-size) (* 1024 1024))
-    (setq buffer-read-only t)
-    (buffer-disable-undo)
-    (fundamental-mode)))
-
 (defun get-html-title-from-url (url)
   "Return content in <title> tag."
   (let (x1 x2 (download-buffer (url-retrieve-synchronously url t)))
