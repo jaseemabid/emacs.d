@@ -716,8 +716,10 @@
   (venv-initialize-interactive-shells)
   (venv-initialize-eshell))
 
+(use-package material
+  :config
+  (load-theme 'material t))
 
-(require 'dot-theme)
 (require 'dot-toggle)
 (require 'dot-lambda-fontify)
 

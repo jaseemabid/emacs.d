@@ -15,6 +15,7 @@
         fill-column-indicator
         flx-ido
         flycheck
+        material
         gitignore-mode
         go-mode
         haskell-mode
