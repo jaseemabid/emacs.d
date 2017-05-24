@@ -357,6 +357,7 @@
 
 (use-package edts
   :diminish edts-mode
+  :disabled t
   :init
   (setq edts-doc-style 'buffer
         edts-inhibit-package-check t
@@ -376,6 +377,7 @@
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ξ"))))
 
 (use-package erlang
+  :disabled t
   :init
   (add-to-list 'auto-mode-alist '("\\.P\\'" . erlang-mode))
   (add-to-list 'auto-mode-alist '("\\.E\\'" . erlang-mode))

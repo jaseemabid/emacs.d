@@ -8,8 +8,6 @@
         diminish
         dired-details
         dropdown-list
-        edts
-        erlang
         exec-path-from-shell
         fic-mode ;; Highlight TODO, XXX etc
         fill-column-indicator
