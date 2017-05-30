@@ -13,18 +13,19 @@
         fill-column-indicator
         flx-ido
         flycheck
-        material
         gitignore-mode
         go-mode
         haskell-mode
         httpcode
-        ido-vertical-mode
         ido-ubiquitous
+        ido-vertical-mode
         jedi     ;; Auto complete for Python
         js2-mode
         ledger-mode
+        llvm-mode
         magit
         markdown-mode
+        material
         multiple-cursors
         paredit
         projectile
