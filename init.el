@@ -579,6 +579,7 @@
 
 (use-package org
   :bind (("C-c a" . org-agenda)
+         ("C-c k" . org-store-link)
          ("C-c r" . org-capture)
          :map org-mode-map
          ("C-c l" . j/org-insert-link))
