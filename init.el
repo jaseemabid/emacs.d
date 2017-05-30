@@ -332,9 +332,7 @@
          ("r" . j/dired-open-external))
   :config
   ;; Set the name of the host and current path/file in title bar:
-  (setq frame-title-format
-        (list (format "%s %%S: %%j " (system-name))
-              '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+  (setq frame-title-format "%b")
   (defun j/dired-open-here ()
     "Open current directory."
     (interactive)
