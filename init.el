@@ -637,16 +637,7 @@
   :config
   (setq-default python-fill-docstring-style 'pep-257-nn)
   (add-hook 'python-mode-hook (lambda () (setq mode-name "Py")))
-  (set-register ?d "import ipdb; ipdb.set_trace()")
-  (defun j/python-method-space-replace ()
-    "SPC while naming a defined method insert an underscore"
-    (interactive)
-    (if (and (looking-back "def .+")
-             (not (and
-                   (looking-at ".*)")
-                   (looking-back "(.*"))))
-        (insert "_")
-      (insert " "))))
+  (set-register ?d "import ipdb; ipdb.set_trace()"))
 
 (use-package rainbow-mode
   :config
