@@ -1,7 +1,7 @@
 ;; Font setup with Fira ;;
 
 (when (window-system)
-  (set-frame-font "Fira Code-12"))
+  (set-frame-font "Fira Code-13"))
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                (36 . ".\\(?:>\\)")
