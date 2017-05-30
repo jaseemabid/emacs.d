@@ -25,7 +25,7 @@
         llvm-mode
         magit
         markdown-mode
-        material
+        material-theme
         multiple-cursors
         paredit
         projectile
