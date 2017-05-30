@@ -626,7 +626,7 @@
   :commands projectile-mode
   :bind-keymap ("C-c p" . projectile-command-map)
   :init (setq projectile-mode-line "")
-  :config (projectile-global-mode))
+  :config (projectile-mode))
 
 (use-package python
   :mode ("\\.py\\'" . python-mode)
