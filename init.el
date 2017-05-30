@@ -466,6 +466,7 @@
   ;; Haskell shell stuff
   (eval-after-load "haskell-mode"
     '(progn
+       (set-register ?u "undefined")
        (setq haskell-interactive-popup-errors nil)
        (bind-keys :map haskell-mode-map
                   ("C-c C-b" . haskell-interactive-switch)
@@ -633,16 +634,12 @@
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python" . python-mode)
   :bind (:map python-mode-map
-              ("C-c d" . j/python-insert-debugger)
               ("M-n" . python-nav-forward-defun)
               ("M-p" . python-nav-backward-defun))
   :config
   (setq-default python-fill-docstring-style 'pep-257-nn)
   (add-hook 'python-mode-hook (lambda () (setq mode-name "Py")))
-  (defun j/python-insert-debugger ()
-    "Insert a debugger statement at point"
-    (interactive)
-    (insert "import ipdb; ipdb.set_trace()"))
+  (set-register ?d "import ipdb; ipdb.set_trace()")
   (defun j/python-method-space-replace ()
     "SPC while naming a defined method insert an underscore"
     (interactive)
