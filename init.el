@@ -415,6 +415,9 @@
   (add-hook 'prog-mode-hook 'fci-mode))
 
 (use-package flycheck
+  :bind (("<f9>" . flycheck-list-errors)    ;; Magnifying glass
+         ("<f4>" . flycheck-previous-error) ;; Media Prev
+         ("<f6>" . flycheck-next-error))    ;; Media Next
   :diminish flycheck-mode
   :config
   (add-hook 'after-init-hook 'global-flycheck-mode)
