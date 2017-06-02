@@ -121,6 +121,11 @@
   (defadvice delete-window (after restore-balance activate)
     (balance-windows)))
 
+;; Never bother to show *compilation* window. It's annoying
+(setq display-buffer-alist
+      '(("\\*compilation\\*" display-buffer-no-window (nil))))
+
+
 ;; Mac specific stuff
 (when (eq system-type 'darwin)
   ;; "Mac hook"
