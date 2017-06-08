@@ -16,6 +16,7 @@
         gitignore-mode
         go-mode
         haskell-mode
+        hindent
         httpcode
         ido-ubiquitous
         ido-vertical-mode

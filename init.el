@@ -453,6 +453,10 @@
   :config
   (add-hook 'haskell-mode-hook 'intero-mode))
 
+(use-package hindent
+  :config
+  (add-hook 'haskell-mode-hook 'hindent-mode))
+
 (use-package haskell-mode
   :config
   (setq haskell-compile-cabal-build-command "cd %s && stack build"
