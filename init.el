@@ -97,8 +97,8 @@
 ;; Larger fonts for the mac
 
 ;; Font setup with Fira
-;; https://github.com/tonsky/FiraCode
-(load-file "~/.emacs.d/fira.el")
+(when (window-system)
+  (set-frame-font "Inconsolata-14"))
 
 ;; Snippets
 (load-file "~/.emacs.d/snippets.el")
